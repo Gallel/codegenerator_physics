@@ -1,0 +1,1 @@
+A car initially moving at 90 km/h starts braking until it stops completely after 5 s. Assuming that during braking the vehicle follows a uniformly accelerated rectilinear motion, calculate the deceleration of the car and the distance covered during braking.

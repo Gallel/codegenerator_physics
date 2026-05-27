@@ -1,0 +1,1 @@
+A test rocket has a mass of 40 kg. It takes off and, during 6 s, ascends with a constant acceleration of 15 m/s². Air resistance is neglected. Calculate the velocity it reaches at 6 s, the distance it covers in those 6 s and the force exerted by the engine. Data: g = 9.8 m/s².

@@ -1,0 +1,9 @@
+{
+  "id": "problem_011",
+  "domain": "linear_kinematics",
+  "difficulty": "easy",
+  "source": "Cantabria, Ciencias Generales, EBAU convocatoria extraordinaria/julio, 2024, pregunta 10",
+  "url": "https://web.unican.es/admision/Documents/Documentos%20EBAU/Ex%C3%A1menes%20EBAU/Criterios%20Correcci%C3%B3n%20JULIO%202024.pdf",
+  "format_adaptations": "Compacted wording; no numeric data, units or physical structure changed.",
+  "verification_note": "Solved only with uniformly accelerated linear kinematics: zero initial velocity, final velocity, time, acceleration and displacement."
+}

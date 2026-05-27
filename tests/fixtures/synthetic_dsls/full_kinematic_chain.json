@@ -1,0 +1,44 @@
+{
+  "metadata": { "name": "FullKinematicChain" },
+  "main_declarations": [
+    {"name": "v0", "value": 20.0, "type": "double",
+     "semantics": {"quantity": "VelocityQuantity", "unit": "Meter"}},
+    {"name": "a", "value": -9.80665, "type": "double",
+     "semantics": {"quantity": "AccelerationQuantity", "unit": "Meter"}},
+    {"name": "delta_x", "value": 15.0, "type": "double",
+     "semantics": {"quantity": "DisplacementQuantity", "unit": "Meter"}}
+  ],
+  "definitions": [
+    {
+      "id": "torricelli_squared",
+      "description": "Compute v^2 = v0^2 + 2 * a * delta_x.",
+      "inputs": [
+        {"name": "v0", "type": "double"},
+        {"name": "a", "type": "double"},
+        {"name": "dx", "type": "double"}
+      ],
+      "operations": [
+        {"type": "binary", "operator": "*", "left": "v0", "right": "v0", "result": "v0_sq",
+         "function": null, "operand": null, "module": null, "solution_polarity": null, "args": null},
+        {"type": "binary", "operator": "+", "left": "a", "right": "a", "result": "two_a",
+         "function": null, "operand": null, "module": null, "solution_polarity": null, "args": null},
+        {"type": "binary", "operator": "*", "left": "two_a", "right": "dx", "result": "two_a_dx",
+         "function": null, "operand": null, "module": null, "solution_polarity": null, "args": null},
+        {"type": "binary", "operator": "+", "left": "v0_sq", "right": "two_a_dx", "result": "v_sq",
+         "function": null, "operand": null, "module": null, "solution_polarity": null, "args": null}
+      ],
+      "output_var": "v_sq",
+      "return_type": "double"
+    }
+  ],
+  "execution_flow": [
+    {"type": "module_call", "module": "torricelli_squared", "result": "v_sq",
+     "args": {"v0": "v0", "a": "a", "dx": "delta_x"},
+     "operator": null, "function": null, "left": null, "right": null,
+     "operand": null, "solution_polarity": null},
+    {"type": "unary", "function": "sqrt", "operand": "v_sq", "result": "v_final",
+     "operator": null, "left": null, "right": null, "module": null,
+     "solution_polarity": "positive", "args": null}
+  ],
+  "results_to_print": ["v_final"]
+}

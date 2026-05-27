@@ -1,0 +1,15 @@
+{
+  "metadata": { "name": "BinaryDiv" },
+  "main_declarations": [
+    {"name": "dist", "value": 100.0, "type": "double",
+     "semantics": {"quantity": "DisplacementQuantity", "unit": "Meter"}},
+    {"name": "time", "value": 10.0, "type": "double",
+     "semantics": {"quantity": "TimeQuantity", "unit": "Second"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "binary", "operator": "/", "left": "dist", "right": "time", "result": "v",
+     "function": null, "operand": null, "module": null, "solution_polarity": null, "args": null}
+  ],
+  "results_to_print": ["v"]
+}

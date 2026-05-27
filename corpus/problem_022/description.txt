@@ -1,0 +1,1 @@
+A vehicle of mass 1300 kg travels at a velocity of 30 m/s. Calculate its kinetic energy at that velocity.

@@ -1,0 +1,475 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/physics/physics-domain"
+         xmlns="http://example.org/physics/physics-domain#"
+         xmlns:phys="http://example.org/physics#">
+
+<owl:Ontology rdf:about="http://example.org/physics/physics-domain">
+  <owl:imports rdf:resource="http://example.org/physics/physics-math"/>
+</owl:Ontology>
+
+<owl:NamedIndividual rdf:about="#MassQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LengthQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PositionQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AltitudeQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DisplacementQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#HeightQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TimeQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#VelocityQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AccelerationQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ForceQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">force</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MomentumQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#EnergyQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PowerQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">power</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AngleQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AngularVelocityQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AngularAccelerationQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#FrequencyQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frequency</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SpecificEnergyQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GravitationalParameterQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AreaQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">area</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#VolumeQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DensityQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">density</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PressureQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pressure</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TimeSquaredQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+  <phys:hasAllowedUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time_squared</phys:hasAllowedUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#FrictionCoefficientQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DimensionlessQuantity">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Meter">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Kilometer">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Second">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Minute">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Hour">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3600.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Kilogram">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gram">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.001</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Newton">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">force</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Joule">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Watt">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">power</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Radian">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Degree">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0174532925</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Hertz">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frequency</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SquareMeter">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">area</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CubicMeter">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Liter">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.001</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KilogramPerCubicMeter">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">density</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pascal">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pressure</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bar">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100000.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pressure</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Atmosphere">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101325.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pressure</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SecondSquared">
+  <rdf:type rdf:resource="http://example.org/physics#Unit"/>
+  <phys:hasConversionFactorToSI rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</phys:hasConversionFactorToSI>
+  <phys:hasUnitCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time_squared</phys:hasUnitCategory>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Pi">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#DimensionlessQuantity"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.141592653589793</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pi</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#StandardGravity">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#AccelerationQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.80665</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">g</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UniversalGravitationalConstantType">
+  <rdf:type rdf:resource="http://example.org/physics#PhysicalQuantity"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#UniversalGravitationalConstant">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#UniversalGravitationalConstantType"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.6743e-11</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#SpeedOfLight">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#VelocityQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">299792458.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#AstronomicalUnit">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">149597870700.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AU</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Day">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#TimeQuantity"/>
+  <phys:hasUnit rdf:resource="#Second"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86400.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">day</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#JulianYear">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#TimeQuantity"/>
+  <phys:hasUnit rdf:resource="#Second"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">31557600.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yr</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#StandardAtmosphericPressure">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#PressureQuantity"/>
+  <phys:hasUnit rdf:resource="#Pascal"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101325.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P_atm</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#StandardWaterDensity">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#DensityQuantity"/>
+  <phys:hasUnit rdf:resource="#KilogramPerCubicMeter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rho_water</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#StandardAirDensity">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#DensityQuantity"/>
+  <phys:hasUnit rdf:resource="#KilogramPerCubicMeter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.225</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rho_air</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Earth_Mass">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#MassQuantity"/>
+  <phys:hasUnit rdf:resource="#Kilogram"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.97217e+24</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M_earth</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Earth_MeanRadius">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6371000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R_earth</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Earth_EquatorialRadius">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6378136.6</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R_eq_earth</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Earth_GravitationalParameter">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#GravitationalParameterQuantity"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">398600441800000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mu_earth</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Mars_MeanRadius">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3389500.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R_mars</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Mars_GravitationalParameter">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#GravitationalParameterQuantity"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42828370000000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mu_mars</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Sun_MeanRadius">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">695700000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R_sun</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Sun_GravitationalParameter">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#GravitationalParameterQuantity"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.32712440018e+20</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mu_sun</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Moon_MeanRadius">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1737400.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R_moon</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Moon_GravitationalParameter">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#GravitationalParameterQuantity"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4902800066000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mu_moon</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Jupiter_MeanRadius">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69911000.0</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R_jup</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/physics#Jupiter_GravitationalParameter">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="#GravitationalParameterQuantity"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.26686534e+17</phys:hasNumericValue>
+  <phys:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mu_jup</phys:hasSymbol>
+</owl:NamedIndividual>
+
+<owl:AllDifferent>
+  <owl:distinctMembers rdf:parseType="Collection">
+    <rdf:Description rdf:about="#MassQuantity"/>
+    <rdf:Description rdf:about="#LengthQuantity"/>
+    <rdf:Description rdf:about="#PositionQuantity"/>
+    <rdf:Description rdf:about="#AltitudeQuantity"/>
+    <rdf:Description rdf:about="#DisplacementQuantity"/>
+    <rdf:Description rdf:about="#HeightQuantity"/>
+    <rdf:Description rdf:about="#TimeQuantity"/>
+    <rdf:Description rdf:about="#VelocityQuantity"/>
+    <rdf:Description rdf:about="#AccelerationQuantity"/>
+    <rdf:Description rdf:about="#ForceQuantity"/>
+    <rdf:Description rdf:about="#MomentumQuantity"/>
+    <rdf:Description rdf:about="#EnergyQuantity"/>
+    <rdf:Description rdf:about="#PowerQuantity"/>
+    <rdf:Description rdf:about="#AngleQuantity"/>
+    <rdf:Description rdf:about="#AngularVelocityQuantity"/>
+    <rdf:Description rdf:about="#AngularAccelerationQuantity"/>
+    <rdf:Description rdf:about="#FrequencyQuantity"/>
+    <rdf:Description rdf:about="#SpecificEnergyQuantity"/>
+    <rdf:Description rdf:about="#GravitationalParameterQuantity"/>
+    <rdf:Description rdf:about="#AreaQuantity"/>
+    <rdf:Description rdf:about="#VolumeQuantity"/>
+    <rdf:Description rdf:about="#DensityQuantity"/>
+    <rdf:Description rdf:about="#PressureQuantity"/>
+    <rdf:Description rdf:about="#TimeSquaredQuantity"/>
+    <rdf:Description rdf:about="#FrictionCoefficientQuantity"/>
+    <rdf:Description rdf:about="#DimensionlessQuantity"/>
+  </owl:distinctMembers>
+</owl:AllDifferent>
+
+
+</rdf:RDF>

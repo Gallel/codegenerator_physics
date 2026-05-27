@@ -1,0 +1,9 @@
+{
+  "id": "problem_017",
+  "domain": "dynamics",
+  "difficulty": "medium",
+  "source": "País Vasco / Universidad del País Vasco (EHU), Ciencias Generales, PAU convocatoria ordinaria, 2025, Segunda pregunta, opción 2B",
+  "url": "https://www.ehu.eus/documents/d/unibertsitaterako-sarbidea/ciencias-generales-examen-ord-2025",
+  "format_adaptations": "Removed the qualitative part and compacted the wording; no numeric data, units or physical structure of the mechanical parts changed.",
+  "verification_note": "Solved only with linear kinematics and dynamics: v = a·t, d = 1/2·a·t² and Newton's second law on the vertical axis, F_engine - weight = m·a."
+}

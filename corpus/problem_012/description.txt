@@ -1,0 +1,1 @@
+From what height must a body fall freely so that, on reaching the ground, its velocity is 54 km/h? If needed, the acceleration of gravity on Earth is g = 9.8 m/s².

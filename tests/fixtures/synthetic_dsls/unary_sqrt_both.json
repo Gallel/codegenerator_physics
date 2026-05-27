@@ -1,0 +1,14 @@
+{
+  "metadata": { "name": "UnarySqrtBoth" },
+  "main_declarations": [
+    {"name": "x", "value": 9.0, "type": "double",
+     "semantics": {"quantity": "DimensionlessQuantity", "unit": "Meter"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "unary", "function": "sqrt", "operand": "x", "result": "root",
+     "operator": null, "left": null, "right": null, "module": null,
+     "solution_polarity": "both", "args": null}
+  ],
+  "results_to_print": ["root", "root_negative"]
+}

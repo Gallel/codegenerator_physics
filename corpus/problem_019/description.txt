@@ -1,0 +1,1 @@
+An air conditioner has a power of 3000 W and runs for 8 hours a day. Calculate the energy it consumes in one day and the total energy it consumes during a 30-day month.

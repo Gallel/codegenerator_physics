@@ -1,0 +1,9 @@
+{
+  "id": "problem_026",
+  "domain": "fluid_statics",
+  "difficulty": "easy",
+  "source": "Extremadura, Ciencias Generales, PAU convocatoria ordinaria/junio, curso 2024-2025, Bloque C, ejercicio 1.b",
+  "url": "https://vrestudiantes.unex.es/wp-content/uploads/sites/23/2025/06/2024_25_JUN_Examenes.pdf",
+  "format_adaptations": "Compacted wording and unit normalization; no numeric data or physics changed.",
+  "verification_note": "Solved only with density ρ = m/V and unit conversion."
+}

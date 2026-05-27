@@ -1,0 +1,89 @@
+# =============================================================================
+#  Secrets — NEVER commit credentials. Use .env.example as the template.
+# =============================================================================
+.env
+.env.*
+!.env.example
+
+# =============================================================================
+#  Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# Type checkers / linters
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+
+# =============================================================================
+#  Project-specific generated artifacts
+# =============================================================================
+# Generated DSL / OWL / Java outputs are reproducible from source
+output/
+
+# Owlready2 sometimes writes a sqlite cache next to the script
+*.sqlite3
+
+# =============================================================================
+#  Editors / OS
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =============================================================================
+#  Logs
+# =============================================================================
+*.log
+logs/
+
+# =============================================================================
+#  Working notes I keep locally (status dumps, scratch, drafts). Anything I
+#  write down while figuring things out lives here and shouldn't ship.
+# =============================================================================
+PROJECT-STATUS.md
+PROJECT-STATUS*.md
+NOTES.md
+NOTES*.md
+TODO.md
+TODO*.md
+SCRATCH*.md
+CLAUDE*.md
+*.draft.md
+
+scratch/
+tmp/
+.tmp/
+
+*.bak
+*.orig

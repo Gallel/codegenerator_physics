@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/physics/physics-math"
+         xmlns="http://example.org/physics/physics-math#">
+
+<owl:Ontology rdf:about="http://example.org/physics/physics-math"/>
+
+<owl:ObjectProperty rdf:about="http://example.org/physics#hasLeftOperand"/>
+
+<owl:ObjectProperty rdf:about="http://example.org/physics#hasRightOperand"/>
+
+<owl:ObjectProperty rdf:about="http://example.org/physics#hasOperand"/>
+
+<owl:ObjectProperty rdf:about="http://example.org/physics#hasUnit"/>
+
+<owl:ObjectProperty rdf:about="http://example.org/physics#hasQuantityType"/>
+
+<owl:ObjectProperty rdf:about="http://example.org/physics#hasResultMeasurement"/>
+
+<owl:DatatypeProperty rdf:about="http://example.org/physics#hasNumericValue"/>
+
+<owl:DatatypeProperty rdf:about="http://example.org/physics#hasSymbol"/>
+
+<owl:DatatypeProperty rdf:about="http://example.org/physics#hasConversionFactorToSI"/>
+
+<owl:DatatypeProperty rdf:about="http://example.org/physics#hasUnitCategory"/>
+
+<owl:DatatypeProperty rdf:about="http://example.org/physics#hasAllowedUnitCategory"/>
+
+<owl:Class rdf:about="http://example.org/physics#PhysicalQuantity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#Unit">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#Expression">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#Measurement">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#Expression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#BinaryExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#Expression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#UnaryExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#Expression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#AdditionExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#BinaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#SubtractionExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#BinaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#MultiplicationExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#BinaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#DivisionExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#BinaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#PowerExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#BinaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#AssignmentOperation">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#BinaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#SqrtExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#SineExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#CosineExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#TangentExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#LogarithmExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#NaturalLogarithmExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#DerivativeExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#IntegralExpression">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#UnaryExpression"/>
+</owl:Class>
+
+
+</rdf:RDF>

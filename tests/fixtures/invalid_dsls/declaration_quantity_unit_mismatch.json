@@ -1,0 +1,11 @@
+{
+  "metadata": { "name": "DeclarationQuantityUnitMismatch" },
+  "expected_error": "DECLARATION ERROR",
+  "main_declarations": [
+    {"name": "a", "value": -9.8, "type": "double",
+     "semantics": {"quantity": "AccelerationQuantity", "unit": "Second"}}
+  ],
+  "definitions": [],
+  "execution_flow": [],
+  "results_to_print": []
+}

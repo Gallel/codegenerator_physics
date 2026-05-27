@@ -1,0 +1,1 @@
+A weather satellite of mass 2000 kg is placed in a circular orbit at an altitude of 36000 km above the Earth. Calculate the energy required to put it into orbit (neglecting the initial kinetic energy), its orbital velocity and its orbital period. Data: G = 6.67e-11 N·m²/kg²; Earth radius = 6370 km; Earth mass = 5.972e24 kg.

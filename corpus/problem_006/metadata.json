@@ -1,0 +1,9 @@
+{
+  "id": "problem_006",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Catalunya, Física, convocatoria extraordinaria, 2022, problema 1",
+  "url": "https://eureka.bibliotecadigital.gencat.cat/bitstream/handle/20.500.14344/295/pau_fisi22jp.pdf?isAllowed=y&sequence=2",
+  "format_adaptations": "Translated from Catalan and compacted; no numeric data or physics changed.",
+  "verification_note": "Solved only with gravitation, uniform circular motion, kinetic energy, gravitational potential energy and conservation of mechanical energy."
+}

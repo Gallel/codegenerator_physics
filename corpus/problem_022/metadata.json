@@ -1,0 +1,9 @@
+{
+  "id": "problem_022",
+  "domain": "work_energy",
+  "difficulty": "easy",
+  "source": "País Vasco / Universidad del País Vasco (EHU), Ciencias Generales, EAU convocatoria ordinaria, 2024, primera pregunta, opción 1A, apartado d",
+  "url": "https://www.ehu.eus/documents/d/unibertsitaterako-sarbidea/ciencias-generales",
+  "format_adaptations": "Removed the reference to the velocity-time graph and the qualitative question about in which segment the kinetic energy is maximum; kept the numeric calculation with the velocity (30 m/s) and the mass (1300 kg). No numeric data or physics changed.",
+  "verification_note": "Solved only with kinetic energy Ec = 1/2·m·v². The prop_ke rule propagates EnergyQuantity."
+}

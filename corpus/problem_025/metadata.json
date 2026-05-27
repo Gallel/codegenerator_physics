@@ -1,0 +1,9 @@
+{
+  "id": "problem_025",
+  "domain": "dynamics",
+  "difficulty": "easy",
+  "source": "UNED, Física, Curso de Acceso Directo, junio tarde 2004, bloque 1, pregunta 5",
+  "url": "https://www.dfmf.uned.es/actividades/asignaturas/acceso/junio_tarde2004.pdf",
+  "format_adaptations": "Converted the multiple-choice question into an open question; no numeric data or physics changed.",
+  "verification_note": "Solved only with impulse and change of linear momentum: F_avg·t = Δp = m·Δv. Uses mass, velocity, time, force and impulse."
+}

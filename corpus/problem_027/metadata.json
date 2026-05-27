@@ -1,0 +1,9 @@
+{
+  "id": "problem_027",
+  "domain": "fluid_statics",
+  "difficulty": "easy",
+  "source": "Andalucía / Universidad de Cádiz, Tecnología e Ingeniería II, relación oficial de problemas tipo PAU 2025-2026 con soluciones, problema 5",
+  "url": "https://webacceso.uca.es/wp-content/uploads/2025/12/Relacion-de-problemas-TeI-II-SOLUCIONES-Version-final.pdf",
+  "format_adaptations": "Removed the subpart about displacement and the dimension-redesign part, keeping only the direct force calculation through equality of pressures. No numeric data or physics changed.",
+  "verification_note": "Solved with pressure and area through Pascal's principle: p1 = p2, hence F1/S1 = F2/S2."
+}

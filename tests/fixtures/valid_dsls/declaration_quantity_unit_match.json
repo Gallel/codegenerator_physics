@@ -1,0 +1,10 @@
+{
+  "metadata": { "name": "DeclarationQuantityUnitMatch" },
+  "main_declarations": [
+    {"name": "a", "value": -9.8, "type": "double",
+     "semantics": {"quantity": "AccelerationQuantity", "unit": "Meter"}}
+  ],
+  "definitions": [],
+  "execution_flow": [],
+  "results_to_print": []
+}

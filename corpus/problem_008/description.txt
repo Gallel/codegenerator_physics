@@ -1,0 +1,1 @@
+A body moves in three segments. In segment 1, between t = 0 s and t = 2 s, its velocity goes from 2 m/s to 8 m/s. In segment 2, between t = 2 s and t = 4 s, its velocity stays constant at 8 m/s. In segment 3, between t = 4 s and t = 6 s, its velocity goes from 8 m/s to 4 m/s. Calculate the average acceleration in each of the three segments.

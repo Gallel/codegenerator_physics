@@ -1,0 +1,1 @@
+A 15-tonne aircraft flies over the ocean at a velocity of 900 km/h and at an altitude above sea level of 10 km. Calculate its mechanical energy, considering the sum of the kinetic energy and the gravitational potential energy. Take g = 9.8 m/s².

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         prefer="public">
+
+  <!-- Physics domain -->
+  <uri name="http://example.org/physics/physics-domain"
+       uri="physics-domain.owl"/>
+
+  <!-- Physics math -->
+  <uri name="http://example.org/physics/physics-math"
+       uri="physics-math.owl"/>
+
+  <!-- Program trace -->
+  <uri name="http://example.org/physics/program-trace"
+       uri="program-trace.owl"/>
+
+  <!-- Bridge -->
+  <uri name="http://example.org/physics/physics-program-bridge"
+       uri="physics-program-bridge.owl"/>
+
+</catalog>

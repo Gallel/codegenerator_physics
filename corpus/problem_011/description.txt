@@ -1,0 +1,1 @@
+A car initially at rest accelerates until it reaches a velocity of 108 km/h after 10 s. Assuming that during acceleration the vehicle follows a uniformly accelerated rectilinear motion, calculate the acceleration of the car and the distance covered during the acceleration phase.

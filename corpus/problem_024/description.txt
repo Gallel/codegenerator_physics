@@ -1,0 +1,1 @@
+The twin brothers Zipi and Zape are on skates on a frozen lake. Both have a mass of 50 kg. Zipi throws a 200 g ball to Zape at a velocity of 21.5 m/s relative to the ice. Zape catches the ball and throws it back to his brother at the same velocity. Calculate the velocity of Zipi relative to the ice after catching the ball.

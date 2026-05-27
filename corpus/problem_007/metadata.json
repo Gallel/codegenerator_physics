@@ -1,0 +1,9 @@
+{
+  "id": "problem_007",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Castilla-La Mancha, Física, EvAU convocatoria extraordinaria, curso 2022/2023, sección 1, problema 2",
+  "url": "https://www.uclm.es/-/media/Files/A04-Gestion-Academica/PDFEstudiantes/PDFEvAU/CriteriosCorreccion2223/ConvocatoriaExtraordinaria/Fisica-criterios-Extraordinaria.ashx?la=es",
+  "format_adaptations": "Compacted wording; no numeric data, formulas or physical structure changed.",
+  "verification_note": "Solved only with gravitation, circular orbital motion, kinetic energy, gravitational potential energy and escape velocity."
+}

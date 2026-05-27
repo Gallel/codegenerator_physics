@@ -1,0 +1,9 @@
+{
+  "id": "problem_021",
+  "domain": "work_energy",
+  "difficulty": "easy",
+  "source": "País Vasco / Universidad del País Vasco (EHU), Ciencias Generales, EAU convocatoria extraordinaria, 2024, primera pregunta, opción 1A, apartado d",
+  "url": "https://www.ehu.eus/documents/d/unibertsitaterako-sarbidea/ciencias-generales-1",
+  "format_adaptations": "Removed the previous parts about the rotating plate and kept only the energy part; no numeric data, units or physics changed.",
+  "verification_note": "Solved only with work and energy through the relation P = E/t."
+}

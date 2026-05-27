@@ -1,0 +1,1 @@
+An object describes a circular trajectory of radius R = 50 cm with constant angular velocity ω = π/2 rad/s. Calculate the linear velocity of the object, the centripetal acceleration, the period and the frequency of the circular trajectory.

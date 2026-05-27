@@ -1,0 +1,16 @@
+{
+  "metadata": { "name": "AssignmentDsl" },
+  "main_declarations": [
+    {"name": "src", "value": 7.0, "type": "double",
+     "semantics": {"quantity": "DimensionlessQuantity", "unit": "Meter"}},
+    {"name": "dst", "value": 0.0, "type": "double",
+     "semantics": {"quantity": "DimensionlessQuantity", "unit": "Meter"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "assignment", "left": "dst", "right": "src", "result": "dst",
+     "operator": null, "function": null, "operand": null, "module": null,
+     "solution_polarity": null, "args": null}
+  ],
+  "results_to_print": ["dst"]
+}

@@ -1,0 +1,1 @@
+A motorcyclist travels at 80 km/h and brakes with a constant acceleration of -3 m/s² for 6 s. Calculate the velocity of the motorcyclist after 6 s and the distance covered while braking.

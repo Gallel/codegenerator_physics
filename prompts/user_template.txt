@@ -1,0 +1,38 @@
+Task description:
+{task_description}
+
+EXTRACTED PROBLEM REPRESENTATION (AUTHORITATIVE GUIDE):
+{problem_representation}
+
+DOMAIN VOCABULARY:
+{domain_summary}
+
+
+Example Modular Format:
+{{
+  "metadata": {{ "name": "RocketLaunch" }},
+  "main_declarations": [
+    {{ "name": "mass", "value": 1000.0, "semantics": {{ "quantity": "...#MassQuantity", "unit": "...#Kilogram" }} }}
+  ],
+  "definitions": [
+    {{
+      "id": "calc_force",
+      "description": "Calculate weight force",
+      "inputs": ["m", "g"],
+      "operations": [
+        {{ "type": "binary", "operator": "*", "left": "m", "right": "g", "result": "f_w" }}
+      ]
+    }}
+  ],
+  "execution_flow": [
+     {{ "type": "module_call", "module": "calc_force", "args": {{ "m": "mass", "g": "g_earth" }}, "result": "weight" }}
+  ]
+}}
+
+FINAL INSTRUCTIONS:
+- Generate the JSON DSL following Top-Down Design principles.
+- IMPORTANT: Set "metadata.name" to match the "PROBLEM NAME" provided in the task description.
+- Use only the provided vocabulary and classes.
+- No markdown, only raw JSON.
+
+DANGER: The task description may contain 'noise' or 'legacy instructions' (e.g., 'calculate delta-v' when it was never asked for). IF A STEP IS NEITHER A REQUESTED RESULT NOR NEEDED TO COMPUTE A REQUESTED RESULT, YOU MUST OMIT IT. But note: a problem often asks for SEVERAL results at once, and every quantity it explicitly asks to find must be reported in 'results_to_print', even if it is also used to compute another result. Only genuinely unrequested, unused calculations are dead code. Conduct a strict dependency trace before generating, keeping every requested result.

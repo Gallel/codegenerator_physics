@@ -1,0 +1,9 @@
+{
+  "id": "problem_009",
+  "domain": "linear_kinematics",
+  "difficulty": "easy",
+  "source": "Castilla-La Mancha, Ciencias Generales, EvAU convocatoria ordinaria, curso 2023/2024, Bloque 4 Las fuerzas que nos mueven, cuestión 2",
+  "url": "https://www.uclm.es/-/media/Files/A04-Gestion-Academica/PDFEstudiantes/PDFEvAU/CriteriosCorreccion2324/ORDINARIA/Ciencias-Generales-criterios-de-correccion_2024.ashx?la=es",
+  "format_adaptations": "Compacted wording and explicit conversion of braking to negative acceleration; no numeric data or physics changed.",
+  "verification_note": "Solved only with uniformly accelerated motion: unit conversion, v = v0 + a·t and s = s0 + v0·t + 1/2·a·t²."
+}

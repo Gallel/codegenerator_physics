@@ -1,0 +1,9 @@
+{
+  "id": "problem_024",
+  "domain": "dynamics",
+  "difficulty": "hard",
+  "source": "UNED, Física, Curso de Acceso Directo, examen junio 2003, problema 7",
+  "url": "https://www.dfmf.uned.es/actividades/asignaturas/acceso/problemas/junio2003-7.pdf",
+  "format_adaptations": "Compacted wording; no numeric data, units or physical structure changed.",
+  "verification_note": "Solved only with conservation of linear momentum in two one-dimensional interactions: throwing the ball and catching it afterward. Uses mass, velocity and momentum."
+}

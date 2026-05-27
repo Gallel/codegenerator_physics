@@ -1,0 +1,1 @@
+Phobos orbits Mars with a period of 7 h 39 min 14 s and an orbital radius of 9.377e6 m. Calculate the mass of Mars and the acceleration of gravity at the Martian surface. Data: radius of Mars = 3.390e6 m; G = 6.67e-11 N·m²/kg².

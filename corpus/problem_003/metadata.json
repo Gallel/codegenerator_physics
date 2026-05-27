@@ -1,0 +1,9 @@
+{
+  "id": "problem_003",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Aragón, Física, convocatoria ordinaria, 2023, problema 2",
+  "url": "https://academico.unizar.es/sites/academico/files/archivos/acceso/accespau/exame/23ord/fisic.pdf",
+  "format_adaptations": "Removed the theoretical parts; no numeric data or physics changed.",
+  "verification_note": "Solved only with gravitation, centripetal force, orbital velocity and period."
+}

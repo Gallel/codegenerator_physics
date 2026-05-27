@@ -1,0 +1,9 @@
+{
+  "id": "problem_013",
+  "domain": "free_fall",
+  "difficulty": "easy",
+  "source": "Castilla-La Mancha, Ciencias Generales, EvAU convocatoria extraordinaria, curso 2023/2024, Bloque 4 Las fuerzas que nos mueven, cuestión 4",
+  "url": "https://www.uclm.es/-/media/Files/A04-Gestion-Academica/PDFEstudiantes/PDFEvAU/CriteriosCorreccion2324/EXTRAORDINARIA/Ciencias-Generales.ashx?la=es",
+  "format_adaptations": "Compacted wording; no numeric data, formulas or physical structure changed.",
+  "verification_note": "Solved only with vertical throw: initial velocity, zero final velocity at maximum height, time, height and gravitational acceleration."
+}

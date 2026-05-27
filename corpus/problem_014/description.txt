@@ -1,0 +1,1 @@
+A car travels at constant speed around a circle of 50 cm radius with a frequency of 10 Hz. Determine the period, the angular velocity and the linear velocity of the car.

@@ -1,0 +1,1 @@
+A nanosatellite orbits the Earth at 500 km above the surface. Calculate the orbital velocity, the orbital period and the initial velocity it should have at the Earth's surface to reach that orbit (neglecting losses). Data: Earth radius = 6.37e6 m; Earth mass = 5.98e24 kg; G = 6.67e-11 N·m²/kg².

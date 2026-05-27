@@ -1,0 +1,9 @@
+{
+  "id": "problem_015",
+  "domain": "angular_kinematics",
+  "difficulty": "medium",
+  "source": "Cantabria, Ciencias Generales, EBAU convocatoria extraordinaria/julio, 2024, pregunta 5",
+  "url": "https://web.unican.es/admision/Documents/Documentos%20EBAU/Ex%C3%A1menes%20EBAU/Criterios%20Correcci%C3%B3n%20JULIO%202024.pdf",
+  "format_adaptations": "Removed the part about drawing the diagram and kept only the numeric part; no numeric data or physics changed.",
+  "verification_note": "Solved only with angular kinematics and uniform circular motion: v = ω·R, ac = v²/R, T = 2π/ω and f = 1/T."
+}

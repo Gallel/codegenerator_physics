@@ -1,0 +1,9 @@
+{
+  "id": "problem_023",
+  "domain": "fluid_statics",
+  "difficulty": "hard",
+  "source": "Asturias / Universidad de Oviedo, Tecnología e Ingeniería II, PAU modelo curso 2024-2025, pregunta 3, opción A",
+  "url": "https://www.uniovi.es/documents/39158/22e7000e-e861-5f61-d413-f159dd2ca7f6",
+  "format_adaptations": "Compacted wording and removed the qualitative question comparing which force is larger; all numeric data and calculations kept. No numeric data, units or physics changed. The official solution had an internal arithmetic inconsistency (return volume rounded to 0.33 L and total stated as 0.67 L, which does not match the sum of its parts); recomputed exactly to 0.34 L and 0.72 L.",
+  "verification_note": "Solved only with pressure, area, volume and force: bar to Pa conversion, circular areas of the piston and the annular area, F = P·A and V = A·L."
+}

@@ -1,0 +1,1 @@
+A normal heart pumps 80 g of blood per beat. This blood is accelerated from rest inside the ventricle until it reaches a velocity of 0.6 m/s in the aorta. If each beat lasts approximately 0.16 s, calculate the average force exerted on the blood.

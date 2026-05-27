@@ -1,0 +1,1 @@
+A child throws a ball upward with an initial velocity of 15 m/s. Calculate the maximum height the ball reaches and the time it takes to reach that maximum height. If needed, the acceleration of gravity on Earth is g = 9.8 m/s².

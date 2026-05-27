@@ -1,0 +1,1 @@
+In a hydraulic press, the cross-section of the large piston is S2 = 250 cm² and that of the small piston is S1 = 10 cm². If a load of 12000 N acts on the large piston, calculate the force that must be exerted on the small piston.

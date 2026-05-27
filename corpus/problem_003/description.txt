@@ -1,0 +1,1 @@
+The Moon describes a circular orbit around the Earth with radius 3.84e8 m. Calculate the orbital velocity and the orbital period of the Moon. Data: Earth mass = 5.972e24 kg; G = 6.67e-11 N·m²/kg².

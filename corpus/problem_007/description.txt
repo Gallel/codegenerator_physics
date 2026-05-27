@@ -1,0 +1,1 @@
+A spacecraft of 5000 kg orbits the Moon at a distance from the lunar center equal to five lunar radii. Calculate the period of the spacecraft in hours, its mechanical energy and the escape velocity from the lunar surface. Data: Moon mass = 7.35e22 kg; lunar radius = 1740 km; G = 6.67e-11 N·m²/kg².

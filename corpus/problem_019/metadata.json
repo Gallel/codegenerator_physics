@@ -1,0 +1,9 @@
+{
+  "id": "problem_019",
+  "domain": "work_energy",
+  "difficulty": "easy",
+  "source": "Castilla-La Mancha, Ciencias Generales, EvAU convocatoria ordinaria, curso 2023/2024, Bloque 1 Un universo de materia y energía, cuestión 4",
+  "url": "https://www.uclm.es/-/media/Files/A04-Gestion-Academica/PDFEstudiantes/PDFEvAU/CriteriosCorreccion2324/ORDINARIA/Ciencias-Generales-criterios-de-correccion_2024.ashx?la=es",
+  "format_adaptations": "Removed the economic cost part (euros and price per kWh, magnitudes outside the ontology); kept the energy calculation from power and time. No numeric data or physics changed.",
+  "verification_note": "Solved only with the power-energy relation E = P·t and multiplication by the number of days."
+}

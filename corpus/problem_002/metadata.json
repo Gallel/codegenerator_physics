@@ -1,0 +1,9 @@
+{
+  "id": "problem_002",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Aragón, Física, convocatoria extraordinaria, 2024, problema 1",
+  "url": "https://academico.unizar.es/sites/academico/files/archivos/acceso/accespau/exame/24extra/fisica.pdf",
+  "format_adaptations": "Compacted wording; no numeric data or physics changed.",
+  "verification_note": "Solved only with gravitation, mechanical energy and orbital velocity/period."
+}

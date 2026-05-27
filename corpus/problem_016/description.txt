@@ -1,0 +1,1 @@
+A disk of 10 cm radius spins at 300 rpm. Determine the period and frequency of rotation, and the normal or centripetal acceleration of the disk at the edge of its surface and at 5 cm from the center.

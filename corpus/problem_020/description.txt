@@ -1,0 +1,1 @@
+A child throws a 150 g toy with an initial velocity of 3 m/s. If the child is 8 m above the ground, calculate the mechanical energy of the toy at that height, taking g = 9.8 m/s², and the final velocity with which it reaches the ground (neglecting air resistance).

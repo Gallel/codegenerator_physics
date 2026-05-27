@@ -1,0 +1,3670 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/physics/physics-rules"
+         xmlns="http://example.org/physics/physics-rules#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+
+<owl:Ontology rdf:about="http://example.org/physics/physics-rules">
+  <owl:imports rdf:resource="http://example.org/physics/physics-domain"/>
+</owl:Ontology>
+
+<owl:Class rdf:about="http://example.org/physics#PhysicsError">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#QuantityIncompatibilityError">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#PhysicsError"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#UnitIncompatibilityError">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#PhysicsError"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#InvalidTrigonometryArgumentError">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#PhysicsError"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/physics#DimensionMismatchError">
+  <rdfs:subClassOf rdf:resource="http://example.org/physics#PhysicsError"/>
+</owl:Class>
+
+<swrl:Variable rdf:about="urn:swrl#e"/>
+
+<swrl:Variable rdf:about="urn:swrl#l"/>
+
+<swrl:Variable rdf:about="urn:swrl#r"/>
+
+<swrl:Variable rdf:about="urn:swrl#res"/>
+
+<swrl:Variable rdf:about="urn:swrl#q"/>
+
+<swrl:Variable rdf:about="urn:swrl#p"/>
+
+<swrl:Variable rdf:about="urn:swrl#d"/>
+
+<swrl:Variable rdf:about="urn:swrl#d1"/>
+
+<swrl:Variable rdf:about="urn:swrl#d2"/>
+
+<swrl:Variable rdf:about="urn:swrl#p1"/>
+
+<swrl:Variable rdf:about="urn:swrl#p2"/>
+
+<swrl:Variable rdf:about="urn:swrl#t"/>
+
+<swrl:Variable rdf:about="urn:swrl#v"/>
+
+<swrl:Variable rdf:about="urn:swrl#a"/>
+
+<swrl:Variable rdf:about="urn:swrl#theta"/>
+
+<swrl:Variable rdf:about="urn:swrl#w"/>
+
+<swrl:Variable rdf:about="urn:swrl#alpha"/>
+
+<swrl:Variable rdf:about="urn:swrl#m"/>
+
+<swrl:Variable rdf:about="urn:swrl#f"/>
+
+<swrl:Variable rdf:about="urn:swrl#mu"/>
+
+<swrl:Variable rdf:about="urn:swrl#n"/>
+
+<swrl:Variable rdf:about="urn:swrl#G"/>
+
+<swrl:Variable rdf:about="urn:swrl#M"/>
+
+<swrl:Variable rdf:about="urn:swrl#neg_mu"/>
+
+<swrl:Variable rdf:about="urn:swrl#mu_r"/>
+
+<swrl:Variable rdf:about="urn:swrl#eps"/>
+
+<swrl:Variable rdf:about="urn:swrl#r2"/>
+
+<swrl:Variable rdf:about="urn:swrl#s"/>
+
+<swrl:Variable rdf:about="urn:swrl#b"/>
+
+<swrl:Variable rdf:about="urn:swrl#x"/>
+
+<swrl:Variable rdf:about="urn:swrl#l1"/>
+
+<swrl:Variable rdf:about="urn:swrl#l2"/>
+
+<swrl:Variable rdf:about="urn:swrl#q1"/>
+
+<swrl:Variable rdf:about="urn:swrl#q2"/>
+
+<swrl:Variable rdf:about="urn:swrl#u1"/>
+
+<swrl:Variable rdf:about="urn:swrl#u2"/>
+
+<swrl:Variable rdf:about="urn:swrl#op"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#TangentExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#op"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#op"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DifferentIndividualsAtom>
+                      <swrl:argument1 rdf:resource="urn:swrl#q"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngleQuantity"/>
+                    </swrl:DifferentIndividualsAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#InvalidTrigonometryArgumentError"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#CosineExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#op"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#op"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DifferentIndividualsAtom>
+                      <swrl:argument1 rdf:resource="urn:swrl#q"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngleQuantity"/>
+                    </swrl:DifferentIndividualsAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#InvalidTrigonometryArgumentError"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#SineExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#op"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#op"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DifferentIndividualsAtom>
+                      <swrl:argument1 rdf:resource="urn:swrl#q"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngleQuantity"/>
+                    </swrl:DifferentIndividualsAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#InvalidTrigonometryArgumentError"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#BinaryExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasUnit"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#u1"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasUnit"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#u2"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:DifferentIndividualsAtom>
+                              <swrl:argument1 rdf:resource="urn:swrl#u1"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#u2"/>
+                            </swrl:DifferentIndividualsAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#UnitIncompatibilityError"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#SubtractionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#q1"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#q2"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:DifferentIndividualsAtom>
+                              <swrl:argument1 rdf:resource="urn:swrl#q1"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#q2"/>
+                            </swrl:DifferentIndividualsAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#QuantityIncompatibilityError"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#AdditionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#q1"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#q2"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:DifferentIndividualsAtom>
+                              <swrl:argument1 rdf:resource="urn:swrl#q1"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#q2"/>
+                            </swrl:DifferentIndividualsAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#QuantityIncompatibilityError"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#p"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#PressureQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AreaQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#f"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#f"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AreaQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#PressureQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#m"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#v"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#v"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VolumeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DensityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#a"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#l"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AreaQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VolumeQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l1"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#l2"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#l1"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#l2"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AreaQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#PowerExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#b"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#TangentExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#res"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#CosineExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#res"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#SineExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#res"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#NaturalLogarithmExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#res"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#LogarithmExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#res"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#IntegralExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#v"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#v"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DerivativeExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#v"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#v"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DerivativeExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#s"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#s"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#a"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#mu"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r2"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#mu"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#GravitationalParameterQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#r2"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AreaQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#eps"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#eps"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#SpecificEnergyQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#EnergyQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#p"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MomentumQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#SqrtExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#mu_r"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#mu_r"/>
+                      <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#SpecificEnergyQuantity"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#neg_mu"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#neg_mu"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#GravitationalParameterQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#SpecificEnergyQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#G"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#M"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#G"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#UniversalGravitationalConstantType"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#GravitationalParameterQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#p"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MomentumQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#f"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#f"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#mu"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#n"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#mu"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#FrictionCoefficientQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#n"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#f"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#f"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MomentumQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#w"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#EnergyQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#PowerQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#f"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#f"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#d"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#EnergyQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#m"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#v"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#v"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MomentumQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#m"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#ForceQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#alpha"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#alpha"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngularAccelerationQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#w"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngularVelocityQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#w"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngularVelocityQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngularAccelerationQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#theta"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#theta"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngleQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AngularVelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#a"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#v"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#v"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#v"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#v"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AccelerationQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#DivisionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#TimeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#VelocityQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#SubtractionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#p1"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#p2"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#p1"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AltitudeQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#p2"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AltitudeQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#AdditionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#d1"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#d2"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#d1"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#d2"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#AdditionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#p"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AltitudeQuantity"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#d"/>
+                              <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#DisplacementQuantity"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="http://example.org/physics/physics-domain#AltitudeQuantity"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#AssignmentOperation"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#r"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="urn:swrl#q"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#SubtractionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="urn:swrl#q"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="http://example.org/physics#AdditionExpression"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasLeftOperand"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasRightOperand"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#r"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasResultMeasurement"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#res"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#l"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#q"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://example.org/physics#hasQuantityType"/>
+          <swrl:argument1 rdf:resource="urn:swrl#res"/>
+          <swrl:argument2 rdf:resource="urn:swrl#q"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+
+</rdf:RDF>

@@ -1,0 +1,1 @@
+The asteroid Didymos has a diameter of 781 m and a density of 2146 kg/m³. Calculate its mass, the gravitational acceleration at its surface and the gravitational force on Dimorphos, of mass 4.42e10 kg, located 1120 m from the center of Didymos. Data: G = 6.67e-11 N·m²/kg².

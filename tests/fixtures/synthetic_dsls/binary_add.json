@@ -1,0 +1,15 @@
+{
+  "metadata": { "name": "BinaryAdd" },
+  "main_declarations": [
+    {"name": "a", "value": 3.0, "type": "double",
+     "semantics": {"quantity": "LengthQuantity", "unit": "Meter"}},
+    {"name": "b", "value": 4.0, "type": "double",
+     "semantics": {"quantity": "LengthQuantity", "unit": "Meter"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "binary", "operator": "+", "left": "a", "right": "b", "result": "sum_ab",
+     "function": null, "operand": null, "module": null, "solution_polarity": null, "args": null}
+  ],
+  "results_to_print": ["sum_ab"]
+}

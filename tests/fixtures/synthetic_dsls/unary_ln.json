@@ -1,0 +1,14 @@
+{
+  "metadata": { "name": "UnaryLn" },
+  "main_declarations": [
+    {"name": "x", "value": 2.71828, "type": "double",
+     "semantics": {"quantity": "DimensionlessQuantity", "unit": "Meter"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "unary", "function": "ln", "operand": "x", "result": "y",
+     "operator": null, "left": null, "right": null, "module": null,
+     "solution_polarity": null, "args": null}
+  ],
+  "results_to_print": ["y"]
+}

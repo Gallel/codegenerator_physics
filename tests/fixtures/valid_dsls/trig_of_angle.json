@@ -1,0 +1,14 @@
+{
+  "metadata": { "name": "TrigOfAngle" },
+  "main_declarations": [
+    {"name": "alpha", "value": 0.5, "type": "double",
+     "semantics": {"quantity": "AngleQuantity", "unit": "Radian"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "unary", "function": "sin", "operand": "alpha", "result": "s",
+     "operator": null, "left": null, "right": null, "module": null,
+     "solution_polarity": null, "args": null}
+  ],
+  "results_to_print": ["s"]
+}

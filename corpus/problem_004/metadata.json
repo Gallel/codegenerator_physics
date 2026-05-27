@@ -1,0 +1,9 @@
+{
+  "id": "problem_004",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Catalunya, Física, convocatoria ordinaria, 2023, problema 1",
+  "url": "https://universitats.gencat.cat/web/.content/01_acces_i_admissio/proves-acces-PAU-PAP/preparat-PAU/enunciats-i-criteris-correccio/correccions_2023/pau_fisi23jt.pdf",
+  "format_adaptations": "Translated from Catalan; no numeric data or physics changed.",
+  "verification_note": "Solved only with gravitation, uniform circular motion, orbital angular velocity and surface gravitational field."
+}

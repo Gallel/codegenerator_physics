@@ -1,0 +1,15 @@
+{
+  "metadata": { "name": "TrigOfNonAngle" },
+  "expected_error": "InvalidTrigonometryArgumentError",
+  "main_declarations": [
+    {"name": "m", "value": 0.5, "type": "double",
+     "semantics": {"quantity": "MassQuantity", "unit": "Kilogram"}}
+  ],
+  "definitions": [],
+  "execution_flow": [
+    {"type": "unary", "function": "sin", "operand": "m", "result": "fail",
+     "operator": null, "left": null, "right": null, "module": null,
+     "solution_polarity": null, "args": null}
+  ],
+  "results_to_print": ["fail"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "problem_005",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Catalunya, Física, convocatoria extraordinaria, 2023, problema 1",
+  "url": "https://universitats.gencat.cat/web/.content/06_pau/models-examen-anys-anteriors/examens-2023/fisica/ext/pau_fisi23sp.pdf",
+  "format_adaptations": "Translated from Catalan and compacted; no numeric data or physics changed.",
+  "verification_note": "Solved only with sphere volume, density, mass, universal gravitation and gravitational field."
+}

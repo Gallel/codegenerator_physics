@@ -1,0 +1,9 @@
+{
+  "id": "problem_001",
+  "domain": "gravitation",
+  "difficulty": "medium",
+  "source": "Aragón, Física, convocatoria ordinaria, 2024, problema 2",
+  "url": "https://academico.unizar.es/sites/academico/files/archivos/acceso/accespau/exame/24ord/fisica.pdf",
+  "format_adaptations": "Removed the theoretical part about gravitational potential; no numeric data or physics changed.",
+  "verification_note": "Solved only with gravitation, orbital kinetic energy and orbital mechanical energy."
+}
