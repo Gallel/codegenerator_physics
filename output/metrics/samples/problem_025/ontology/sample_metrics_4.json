@@ -1,0 +1,60 @@
+{
+  "sample": 4,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "average_force": {
+        "reference": 0.3,
+        "generated": 0.3,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "F_avg": 0.3
+    }
+  },
+  "lcs": {
+    "domain": "dynamics",
+    "applicable": 1,
+    "passed": 1,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "force_positive",
+        "goal": "average_force",
+        "value": 0.3,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 1,
+    "covered": 1,
+    "reported_by_name": 0,
+    "value_only": 1,
+    "reported_and_correct": 1,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "average_force": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.5138598726610488,
+    "ngram_match": 0.12887337611052754,
+    "weighted_ngram_match": 0.4438074938440125,
+    "syntax_match": 0.8620689655172413,
+    "dataflow_match": 0.6206896551724138
+  }
+}

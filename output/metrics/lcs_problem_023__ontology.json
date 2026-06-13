@@ -1,0 +1,25 @@
+{
+  "domain": "fluid_statics",
+  "applicable": 2,
+  "passed": 2,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "force_positive",
+      "goal": "advance_force",
+      "value": 2309.070600388498,
+      "passed": true
+    },
+    {
+      "rule": "force_positive",
+      "goal": "return_force",
+      "value": 2014.5462891144552,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": null,
+  "lcs_min_correct": null,
+  "problem_id": "problem_023__ontology"
+}

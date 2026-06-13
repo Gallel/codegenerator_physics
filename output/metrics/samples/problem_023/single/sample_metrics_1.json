@@ -1,0 +1,118 @@
+{
+  "sample": 1,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "advance_force": {
+        "reference": 2307.9,
+        "generated": 11.314445941903644,
+        "match": false,
+        "matched_by": null
+      },
+      "return_force": {
+        "reference": 2013.52,
+        "generated": 11.130368247357367,
+        "match": false,
+        "matched_by": null
+      },
+      "air_volume_advance": {
+        "reference": 0.38,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "air_volume_return": {
+        "reference": 0.34,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "total_air_volume_cycle": {
+        "reference": 0.72,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      }
+    },
+    "produced": {
+      "advance_force": 11.314445941903644,
+      "return_force": 11.130368247357367,
+      "advance_volume": 1.8857409903172742e-06,
+      "return_volume": 1.8550613745595613e-06,
+      "total_cycle_volume": 3.7408023648768353e-06
+    }
+  },
+  "lcs": {
+    "domain": "fluid_statics",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "force_positive",
+        "goal": "advance_force",
+        "value": 11.314445941903644,
+        "passed": true
+      },
+      {
+        "rule": "force_positive",
+        "goal": "return_force",
+        "value": 11.130368247357367,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 5,
+    "covered": 0,
+    "reported_by_name": 0,
+    "value_only": 0,
+    "reported_and_correct": 0,
+    "cas_lax": 0.0,
+    "cas_strict": 0.0,
+    "goals": {
+      "advance_force": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "return_force": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "air_volume_advance": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "air_volume_return": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "total_air_volume_cycle": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.44120031307516216,
+    "ngram_match": 0.1367251095549564,
+    "weighted_ngram_match": 0.3121386427456922,
+    "syntax_match": 0.8359375,
+    "dataflow_match": 0.48
+  }
+}

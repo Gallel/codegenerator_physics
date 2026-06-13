@@ -1,0 +1,79 @@
+{
+  "sample": 4,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "kinetic_energy": {
+        "reference": 2.45e+22,
+        "generated": 2.4544632611709504e+22,
+        "match": true,
+        "matched_by": "name"
+      },
+      "mechanical_energy": {
+        "reference": -2.45e+22,
+        "generated": -2.4544632611709504e+22,
+        "match": true,
+        "matched_by": "name"
+      }
+    },
+    "produced": {
+      "kinetic_energy": 2.4544632611709504e+22,
+      "mechanical_energy": -2.4544632611709504e+22
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "kinetic_energy_nonneg",
+        "goal": "kinetic_energy",
+        "value": 2.4544632611709504e+22,
+        "passed": true
+      },
+      {
+        "rule": "orbital_mech_energy_negative",
+        "goal": "mechanical_energy",
+        "value": -2.4544632611709504e+22,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 2,
+    "value_only": 0,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "kinetic_energy": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      },
+      "mechanical_energy": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.513172386519029,
+    "ngram_match": 0.16098611370723617,
+    "weighted_ngram_match": 0.4605293433000539,
+    "syntax_match": 0.8157894736842105,
+    "dataflow_match": 0.6153846153846154
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "domain": "fluid_statics",
+  "applicable": 2,
+  "passed": 2,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "density_positive",
+      "goal": "density_g_ml",
+      "value": 3.75,
+      "passed": true
+    },
+    {
+      "rule": "density_positive",
+      "goal": "density_kg_m3",
+      "value": 3750.0000000000005,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_026__ontology"
+}

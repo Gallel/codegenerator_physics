@@ -1,0 +1,107 @@
+{
+  "program": "problem_014",
+  "steps": [
+    {
+      "expression": "Op_1_T",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 1.0
+        },
+        {
+          "name": "phys_f",
+          "quantities": [
+            "FrequencyQuantity"
+          ],
+          "value": 10.0
+        }
+      ],
+      "result": {
+        "name": "Res_T_1",
+        "quantities": [
+          "TimeQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_omega_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.5
+        }
+      ],
+      "result": {
+        "name": "Res_v_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_two_pi",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        }
+      ],
+      "result": {
+        "name": "Res_two_pi_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_omega",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_pi_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_f",
+          "quantities": [
+            "FrequencyQuantity"
+          ],
+          "value": 10.0
+        }
+      ],
+      "result": {
+        "name": "Res_omega_3",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

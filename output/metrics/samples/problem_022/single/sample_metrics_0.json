@@ -1,0 +1,60 @@
+{
+  "sample": 0,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "kinetic_energy": {
+        "reference": 585000.0,
+        "generated": 585000.0,
+        "match": true,
+        "matched_by": "name"
+      }
+    },
+    "produced": {
+      "kinetic_energy": 585000.0
+    }
+  },
+  "lcs": {
+    "domain": "work_energy",
+    "applicable": 1,
+    "passed": 1,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "kinetic_energy_nonneg",
+        "goal": "kinetic_energy",
+        "value": 585000.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 1,
+    "covered": 1,
+    "reported_by_name": 1,
+    "value_only": 0,
+    "reported_and_correct": 1,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "kinetic_energy": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.5526153554593645,
+    "ngram_match": 0.18977561017468605,
+    "weighted_ngram_match": 0.5564000973770578,
+    "syntax_match": 0.7857142857142857,
+    "dataflow_match": 0.6785714285714286
+  }
+}

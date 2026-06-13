@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/program"
+         xmlns="http://example.org/program#"
+         xmlns:phys="http://example.org/physics#">
+
+<owl:Ontology rdf:about="http://example.org/program"/>
+
+<owl:NamedIndividual rdf:about="#phys_m_g">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Gram"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">450.0</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_V_L">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#VolumeQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Liter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.12</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_V_m3">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#VolumeQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#CubicMeter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.00012</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_1_rho">
+  <rdf:type rdf:resource="http://example.org/physics#DivisionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_m_g"/>
+  <phys:hasRightOperand rdf:resource="#phys_V_L"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_rho_1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_rho_1">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_2_rho">
+  <rdf:type rdf:resource="http://example.org/physics#DivisionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_m_kg"/>
+  <phys:hasRightOperand rdf:resource="#phys_V_m3"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_rho_2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_rho_2">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_m_kg">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Kilogram"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.45</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

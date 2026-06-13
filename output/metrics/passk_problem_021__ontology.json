@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "energy_consumed_kwh": {
+      "reference": 0.18,
+      "generated": 0.18,
+      "match": true,
+      "matched_by": "value"
+    },
+    "energy_consumed_j": {
+      "reference": 648000.0,
+      "generated": 648000.0,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "E_kWh": 0.18,
+    "E_J": 648000.0
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_021__ontology"
+}

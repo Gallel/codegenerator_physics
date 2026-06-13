@@ -1,0 +1,25 @@
+{
+  "total_goals": 1,
+  "covered": 0,
+  "reported_by_name": 0,
+  "value_only": 0,
+  "reported_and_correct": 0,
+  "cas_lax": 0.0,
+  "cas_strict": 0.0,
+  "goals": {
+    "final_velocity_zipi": {
+      "matched_by": null,
+      "correct": false,
+      "covered": false,
+      "reported_by_name": false
+    }
+  },
+  "branch": "ontology",
+  "cas_lax_std": 0.0,
+  "cas_lax_max_correct": null,
+  "cas_lax_min_correct": null,
+  "cas_strict_std": 0.0,
+  "cas_strict_max_correct": null,
+  "cas_strict_min_correct": null,
+  "problem_id": "problem_024__ontology"
+}

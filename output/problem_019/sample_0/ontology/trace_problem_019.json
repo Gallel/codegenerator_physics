@@ -1,0 +1,79 @@
+{
+  "program": "problem_019",
+  "steps": [
+    {
+      "expression": "Op_1_t_seconds",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_t_day_hours",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 8.0
+        },
+        {
+          "name": "phys_hours_to_seconds",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3600.0
+        }
+      ],
+      "result": {
+        "name": "Res_t_seconds_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_energy",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_P",
+          "quantities": [
+            "PowerQuantity"
+          ],
+          "value": 3000.0
+        },
+        {
+          "name": "Res_t_seconds_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_energy_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_monthly_energy",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_energy_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_N_days",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 30.0
+        }
+      ],
+      "result": {
+        "name": "Res_monthly_energy_3",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

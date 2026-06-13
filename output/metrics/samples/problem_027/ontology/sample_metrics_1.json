@@ -1,0 +1,60 @@
+{
+  "sample": 1,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "force_small_piston": {
+        "reference": 480.0,
+        "generated": 480.0,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "F1": 480.0
+    }
+  },
+  "lcs": {
+    "domain": "fluid_statics",
+    "applicable": 1,
+    "passed": 1,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "force_positive",
+        "goal": "force_small_piston",
+        "value": 480.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 1,
+    "covered": 1,
+    "reported_by_name": 0,
+    "value_only": 1,
+    "reported_and_correct": 1,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "force_small_piston": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.6057671600101034,
+    "ngram_match": 0.19322197449060857,
+    "weighted_ngram_match": 0.409116892942719,
+    "syntax_match": 0.8852459016393442,
+    "dataflow_match": 0.9354838709677419
+  }
+}

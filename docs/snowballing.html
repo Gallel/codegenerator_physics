@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Procés de Snowballing — TFM</title>
+<style>
+  :root {
+    --bg:        #f7f7f5;
+    --panel:    #ffffff;
+    --border:   #d8d8d4;
+    --ink:      #1f2933;
+    --muted:    #5b6573;
+    --accent:   #2d6a4f;
+    --accent-l: #d8f1e2;
+    --code-bg:  #f0efe8;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.5;
+    display: flex; flex-direction: column; min-height: 100vh;
+  }
+  header {
+    padding: 24px 32px; background: var(--panel); border-bottom: 1px solid var(--border);
+    flex: 0 0 auto;
+  }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header p  { margin: 0; color: var(--muted); font-size: 14px; }
+  main {
+    padding: 24px 32px 60px; max-width: 1100px; width: 100%;
+    flex: 1 1 auto; margin: 0 auto;
+  }
+  main h2 { margin: 0 0 8px; font-size: 20px; }
+  main > p.lead { margin: 0 0 18px; color: var(--muted); }
+  h3 { margin: 26px 0 8px; font-size: 16px; }
+  table {
+    border-collapse: collapse; width: 100%; background: var(--panel);
+    border: 1px solid var(--border); margin: 8px 0 18px; font-size: 14px;
+  }
+  th, td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: #efefea; font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  td.num { text-align: center; color: var(--muted); width: 40px; }
+  td.origin { white-space: nowrap; }
+  .tag {
+    display: inline-block; padding: 1px 8px; border-radius: 10px;
+    background: var(--accent-l); color: var(--accent); font-size: 12px; font-weight: 500;
+  }
+  .tag.seed     { background: #ffe9c2; color: #8a5a00; }
+  .tag.bw1      { background: #e2efff; color: #1d4f8c; }
+  .tag.bw2      { background: #ece2ff; color: #5a3aa7; }
+  .tag.fw2      { background: #d8f1e2; color: #2d6a4f; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--code-bg); border-radius: 3px; padding: 1px 6px; font-size: 13px;
+  }
+  .small { font-size: 13px; color: var(--muted); }
+  footer {
+    padding: 16px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px;
+    background: var(--panel); flex: 0 0 auto;
+  }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 960px) {
+    header { padding: 18px 22px; }
+    main { padding: 20px 22px 48px; }
+    footer { padding: 14px 22px; }
+  }
+  @media (max-width: 760px) {
+    header { padding: 16px 18px; }
+    header h1 { font-size: 19px; }
+    header p { font-size: 13px; }
+    main { padding: 18px 18px 40px; }
+    footer { padding: 12px 18px; font-size: 12px; }
+    main h2 { font-size: 18px; }
+    th, td { padding: 7px 10px; }
+    main table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+  @media (max-width: 420px) {
+    header { padding: 14px 14px; }
+    header h1 { font-size: 17px; }
+    main { padding: 14px 14px 36px; }
+    body { font-size: 14px; }
+    table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Procés de Snowballing</h1>
+  <p>Recull dels articles incorporats a l'estat de l'art a partir del procés de cerca amb la tècnica del snowballing. Aquesta pàgina permet consultar el conjunt complet de referències amb el seu origen dins del procés.</p>
+</header>
+
+<main>
+  <h2>Conjunt d'articles seleccionats</h2>
+  <p class="lead">El procés parteix de dos articles llavor (seed) i s'amplia mitjançant dues iteracions de cerca enrere (backward) i una iteració de cerca endavant (forward). Cada entrada inclou els autors, el títol enllaçat a l'article original i l'origen dins del procés.</p>
+
+  <h3>Llegenda de l'origen</h3>
+  <p>
+    <span class="tag seed">Seed</span> Article llavor del procés.
+    &nbsp;
+    <span class="tag bw1">1 - Backward</span> Primera iteració de cerca enrere.
+    &nbsp;
+    <span class="tag bw2">2 - Backward</span> Segona iteració de cerca enrere.
+    &nbsp;
+    <span class="tag fw2">2 - Forward</span> Iteració de cerca endavant.
+  </p>
+
+  <h3>Articles</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Autors</th>
+        <th>Títol</th>
+        <th>Origen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td>Zhang, Z.</td>
+        <td><a href="https://arxiv.org/abs/2507.10624" target="_blank" rel="noopener">Comprehension Without Competence: Architectural Limits of LLMs in Symbolic Computation and Reasoning</a></td>
+        <td class="origin"><span class="tag seed">Seed</span></td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td>Jain, N., Han, K., Gu, A., Li, W.-D., Yan, F., Zhang, T., Wang, S., Solar-Lezama, A., Sen, K., &amp; Stoica, I.</td>
+        <td><a href="https://arxiv.org/abs/2403.07974" target="_blank" rel="noopener">LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code</a></td>
+        <td class="origin"><span class="tag seed">Seed</span></td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td>Bender, E., Gebru, T., MacMillan-Major, A. &amp; Shmitchell, S.</td>
+        <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445922" target="_blank" rel="noopener">On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td>Berglund, L., Tong, M., Kaufmann, M., Balesni, M., Stickland, A. C., Korbak, T., &amp; Evans, O.</td>
+        <td><a href="https://arxiv.org/abs/2309.12288" target="_blank" rel="noopener">The Reversal Curse: LLMs trained on "A is B" fail to learn "B is A"</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td>Calanzone, D., Teso, S., &amp; Vergari, A.</td>
+        <td><a href="https://openreview.net/pdf?id=7PGluppo4k" target="_blank" rel="noopener">Logically Consistent Language Models via Neuro-Symbolic Integration</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">6</td>
+        <td>Cheng, F., Li, H., Liu, F., van Rooij, R., Zhang, K., &amp; Lin, Z.</td>
+        <td><a href="https://arxiv.org/pdf/2502.15652" target="_blank" rel="noopener">Empowering LLMs with Logical Reasoning: A Comprehensive Survey</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">7</td>
+        <td>DeepSeek-AI, Guo, D., Yang, D., Zhang, H., Song, J., et al.</td>
+        <td><a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">8</td>
+        <td>Dietz, F. &amp; Klakow, D.</td>
+        <td><a href="https://arxiv.org/pdf/2501.00684" target="_blank" rel="noopener">IGC: Integrating a Gated Calculator into an LLM to Solve Arithmetic Tasks Reliably and Efficiently</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">9</td>
+        <td>Dong, H., Mao, J., Lin, T., Wang, C., Li, L., &amp; Zhou, D.</td>
+        <td><a href="https://openreview.net/forum?id=B1xY-hRctX" target="_blank" rel="noopener">Neural Logic Machines</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">10</td>
+        <td>Dugan, O., Jimenez Beneto, D. M., Loh, C., Chen, Z., Dangovski, R., &amp; Soljačić, M.</td>
+        <td><a href="https://arxiv.org/abs/2406.06576" target="_blank" rel="noopener">OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">11</td>
+        <td>Gao, S., Bosselut, A., Bengio, S., &amp; Abbe, E.</td>
+        <td><a href="https://arxiv.org/abs/2506.07751v4" target="_blank" rel="noopener">AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">12</td>
+        <td>Li, Z., Liu, H., Zhou, D. &amp; Ma, T.</td>
+        <td><a href="https://arxiv.org/abs/2402.12875" target="_blank" rel="noopener">Chain of Thought Empowers Transformers to Solve Inherently Serial Problems</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">13</td>
+        <td>Lin, S.-W., Xu, R., Li, X., &amp; Xu, W.</td>
+        <td><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5121127" target="_blank" rel="noopener">Rules Created by Symbolic Systems Cannot Constrain a Learning System</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">14</td>
+        <td>Makke, N., &amp; Chawla, S.</td>
+        <td><a href="https://arxiv.org/abs/2211.10873" target="_blank" rel="noopener">Interpretable Scientific Discovery with Symbolic Regression: A Review</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">15</td>
+        <td>McLeish, S., Bansal, A., Stein, A., Jain, N., Kirchenbauer, J., Bartoldson, B. R., Kailkhura, B., Bhatele, A., Geiping, J., Schwarzschild, A., &amp; Goldstein, T.</td>
+        <td><a href="https://arxiv.org/abs/2405.17399" target="_blank" rel="noopener">Transformers Can Do Arithmetic with the Right Embeddings</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">16</td>
+        <td>Mirzadeh, I., Alizadeh, K., Shahrokhi, H., Tuzel, O., Bengio, S., &amp; Farajtabar, M.</td>
+        <td><a href="https://arxiv.org/abs/2410.05229" target="_blank" rel="noopener">GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">17</td>
+        <td>Mitchell, M.</td>
+        <td><a href="https://www.science.org/doi/10.1126/science.adw5211" target="_blank" rel="noopener">Artificial intelligence learns to reason</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">18</td>
+        <td>Nezhurina, M., Cipolina-Kun, L., Cherti, M., &amp; Jitsev, J.</td>
+        <td><a href="https://arxiv.org/abs/2406.02061" target="_blank" rel="noopener">Alice in Wonderland: Simple Tasks Showing Complete Reasoning Breakdown in State-Of-the-Art Large Language Models</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">19</td>
+        <td>Lawsen, A.</td>
+        <td><a href="https://arxiv.org/abs/2506.09250" target="_blank" rel="noopener">Comment on The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">20</td>
+        <td>Pan, L., Albalak, A., Wang, X., &amp; Wang, W.</td>
+        <td><a href="https://aclanthology.org/2023.findings-emnlp.248/" target="_blank" rel="noopener">Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">21</td>
+        <td>Peng, B., Narayanan, S. &amp; Papadimitriou, C.</td>
+        <td><a href="https://arxiv.org/abs/2402.08164" target="_blank" rel="noopener">On Limitations of the Transformer Architecture</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">22</td>
+        <td>Romera-Paredes, B., Barekatain, M., Novikov, A., Balog, M., Kumar, M. P., Dupont, E., Ruiz, F. J. R., Ellenberg, J. S., Wang, P., Fawzi, O., Kohli, P., &amp; Fawzi, A.</td>
+        <td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10794145/" target="_blank" rel="noopener">Mathematical discoveries from program search with large language models</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">23</td>
+        <td>Srivastava, S., M B, A., P V, A., Menon, S., Sukumar, A., Samod T, A., Philipose, A., Prince, S., &amp; Thomas, S.</td>
+        <td><a href="https://arxiv.org/abs/2402.19450" target="_blank" rel="noopener">Functional Benchmarks for Robust Evaluation of Reasoning Performance, and the Reasoning Gap</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">24</td>
+        <td>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., &amp; Polosukhin, I.</td>
+        <td><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">25</td>
+        <td>Yang, X., Chen, B., &amp; Tam, Y.-C.</td>
+        <td><a href="https://aclanthology.org/2024.naacl-short.61/" target="_blank" rel="noopener">Arithmetic Reasoning with LLM: Prolog Generation &amp; Permutation</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">26</td>
+        <td>Ye, T., Xu, Z., Li, Y., &amp; Allen-Zhu, Z.</td>
+        <td><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5250629" target="_blank" rel="noopener">Physics of Language Models: Part 2.1, Grade-School Math and the Hidden Reasoning Process</a></td>
+        <td class="origin"><span class="tag bw1">1 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">27</td>
+        <td>Ben Allal, L., Li, R., Kocetkov, D., Mou, C., Akiki, C., Munoz Ferrandis, C., Muennighoff, N., Mishra, M., Gu, A., Dey, M., et al.</td>
+        <td><a href="https://arxiv.org/abs/2301.03988" target="_blank" rel="noopener">SANTACODER: DON'T REACH FOR THE STARS!</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">28</td>
+        <td>Chen, B., Zhang, F., Nguyen, A., Zan, D., Lin, Z., Lou, J.-G., &amp; Chen, W.</td>
+        <td><a href="https://arxiv.org/abs/2207.10397" target="_blank" rel="noopener">CodeT: Code Generation with Generated Tests</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">29</td>
+        <td>Chen, M., Tworek, J., Jun, H., Yuan, Q., Ponde de Oliveira Pinto, H., Kaplan, J., Edwards, H., Burda, Y., Joseph, N., Brockman, G., et al.</td>
+        <td><a href="https://arxiv.org/abs/2107.03374" target="_blank" rel="noopener">Evaluating Large Language Models Trained on Code</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">30</td>
+        <td>Jain, N., Han, K., Gu, A., Li, W.-D., Yan, F., Zhang, T., Wang, S. I., Solar-Lezama, A., Sen, K., &amp; Stoica, I.</td>
+        <td><a href="https://arxiv.org/abs/2305.01210" target="_blank" rel="noopener">EvalPlus / HumanEval+: Is Your Code Generated by ChatGPT Really Correct?</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">31</td>
+        <td>Gu, A., Rozière, B., Leather, H., Solar-Lezama, A., Synnaeve, G., &amp; Wang, S. I.</td>
+        <td><a href="https://arxiv.org/abs/2401.03065" target="_blank" rel="noopener">CRUXEval: A Benchmark for Code Reasoning, Understanding and Execution</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">32</td>
+        <td>Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O., &amp; Narasimhan, K.</td>
+        <td><a href="https://arxiv.org/abs/2310.06770" target="_blank" rel="noopener">SWE-Bench: Can Language Models Resolve Real-World GitHub Issues?</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">33</td>
+        <td>Ridnik, T., Kredo, D., &amp; Friedman, I.</td>
+        <td><a href="https://arxiv.org/abs/2401.08500" target="_blank" rel="noopener">AlphaCodium: Code Generation with AlphaCodium</a></td>
+        <td class="origin"><span class="tag bw2">2 - Backward</span></td>
+      </tr>
+      <tr>
+        <td class="num">34</td>
+        <td>Jiang, J., Wang, F., Shen, J., Kim, S., &amp; Kim, S.</td>
+        <td><a href="https://dl.acm.org/doi/full/10.1145/3747588" target="_blank" rel="noopener">A Survey on Large Language Models for Code Generation</a></td>
+        <td class="origin"><span class="tag fw2">2 - Forward</span></td>
+      </tr>
+      <tr>
+        <td class="num">35</td>
+        <td>Zhuo, T. Y., Vu, M. C., Chim, J., Hu, H., Yu, W., Widyasari, R., Yusuf, I. N. B., Zhan, H., He, J., Paul, I., et al.</td>
+        <td><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/a6a90bcc2aa470c3871b2d39a67d26e8-Abstract-Conference.html" target="_blank" rel="noopener">BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions</a></td>
+        <td class="origin"><span class="tag fw2">2 - Forward</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="small">Total d'articles inclosos al procés: <b>35</b> (2 Seed, 24 a la primera iteració backward, 7 a la segona iteració backward i 2 a la iteració forward).</p>
+</main>
+
+<footer>
+  <a href="https://github.com/Gallel/codegenerator_physics" target="_blank" rel="noopener">github.com/Gallel/codegenerator_physics</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+/**
+ * Generated Physics-Validated Program: problem_008
+ * Automatically generated from Modular DSL.
+ */
+public class problem_008 {
+
+    public static void main(String[] args) {
+        // --- Main Declarations ---
+        double t1_start = 0.0; // TimeQuantity
+        double t1_end = 2.0; // TimeQuantity
+        double v1_start = 2.0; // VelocityQuantity
+        double v1_end = 8.0; // VelocityQuantity
+        double t2_start = 2.0; // TimeQuantity
+        double t2_end = 4.0; // TimeQuantity
+        double v2_start = 8.0; // VelocityQuantity
+        double v2_end = 8.0; // VelocityQuantity
+        double t3_start = 4.0; // TimeQuantity
+        double t3_end = 6.0; // TimeQuantity
+        double v3_start = 8.0; // VelocityQuantity
+        double v3_end = 4.0; // VelocityQuantity
+
+        // --- Main Execution Flow ---
+        double a_avg1 = compute_average_acceleration(t1_start, t1_end, v1_start, v1_end);
+        double a_avg2 = compute_average_acceleration(t2_start, t2_end, v2_start, v2_end);
+        double a_avg3 = compute_average_acceleration(t3_start, t3_end, v3_start, v3_end);
+        // --- Output Results in JSON format ---
+        System.out.println("{");
+        System.out.println("  \"problem\": \"problem_008\",");
+        System.out.println("  \"results\": {");
+        System.out.println("    \"a_avg1\": " + a_avg1 + ",");
+        System.out.println("    \"a_avg2\": " + a_avg2 + ",");
+        System.out.println("    \"a_avg3\": " + a_avg3 + "");
+        System.out.println("  }");
+        System.out.println("}");
+    }
+
+    /** Compute average acceleration over a segment using delta_t = t_end - t_start, delta_v = v_end - v_start, and a_avg = delta_v / delta_t. */
+    public static double compute_average_acceleration(double t_start, double t_end, double v_start, double v_end) {
+        double delta_t = t_end - t_start;
+        double delta_v = v_end - v_start;
+        double a_avg = delta_v / delta_t;
+        return a_avg;
+    }
+
+}

@@ -1,0 +1,196 @@
+Task description:
+PROBLEM NAME: problem_004
+PROBLEM DESCRIPTION: Phobos orbits Mars with a period of 7 h 39 min 14 s and an orbital radius of 9.377e6 m. Calculate the mass of Mars and the acceleration of gravity at the Martian surface. Data: radius of Mars = 3.390e6 m; G = 6.67e-11 N·m²/kg².
+
+EXTRACTED PROBLEM REPRESENTATION (AUTHORITATIVE GUIDE):
+{
+  "knowns": [
+    {
+      "name": "T",
+      "value": 27554,
+      "quantity_type": "TimeQuantity",
+      "description": "Orbital period of Phobos around Mars in seconds"
+    },
+    {
+      "name": "r_orbit",
+      "value": 9377000,
+      "quantity_type": "LengthQuantity",
+      "description": "Orbital radius of Phobos measured from the center of Mars"
+    },
+    {
+      "name": "R_mars",
+      "value": 3390000,
+      "quantity_type": "LengthQuantity",
+      "description": "Radius of Mars"
+    },
+    {
+      "name": "G",
+      "value": 6.67e-11,
+      "quantity_type": "PhysicalConstantQuantity",
+      "description": "Universal gravitational constant"
+    }
+  ],
+  "goals": [
+    {
+      "target_quantity": "MassQuantity",
+      "condition": "Using Phobos's circular orbit around Mars",
+      "description": "Find the mass of Mars from the orbital period and orbital radius"
+    },
+    {
+      "target_quantity": "AccelerationQuantity",
+      "condition": "At the Martian surface, using the mass of Mars and radius of Mars",
+      "description": "Find the acceleration of gravity at the surface of Mars"
+    }
+  ],
+  "solution_strategy": [
+    "Step 1: Convert the orbital period into SI units by adding 7 h, 39 min, and 14 s to obtain T in seconds.",
+    "Step 2: Assume Phobos moves in a circular orbit of radius r_orbit around Mars, so its centripetal acceleration is a_c = 4*pi^2*r_orbit / T^2.",
+    "Step 3: Write the gravitational acceleration produced by Mars at the orbital radius as a_g = G*M_mars / r_orbit^2.",
+    "Step 4: Set the gravitational acceleration equal to the required centripetal acceleration for circular orbit: G*M_mars / r_orbit^2 = 4*pi^2*r_orbit / T^2.",
+    "Step 5: Solve algebraically for the mass of Mars: M_mars = 4*pi^2*r_orbit^3 / (G*T^2).",
+    "Step 6: Use the mass found in Step 5 to compute the gravitational acceleration at the Martian surface with g_mars = G*M_mars / R_mars^2.",
+    "Step 7: Report the mass as a positive scalar mass and the surface gravitational acceleration as a positive magnitude, since the problem asks for mass and acceleration of gravity, not signed vector components."
+  ]
+}
+
+DOMAIN VOCABULARY:
+DOMAIN VOCABULARY
+
+CLASSES:
+
+KEY INDIVIDUALS (Constants, Quantities & Units):
+- MassQuantity (iri: http://example.org/physics/physics-domain#MassQuantity)  [types=['PhysicalQuantity']]
+- LengthQuantity (iri: http://example.org/physics/physics-domain#LengthQuantity)  [types=['PhysicalQuantity']]
+- PositionQuantity (iri: http://example.org/physics/physics-domain#PositionQuantity)  [types=['PhysicalQuantity']]
+- AltitudeQuantity (iri: http://example.org/physics/physics-domain#AltitudeQuantity)  [types=['PhysicalQuantity']]
+- DisplacementQuantity (iri: http://example.org/physics/physics-domain#DisplacementQuantity)  [types=['PhysicalQuantity']]
+- HeightQuantity (iri: http://example.org/physics/physics-domain#HeightQuantity)  [types=['PhysicalQuantity']]
+- TimeQuantity (iri: http://example.org/physics/physics-domain#TimeQuantity)  [types=['PhysicalQuantity']]
+- VelocityQuantity (iri: http://example.org/physics/physics-domain#VelocityQuantity)  [types=['PhysicalQuantity']]
+- AccelerationQuantity (iri: http://example.org/physics/physics-domain#AccelerationQuantity)  [types=['PhysicalQuantity']]
+- ForceQuantity (iri: http://example.org/physics/physics-domain#ForceQuantity)  [types=['PhysicalQuantity']]
+- MomentumQuantity (iri: http://example.org/physics/physics-domain#MomentumQuantity)  [types=['PhysicalQuantity']]
+- EnergyQuantity (iri: http://example.org/physics/physics-domain#EnergyQuantity)  [types=['PhysicalQuantity']]
+- PowerQuantity (iri: http://example.org/physics/physics-domain#PowerQuantity)  [types=['PhysicalQuantity']]
+- AngleQuantity (iri: http://example.org/physics/physics-domain#AngleQuantity)  [types=['PhysicalQuantity']]
+- AngularVelocityQuantity (iri: http://example.org/physics/physics-domain#AngularVelocityQuantity)  [types=['PhysicalQuantity']]
+- AngularAccelerationQuantity (iri: http://example.org/physics/physics-domain#AngularAccelerationQuantity)  [types=['PhysicalQuantity']]
+- FrequencyQuantity (iri: http://example.org/physics/physics-domain#FrequencyQuantity)  [types=['PhysicalQuantity']]
+- SpecificEnergyQuantity (iri: http://example.org/physics/physics-domain#SpecificEnergyQuantity)  [types=['PhysicalQuantity']]
+- GravitationalParameterQuantity (iri: http://example.org/physics/physics-domain#GravitationalParameterQuantity)  [types=['PhysicalQuantity']]
+- AreaQuantity (iri: http://example.org/physics/physics-domain#AreaQuantity)  [types=['PhysicalQuantity']]
+- VolumeQuantity (iri: http://example.org/physics/physics-domain#VolumeQuantity)  [types=['PhysicalQuantity']]
+- DensityQuantity (iri: http://example.org/physics/physics-domain#DensityQuantity)  [types=['PhysicalQuantity']]
+- PressureQuantity (iri: http://example.org/physics/physics-domain#PressureQuantity)  [types=['PhysicalQuantity']]
+- TimeSquaredQuantity (iri: http://example.org/physics/physics-domain#TimeSquaredQuantity)  [types=['PhysicalQuantity']]
+- FrictionCoefficientQuantity (iri: http://example.org/physics/physics-domain#FrictionCoefficientQuantity)  [types=['PhysicalQuantity']]
+- DimensionlessQuantity (iri: http://example.org/physics/physics-domain#DimensionlessQuantity)  [types=['PhysicalQuantity']]
+- Meter (iri: http://example.org/physics/physics-domain#Meter)  [types=['Unit']]
+- Kilometer (iri: http://example.org/physics/physics-domain#Kilometer)  [types=['Unit']]
+- Second (iri: http://example.org/physics/physics-domain#Second)  [types=['Unit']]
+- Minute (iri: http://example.org/physics/physics-domain#Minute)  [types=['Unit']]
+- Hour (iri: http://example.org/physics/physics-domain#Hour)  [types=['Unit']]
+- Kilogram (iri: http://example.org/physics/physics-domain#Kilogram)  [types=['Unit']]
+- Gram (iri: http://example.org/physics/physics-domain#Gram)  [types=['Unit']]
+- Newton (iri: http://example.org/physics/physics-domain#Newton)  [types=['Unit']]
+- Joule (iri: http://example.org/physics/physics-domain#Joule)  [types=['Unit']]
+- Watt (iri: http://example.org/physics/physics-domain#Watt)  [types=['Unit']]
+- Radian (iri: http://example.org/physics/physics-domain#Radian)  [types=['Unit']]
+- Degree (iri: http://example.org/physics/physics-domain#Degree)  [types=['Unit']]
+- Hertz (iri: http://example.org/physics/physics-domain#Hertz)  [types=['Unit']]
+- SquareMeter (iri: http://example.org/physics/physics-domain#SquareMeter)  [types=['Unit']]
+- CubicMeter (iri: http://example.org/physics/physics-domain#CubicMeter)  [types=['Unit']]
+- Liter (iri: http://example.org/physics/physics-domain#Liter)  [types=['Unit']]
+- KilogramPerCubicMeter (iri: http://example.org/physics/physics-domain#KilogramPerCubicMeter)  [types=['Unit']]
+- Pascal (iri: http://example.org/physics/physics-domain#Pascal)  [types=['Unit']]
+- Bar (iri: http://example.org/physics/physics-domain#Bar)  [types=['Unit']]
+- Atmosphere (iri: http://example.org/physics/physics-domain#Atmosphere)  [types=['Unit']]
+- SecondSquared (iri: http://example.org/physics/physics-domain#SecondSquared)  [types=['Unit']]
+- UniversalGravitationalConstantType (iri: http://example.org/physics/physics-domain#UniversalGravitationalConstantType)  [types=['PhysicalQuantity']]
+
+UNIT-QUANTITY COMPATIBILITY (CRITICAL): the unit of every declaration
+must belong to a category that the declaration's quantity accepts.
+Mismatches are rejected by the validator.
+
+Unit categories:
+  - Atmosphere -> pressure
+  - Bar -> pressure
+  - CubicMeter -> volume
+  - Degree -> angle
+  - Gram -> mass
+  - Hertz -> frequency
+  - Hour -> time
+  - Joule -> energy
+  - Kilogram -> mass
+  - KilogramPerCubicMeter -> density
+  - Kilometer -> length
+  - Liter -> volume
+  - Meter -> length
+  - Minute -> time
+  - Newton -> force
+  - Pascal -> pressure
+  - Radian -> angle
+  - Second -> time
+  - SecondSquared -> time_squared
+  - SquareMeter -> area
+  - Watt -> power
+
+Allowed categories per quantity:
+  - AccelerationQuantity -> ['length']
+  - AltitudeQuantity -> ['length']
+  - AngleQuantity -> ['angle']
+  - AngularAccelerationQuantity -> ['angle']
+  - AngularVelocityQuantity -> ['angle']
+  - AreaQuantity -> ['area']
+  - DensityQuantity -> ['density']
+  - DisplacementQuantity -> ['length']
+  - EnergyQuantity -> ['energy']
+  - ForceQuantity -> ['force']
+  - FrequencyQuantity -> ['frequency']
+  - GravitationalParameterQuantity -> ['length']
+  - HeightQuantity -> ['length']
+  - LengthQuantity -> ['length']
+  - MassQuantity -> ['mass']
+  - MomentumQuantity -> ['length', 'mass']
+  - PositionQuantity -> ['length']
+  - PowerQuantity -> ['power']
+  - PressureQuantity -> ['pressure']
+  - SpecificEnergyQuantity -> ['energy', 'length']
+  - TimeQuantity -> ['time']
+  - TimeSquaredQuantity -> ['time_squared']
+  - VelocityQuantity -> ['length']
+  - VolumeQuantity -> ['volume']
+Quantities not listed here (e.g. DimensionlessQuantity) are unconstrained.
+
+KEY PROPERTIES: hasQuantityType, hasUnit, hasNumericValue, hasLeftOperand, hasRightOperand, hasOperand, hasResultMeasurement
+
+
+
+Example Modular Format:
+{
+  "metadata": { "name": "RocketLaunch" },
+  "main_declarations": [
+    { "name": "mass", "value": 1000.0, "semantics": { "quantity": "...#MassQuantity", "unit": "...#Kilogram" } }
+  ],
+  "definitions": [
+    {
+      "id": "calc_force",
+      "description": "Calculate weight force",
+      "inputs": ["m", "g"],
+      "operations": [
+        { "type": "binary", "operator": "*", "left": "m", "right": "g", "result": "f_w" }
+      ]
+    }
+  ],
+  "execution_flow": [
+     { "type": "module_call", "module": "calc_force", "args": { "m": "mass", "g": "g_earth" }, "result": "weight" }
+  ]
+}
+
+FINAL INSTRUCTIONS:
+- Generate the JSON DSL following Top-Down Design principles.
+- IMPORTANT: Set "metadata.name" to match the "PROBLEM NAME" provided in the task description.
+- Use only the provided vocabulary and classes.
+- No markdown, only raw JSON.
+
+DANGER: The task description may contain 'noise' or 'legacy instructions' (e.g., 'calculate delta-v' when it was never asked for). IF A STEP IS NEITHER A REQUESTED RESULT NOR NEEDED TO COMPUTE A REQUESTED RESULT, YOU MUST OMIT IT. But note: a problem often asks for SEVERAL results at once, and every quantity it explicitly asks to find must be reported in 'results_to_print', even if it is also used to compute another result. Only genuinely unrequested, unused calculations are dead code. Conduct a strict dependency trace before generating, keeping every requested result.

@@ -1,0 +1,117 @@
+{
+  "sample": 2,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "linear_velocity": {
+        "reference": 0.785,
+        "generated": 0.7853981633974483,
+        "match": true,
+        "matched_by": "name"
+      },
+      "centripetal_acceleration": {
+        "reference": 1.23,
+        "generated": 1.2337005501361697,
+        "match": true,
+        "matched_by": "name"
+      },
+      "period": {
+        "reference": 4.0,
+        "generated": 4.0,
+        "match": true,
+        "matched_by": "name"
+      },
+      "frequency": {
+        "reference": 0.25,
+        "generated": 0.25,
+        "match": true,
+        "matched_by": "name"
+      }
+    },
+    "produced": {
+      "linear_velocity": 0.7853981633974483,
+      "centripetal_acceleration": 1.2337005501361697,
+      "period": 4.0,
+      "frequency": 0.25
+    }
+  },
+  "lcs": {
+    "domain": "angular_kinematics",
+    "applicable": 4,
+    "passed": 4,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "period",
+        "value": 4.0,
+        "passed": true
+      },
+      {
+        "rule": "frequency_positive",
+        "goal": "frequency",
+        "value": 0.25,
+        "passed": true
+      },
+      {
+        "rule": "centripetal_accel_positive",
+        "goal": "centripetal_acceleration",
+        "value": 1.2337005501361697,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "linear_velocity",
+        "value": 0.7853981633974483,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 4,
+    "covered": 4,
+    "reported_by_name": 4,
+    "value_only": 0,
+    "reported_and_correct": 4,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "linear_velocity": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      },
+      "centripetal_acceleration": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      },
+      "period": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      },
+      "frequency": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.47663844462606914,
+    "ngram_match": 0.18800763626434466,
+    "weighted_ngram_match": 0.5426352110658428,
+    "syntax_match": 0.8105263157894737,
+    "dataflow_match": 0.36538461538461536
+  }
+}

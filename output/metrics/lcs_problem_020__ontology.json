@@ -1,0 +1,25 @@
+{
+  "domain": "work_energy",
+  "applicable": 2,
+  "passed": 2,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "velocity_below_c",
+      "goal": "final_velocity",
+      "value": 12.876334882255899,
+      "passed": true
+    },
+    {
+      "rule": "surface_mech_energy_nonneg",
+      "goal": "initial_mechanical_energy",
+      "value": 12.435,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_020__ontology"
+}

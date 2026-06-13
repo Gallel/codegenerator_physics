@@ -1,0 +1,79 @@
+{
+  "sample": 3,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "mass_of_mars": {
+        "reference": 6.43e+23,
+        "generated": 6.427711010581384e+23,
+        "match": true,
+        "matched_by": "value"
+      },
+      "surface_gravity_mars": {
+        "reference": 3.73,
+        "generated": 3.730635170297668,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "M_mars": 6.427711010581384e+23,
+      "g_mars": 3.730635170297668
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "mass_positive",
+        "goal": "mass_of_mars",
+        "value": 6.427711010581384e+23,
+        "passed": true
+      },
+      {
+        "rule": "surface_gravity_positive",
+        "goal": "surface_gravity_mars",
+        "value": 3.730635170297668,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "mass_of_mars": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "surface_gravity_mars": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.43742052453888025,
+    "ngram_match": 0.11837320462368806,
+    "weighted_ngram_match": 0.296823154551712,
+    "syntax_match": 0.7191011235955056,
+    "dataflow_match": 0.6153846153846154
+  }
+}

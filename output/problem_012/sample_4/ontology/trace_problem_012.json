@@ -1,0 +1,135 @@
+{
+  "program": "problem_012",
+  "steps": [
+    {
+      "expression": "Op_1_v_f_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v_f",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 15.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_f_sq_1",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_v_0_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_0_sq_2",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_two_g",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_two_g_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_h",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_sq_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_two_g_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_h_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_delta_v_sq",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_v_f_sq_1",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        },
+        {
+          "name": "Res_v_0_sq_2",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_sq_3",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

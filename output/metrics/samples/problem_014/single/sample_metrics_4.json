@@ -1,0 +1,98 @@
+{
+  "sample": 4,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "period": {
+        "reference": 0.1,
+        "generated": 0.1,
+        "match": true,
+        "matched_by": "value"
+      },
+      "angular_velocity": {
+        "reference": 62.83,
+        "generated": 62.83185307179586,
+        "match": true,
+        "matched_by": "value"
+      },
+      "linear_velocity": {
+        "reference": 31.42,
+        "generated": 31.41592653589793,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "T": 0.1,
+      "omega": 62.83185307179586,
+      "v": 31.41592653589793
+    }
+  },
+  "lcs": {
+    "domain": "angular_kinematics",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "period",
+        "value": 0.1,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "angular_velocity",
+        "value": 62.83185307179586,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "linear_velocity",
+        "value": 31.41592653589793,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 3,
+    "reported_by_name": 0,
+    "value_only": 3,
+    "reported_and_correct": 3,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "period": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "angular_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "linear_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.47604510644050607,
+    "ngram_match": 0.1293459846440944,
+    "weighted_ngram_match": 0.38971539349888235,
+    "syntax_match": 0.8375,
+    "dataflow_match": 0.5476190476190477
+  }
+}

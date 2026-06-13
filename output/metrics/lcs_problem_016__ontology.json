@@ -1,0 +1,37 @@
+{
+  "domain": "angular_kinematics",
+  "applicable": 4,
+  "passed": 4,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "period_positive",
+      "goal": "period",
+      "value": 0.2,
+      "passed": true
+    },
+    {
+      "rule": "frequency_positive",
+      "goal": "frequency",
+      "value": 5.0,
+      "passed": true
+    },
+    {
+      "rule": "centripetal_accel_positive",
+      "goal": "centripetal_acceleration_surface",
+      "value": 98.69604401089359,
+      "passed": true
+    },
+    {
+      "rule": "centripetal_accel_positive",
+      "goal": "centripetal_acceleration_at_5_cm",
+      "value": 49.34802200544679,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_016__ontology"
+}

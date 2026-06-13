@@ -45,7 +45,7 @@ coverage.xml
 #  Project-specific generated artifacts
 # =============================================================================
 # Generated DSL / OWL / Java outputs are reproducible from source
-output/
+# output/
 
 # Owlready2 sometimes writes a sqlite cache next to the script
 *.sqlite3

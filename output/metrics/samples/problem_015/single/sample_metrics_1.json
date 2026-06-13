@@ -1,0 +1,117 @@
+{
+  "sample": 1,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "linear_velocity": {
+        "reference": 0.785,
+        "generated": 0.7853981633974483,
+        "match": true,
+        "matched_by": "value"
+      },
+      "centripetal_acceleration": {
+        "reference": 1.23,
+        "generated": 1.2337005501361697,
+        "match": true,
+        "matched_by": "value"
+      },
+      "period": {
+        "reference": 4.0,
+        "generated": 4.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "frequency": {
+        "reference": 0.25,
+        "generated": 0.25,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "v": 0.7853981633974483,
+      "a_c": 1.2337005501361697,
+      "T": 4.0,
+      "f": 0.25
+    }
+  },
+  "lcs": {
+    "domain": "angular_kinematics",
+    "applicable": 4,
+    "passed": 4,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "period",
+        "value": 4.0,
+        "passed": true
+      },
+      {
+        "rule": "frequency_positive",
+        "goal": "frequency",
+        "value": 0.25,
+        "passed": true
+      },
+      {
+        "rule": "centripetal_accel_positive",
+        "goal": "centripetal_acceleration",
+        "value": 1.2337005501361697,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "linear_velocity",
+        "value": 0.7853981633974483,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 4,
+    "covered": 4,
+    "reported_by_name": 0,
+    "value_only": 4,
+    "reported_and_correct": 4,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "linear_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "centripetal_acceleration": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "period": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "frequency": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.4077486667468603,
+    "ngram_match": 0.11392950387447512,
+    "weighted_ngram_match": 0.34115423193887706,
+    "syntax_match": 0.8105263157894737,
+    "dataflow_match": 0.36538461538461536
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "mass_of_mars": {
+      "reference": 6.43e+23,
+      "generated": 6.427711010581384e+23,
+      "match": true,
+      "matched_by": "value"
+    },
+    "surface_gravity_mars": {
+      "reference": 3.73,
+      "generated": 3.730635170297668,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "M_mars": 6.427711010581384e+23,
+    "g_surface": 3.730635170297668
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 3,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.6,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_004__ontology"
+}

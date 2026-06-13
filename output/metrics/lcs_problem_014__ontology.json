@@ -1,0 +1,31 @@
+{
+  "domain": "angular_kinematics",
+  "applicable": 3,
+  "passed": 3,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "period_positive",
+      "goal": "period",
+      "value": 0.1,
+      "passed": true
+    },
+    {
+      "rule": "velocity_below_c",
+      "goal": "angular_velocity",
+      "value": 62.83185307179586,
+      "passed": true
+    },
+    {
+      "rule": "velocity_below_c",
+      "goal": "linear_velocity",
+      "value": 31.41592653589793,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_014__ontology"
+}

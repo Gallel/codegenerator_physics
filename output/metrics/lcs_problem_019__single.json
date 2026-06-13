@@ -1,0 +1,31 @@
+{
+  "domain": "work_energy",
+  "applicable": 3,
+  "passed": 3,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "energy_consumed_nonneg",
+      "goal": "daily_energy_consumed",
+      "value": 86400000.0,
+      "passed": true
+    },
+    {
+      "rule": "energy_consumed_nonneg",
+      "goal": "monthly_energy_consumed",
+      "value": 2592000000.0,
+      "passed": true
+    },
+    {
+      "rule": "monthly_energy_is_30_daily",
+      "goal": "(relational)",
+      "value": null,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_019__single"
+}

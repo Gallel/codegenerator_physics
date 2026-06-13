@@ -1,0 +1,46 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "period": {
+      "reference": 0.2,
+      "generated": 0.2,
+      "match": true,
+      "matched_by": "name"
+    },
+    "frequency": {
+      "reference": 5.0,
+      "generated": 5.0,
+      "match": true,
+      "matched_by": "name"
+    },
+    "centripetal_acceleration_surface": {
+      "reference": 98.596,
+      "generated": 98.69604401089359,
+      "match": true,
+      "matched_by": "value"
+    },
+    "centripetal_acceleration_at_5_cm": {
+      "reference": 49.298,
+      "generated": 49.34802200544679,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "period": 0.2,
+    "frequency": 5.0,
+    "a_c_edge": 98.69604401089359,
+    "a_c_inner": 49.34802200544679
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_016__ontology"
+}

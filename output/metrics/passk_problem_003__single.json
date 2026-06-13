@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "orbital_velocity": {
+      "reference": 1020.0,
+      "generated": 1018.4910202516925,
+      "match": true,
+      "matched_by": "value"
+    },
+    "orbital_period": {
+      "reference": 2370000.0,
+      "generated": 2368939.0578629915,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "v": 1018.4910202516925,
+    "T": 2368939.0578629915
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 4,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.8,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_003__single"
+}

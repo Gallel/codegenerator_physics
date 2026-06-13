@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "orbital_energy_required": {
+      "reference": 115000000000.0,
+      "generated": 115663833812.0964,
+      "match": true,
+      "matched_by": "value"
+    },
+    "orbital_velocity": {
+      "reference": 3066.15,
+      "generated": 3066.151321658319,
+      "match": true,
+      "matched_by": "value"
+    },
+    "orbital_period": {
+      "reference": 86840.0,
+      "generated": 86824.99118184928,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "Delta_E": 115663833812.0964,
+    "v": 3066.151321658319,
+    "T": 86824.99118184928
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 2,
+  "n_compiled": 2,
+  "n_ran": 2,
+  "pass_at_1": 0.4,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_002__single"
+}

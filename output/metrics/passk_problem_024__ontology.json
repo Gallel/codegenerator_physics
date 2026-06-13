@@ -1,0 +1,25 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": false,
+  "error": null,
+  "goals": {
+    "final_velocity_zipi": {
+      "reference": 0.17,
+      "generated": null,
+      "match": false,
+      "matched_by": null
+    }
+  },
+  "produced": {
+    "v_zipi_final": -0.17131474103585656
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 0,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.0,
+  "pass_at_5": 0.0,
+  "problem_id": "problem_024__ontology"
+}

@@ -1,0 +1,19 @@
+{
+  "domain": "free_fall",
+  "applicable": 1,
+  "passed": 1,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "height_nonneg",
+      "goal": "fall_height",
+      "value": 11.479591836734693,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_012__ontology"
+}

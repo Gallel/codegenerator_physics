@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "initial_mechanical_energy": {
+      "reference": 12.435,
+      "generated": 12.435,
+      "match": true,
+      "matched_by": "value"
+    },
+    "final_velocity": {
+      "reference": 12.88,
+      "generated": 12.876334882255899,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "E_mech": 12.435,
+    "v_f": 12.876334882255899
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_020__single"
+}

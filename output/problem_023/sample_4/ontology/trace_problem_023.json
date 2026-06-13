@@ -1,0 +1,253 @@
+{
+  "program": "problem_023",
+  "steps": [
+    {
+      "expression": "Op_5_annular_area",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_area_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_area_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_annular_area_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_10_total_cycle_volume",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_volume_8",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_volume_9",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_total_cycle_volume_10",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_diameter_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_piston_diameter",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.07
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_diameter_squared_1",
+        "quantities": [
+          "AreaQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_diameter_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_rod_diameter",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.025
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_diameter_squared_3",
+        "quantities": [
+          "AreaQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_area",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_pi_over_4",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 0.7853981633974483
+        },
+        {
+          "name": "Res_diameter_squared_1",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_area_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_area",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_pi_over_4",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 0.7853981633974483
+        },
+        {
+          "name": "Res_diameter_squared_3",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_area_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_force",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_working_pressure",
+          "quantities": [
+            "PressureQuantity"
+          ],
+          "value": 600000.0
+        },
+        {
+          "name": "Res_area_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_force_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_force",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_working_pressure",
+          "quantities": [
+            "PressureQuantity"
+          ],
+          "value": 600000.0
+        },
+        {
+          "name": "Res_annular_area_5",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_force_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_volume",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_area_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_stroke",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.1
+        }
+      ],
+      "result": {
+        "name": "Res_volume_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_volume",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_annular_area_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_stroke",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.1
+        }
+      ],
+      "result": {
+        "name": "Res_volume_9",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

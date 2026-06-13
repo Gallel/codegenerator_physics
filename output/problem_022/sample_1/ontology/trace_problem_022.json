@@ -1,0 +1,83 @@
+{
+  "program": "problem_022",
+  "steps": [
+    {
+      "expression": "Op_2_m_v_squared",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 1300.0
+        },
+        {
+          "name": "Res_v_squared_1",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_m_v_squared_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_ke",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_half",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 0.5
+        },
+        {
+          "name": "Res_m_v_squared_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_ke_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 30.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_squared_1",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    }
+  ]
+}

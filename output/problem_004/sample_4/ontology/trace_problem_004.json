@@ -1,0 +1,231 @@
+{
+  "program": "problem_004",
+  "steps": [
+    {
+      "expression": "Op_3_T_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_T",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 27554.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_T_sq_3",
+        "quantities": [
+          "TimeSquaredQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_R_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_R_mars",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 3390000.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_R_sq_8",
+        "quantities": [
+          "AreaQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "Res_M_mars_6",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_GM_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_r_cu",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_r_sq_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 9377000.0
+        }
+      ],
+      "result": {
+        "name": "Res_r_cu_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_r_sq",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 9377000.0
+        },
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 9377000.0
+        }
+      ],
+      "result": {
+        "name": "Res_r_sq_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_four_r_cu",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_four",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 4.0
+        },
+        {
+          "name": "Res_r_cu_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_four_r_cu_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_den_mass",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "Res_T_sq_3",
+          "quantities": [
+            "TimeSquaredQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_den_mass_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_M_mars",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_four_r_cu_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_den_mass_5",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_M_mars_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_g_mars",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GM_7",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_R_sq_8",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_g_mars_9",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

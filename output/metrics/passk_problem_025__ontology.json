@@ -1,0 +1,25 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "average_force": {
+      "reference": 0.3,
+      "generated": 0.3,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "F_avg": 0.3
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_025__ontology"
+}

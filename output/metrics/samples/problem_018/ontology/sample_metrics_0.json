@@ -1,0 +1,84 @@
+{
+  "sample": 0,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "kinetic_energy": {
+        "reference": 469000000.0,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "gravitational_potential_energy": {
+        "reference": 1470000000.0,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "mechanical_energy": {
+        "reference": 1940000000.0,
+        "generated": 1938750000.0,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "e_mech": 1938750000.0
+    }
+  },
+  "lcs": {
+    "domain": "work_energy",
+    "applicable": 1,
+    "passed": 1,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "surface_mech_energy_nonneg",
+        "goal": "mechanical_energy",
+        "value": 1938750000.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 1,
+    "reported_by_name": 0,
+    "value_only": 1,
+    "reported_and_correct": 1,
+    "cas_lax": 0.3333333333333333,
+    "cas_strict": 0.3333333333333333,
+    "goals": {
+      "kinetic_energy": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "gravitational_potential_energy": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "mechanical_energy": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3816735517348559,
+    "ngram_match": 0.13293571503420312,
+    "weighted_ngram_match": 0.3350463706930992,
+    "syntax_match": 0.7045454545454546,
+    "dataflow_match": 0.3541666666666667
+  }
+}

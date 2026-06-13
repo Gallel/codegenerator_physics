@@ -1,0 +1,6 @@
+VALIDATION REPORT: problem_018.json
+====================================================
+
+STATUS: OK - no physical inconsistencies found.
+
+Inference chain: 6 step(s). See trace_problem_018.json for the full trace.

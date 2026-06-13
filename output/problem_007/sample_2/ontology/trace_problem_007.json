@@ -1,0 +1,381 @@
+{
+  "program": "problem_007",
+  "steps": [
+    {
+      "expression": "Op_2_v_orbit_sq",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GM_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 8700000.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_orbit_sq_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_T_seconds",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_orbit_circumference_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_v_orbit_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_T_seconds_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_T_hours",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_T_seconds_6",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_seconds_per_hour",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3600.0
+        }
+      ],
+      "result": {
+        "name": "Res_T_hours_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_11_energy_magnitude",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GMm_9",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_two_r_10",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_energy_magnitude_11",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_15_v_esc_sq",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_two_GM_14",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_R_moon",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 1740000.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_esc_sq_15",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_v_orbit",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_v_orbit_sq_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_orbit_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_16_v_esc",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_v_esc_sq_15",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_esc_16",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M_moon",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 7.35e+22
+        }
+      ],
+      "result": {
+        "name": "Res_GM_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M_moon",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 7.35e+22
+        }
+      ],
+      "result": {
+        "name": "Res_GM_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_GMm",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_GM_8",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_m_spacecraft",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 5000.0
+        }
+      ],
+      "result": {
+        "name": "Res_GMm_9",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_10_two_r",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 8700000.0
+        }
+      ],
+      "result": {
+        "name": "Res_two_r_10",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_two_pi",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        }
+      ],
+      "result": {
+        "name": "Res_two_pi_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_orbit_circumference",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_pi_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 8700000.0
+        }
+      ],
+      "result": {
+        "name": "Res_orbit_circumference_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_12_E_mech",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_negative_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": -1.0
+        },
+        {
+          "name": "Res_energy_magnitude_11",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_E_mech_12",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_13_two_G",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        }
+      ],
+      "result": {
+        "name": "Res_two_G_13",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_14_two_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_G_13",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_M_moon",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 7.35e+22
+        }
+      ],
+      "result": {
+        "name": "Res_two_GM_14",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

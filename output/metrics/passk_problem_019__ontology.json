@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "daily_energy_consumed": {
+      "reference": 86400000.0,
+      "generated": 86400000.0,
+      "match": true,
+      "matched_by": "value"
+    },
+    "monthly_energy_consumed": {
+      "reference": 2590000000.0,
+      "generated": 2592000000.0,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "E_day": 86400000.0,
+    "E_month": 2592000000.0
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_019__ontology"
+}

@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/program"
+         xmlns="http://example.org/program#"
+         xmlns:phys="http://example.org/physics#">
+
+<owl:Ontology rdf:about="http://example.org/program"/>
+
+<owl:NamedIndividual rdf:about="#phys_m">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Kilogram"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000.0</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_G">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#UniversalGravitationalConstantType"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.67e-11</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_two">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_h">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36000000.0</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_R_E">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#LengthQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6370000.0</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_M_E">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#MassQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Kilogram"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.972e+24</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#phys_pi">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+  <phys:hasQuantityType rdf:resource="http://example.org/physics/physics-domain#DimensionlessQuantity"/>
+  <phys:hasUnit rdf:resource="http://example.org/physics/physics-domain#Meter"/>
+  <phys:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.141592653589793</phys:hasNumericValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_1_r">
+  <rdf:type rdf:resource="http://example.org/physics#AdditionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_R_E"/>
+  <phys:hasRightOperand rdf:resource="#phys_h"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_r_1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_r_1">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_2_GM">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_G"/>
+  <phys:hasRightOperand rdf:resource="#phys_M_E"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_GM_2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_GM_2">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_3_GMm">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_GM_2"/>
+  <phys:hasRightOperand rdf:resource="#phys_m"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_GMm_3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_GMm_3">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_4_Ui_mag">
+  <rdf:type rdf:resource="http://example.org/physics#DivisionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_GMm_3"/>
+  <phys:hasRightOperand rdf:resource="#phys_R_E"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_Ui_mag_4"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_Ui_mag_4">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_5_zero_init">
+  <rdf:type rdf:resource="http://example.org/physics#SubtractionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_G"/>
+  <phys:hasRightOperand rdf:resource="#phys_G"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_zero_init_5"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_zero_init_5">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_6_U_i">
+  <rdf:type rdf:resource="http://example.org/physics#SubtractionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_zero_init_5"/>
+  <phys:hasRightOperand rdf:resource="#Res_Ui_mag_4"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_U_i_6"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_U_i_6">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_7_GM">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_G"/>
+  <phys:hasRightOperand rdf:resource="#phys_M_E"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_GM_7"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_GM_7">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_8_v_sq">
+  <rdf:type rdf:resource="http://example.org/physics#DivisionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_GM_7"/>
+  <phys:hasRightOperand rdf:resource="#Res_r_1"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_v_sq_8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_v_sq_8">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_9_v">
+  <rdf:type rdf:resource="http://example.org/physics#SqrtExpression"/>
+  <phys:hasOperand rdf:resource="#Res_v_sq_8"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_v_9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_v_9">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_10_GM">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_G"/>
+  <phys:hasRightOperand rdf:resource="#phys_M_E"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_GM_10"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_GM_10">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_11_GMm">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_GM_10"/>
+  <phys:hasRightOperand rdf:resource="#phys_m"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_GMm_11"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_GMm_11">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_12_two_r">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_two"/>
+  <phys:hasRightOperand rdf:resource="#Res_r_1"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_two_r_12"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_two_r_12">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_13_Ef_mag">
+  <rdf:type rdf:resource="http://example.org/physics#DivisionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_GMm_11"/>
+  <phys:hasRightOperand rdf:resource="#Res_two_r_12"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_Ef_mag_13"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_Ef_mag_13">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_14_zero_final">
+  <rdf:type rdf:resource="http://example.org/physics#SubtractionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_G"/>
+  <phys:hasRightOperand rdf:resource="#phys_G"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_zero_final_14"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_zero_final_14">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_15_E_f">
+  <rdf:type rdf:resource="http://example.org/physics#SubtractionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_zero_final_14"/>
+  <phys:hasRightOperand rdf:resource="#Res_Ef_mag_13"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_E_f_15"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_E_f_15">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_16_Delta_E">
+  <rdf:type rdf:resource="http://example.org/physics#SubtractionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_E_f_15"/>
+  <phys:hasRightOperand rdf:resource="#Res_U_i_6"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_Delta_E_16"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_Delta_E_16">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_17_two_pi">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#phys_two"/>
+  <phys:hasRightOperand rdf:resource="#phys_pi"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_two_pi_17"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_two_pi_17">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_18_circumference">
+  <rdf:type rdf:resource="http://example.org/physics#MultiplicationExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_two_pi_17"/>
+  <phys:hasRightOperand rdf:resource="#Res_r_1"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_circumference_18"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_circumference_18">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Op_19_T">
+  <rdf:type rdf:resource="http://example.org/physics#DivisionExpression"/>
+  <phys:hasLeftOperand rdf:resource="#Res_circumference_18"/>
+  <phys:hasRightOperand rdf:resource="#Res_v_9"/>
+  <phys:hasResultMeasurement rdf:resource="#Res_T_19"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Res_T_19">
+  <rdf:type rdf:resource="http://example.org/physics#Measurement"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

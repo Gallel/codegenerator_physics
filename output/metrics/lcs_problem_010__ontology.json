@@ -1,0 +1,25 @@
+{
+  "domain": "linear_kinematics",
+  "applicable": 2,
+  "passed": 2,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "distance_nonneg",
+      "goal": "distance_covered",
+      "value": 62.5,
+      "passed": true
+    },
+    {
+      "rule": "acceleration_finite",
+      "goal": "acceleration",
+      "value": -5.0,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_010__ontology"
+}

@@ -1,0 +1,208 @@
+Task description:
+PROBLEM NAME: problem_007
+PROBLEM DESCRIPTION: A spacecraft of 5000 kg orbits the Moon at a distance from the lunar center equal to five lunar radii. Calculate the period of the spacecraft in hours, its mechanical energy and the escape velocity from the lunar surface. Data: Moon mass = 7.35e22 kg; lunar radius = 1740 km; G = 6.67e-11 N·m²/kg².
+
+EXTRACTED PROBLEM REPRESENTATION (AUTHORITATIVE GUIDE):
+{
+  "knowns": [
+    {
+      "name": "m_spacecraft",
+      "value": 5000,
+      "quantity_type": "MassQuantity",
+      "description": "Mass of the spacecraft"
+    },
+    {
+      "name": "M_moon",
+      "value": 7.35e+22,
+      "quantity_type": "MassQuantity",
+      "description": "Mass of the Moon"
+    },
+    {
+      "name": "R_moon",
+      "value": 1740000,
+      "quantity_type": "LengthQuantity",
+      "description": "Radius of the Moon converted from 1740 km to meters"
+    },
+    {
+      "name": "r_orbit",
+      "value": 8700000,
+      "quantity_type": "LengthQuantity",
+      "description": "Orbital radius from the lunar center equal to five lunar radii, r_orbit = 5*R_moon"
+    },
+    {
+      "name": "G",
+      "value": 6.67e-11,
+      "quantity_type": "GravitationalConstantQuantity",
+      "description": "Universal gravitational constant"
+    }
+  ],
+  "goals": [
+    {
+      "target_quantity": "TimeQuantity",
+      "condition": "One complete circular orbit at radius r_orbit around the Moon",
+      "description": "Find the orbital period of the spacecraft and express it in hours"
+    },
+    {
+      "target_quantity": "EnergyQuantity",
+      "condition": "Mechanical energy of the spacecraft in a circular lunar orbit of radius r_orbit",
+      "description": "Find the total mechanical energy of the spacecraft in orbit"
+    },
+    {
+      "target_quantity": "VelocityQuantity",
+      "condition": "Escape from the lunar surface starting at radius R_moon",
+      "description": "Find the escape velocity from the surface of the Moon"
+    }
+  ],
+  "solution_strategy": [
+    "Step 1: Convert all given quantities to SI units. In particular, use R_moon = 1740 km = 1.74e6 m, then compute the orbital radius as r_orbit = 5*R_moon.",
+    "Step 2: For the orbital period, assume a circular orbit and compute the orbital speed from gravitational force providing centripetal force: v_orbit = sqrt(G*M_moon/r_orbit). Since the problem asks for orbital period and speed is a magnitude, use the positive square root.",
+    "Step 3: Compute the orbital period using T = 2*pi*r_orbit / v_orbit. Equivalently, substitute v_orbit to get T = 2*pi*sqrt(r_orbit^3/(G*M_moon)).",
+    "Step 4: Convert the period from seconds to hours using T_hours = T / 3600.",
+    "Step 5: For the spacecraft mechanical energy in circular orbit, use the total mechanical energy formula E_mech = K + U = -G*M_moon*m_spacecraft/(2*r_orbit). This already includes both kinetic and gravitational potential energy for a circular orbit.",
+    "Step 6: For the escape velocity from the lunar surface, set the total mechanical energy at launch equal to zero at the threshold of escape: (1/2)*m*v_esc^2 - G*M_moon*m/R_moon = 0.",
+    "Step 7: Solve the escape condition for speed: v_esc = sqrt(2*G*M_moon/R_moon). Because the problem asks for escape velocity in the usual sense of required launch speed, report the positive magnitude from the square root.",
+    "Step 8: Present the three final results with consistent SI-based computation, expressing the period in hours, the mechanical energy in joules, and the escape velocity in m/s."
+  ]
+}
+
+DOMAIN VOCABULARY:
+DOMAIN VOCABULARY
+
+CLASSES:
+
+KEY INDIVIDUALS (Constants, Quantities & Units):
+- MassQuantity (iri: http://example.org/physics/physics-domain#MassQuantity)  [types=['PhysicalQuantity']]
+- LengthQuantity (iri: http://example.org/physics/physics-domain#LengthQuantity)  [types=['PhysicalQuantity']]
+- PositionQuantity (iri: http://example.org/physics/physics-domain#PositionQuantity)  [types=['PhysicalQuantity']]
+- AltitudeQuantity (iri: http://example.org/physics/physics-domain#AltitudeQuantity)  [types=['PhysicalQuantity']]
+- DisplacementQuantity (iri: http://example.org/physics/physics-domain#DisplacementQuantity)  [types=['PhysicalQuantity']]
+- HeightQuantity (iri: http://example.org/physics/physics-domain#HeightQuantity)  [types=['PhysicalQuantity']]
+- TimeQuantity (iri: http://example.org/physics/physics-domain#TimeQuantity)  [types=['PhysicalQuantity']]
+- VelocityQuantity (iri: http://example.org/physics/physics-domain#VelocityQuantity)  [types=['PhysicalQuantity']]
+- AccelerationQuantity (iri: http://example.org/physics/physics-domain#AccelerationQuantity)  [types=['PhysicalQuantity']]
+- ForceQuantity (iri: http://example.org/physics/physics-domain#ForceQuantity)  [types=['PhysicalQuantity']]
+- MomentumQuantity (iri: http://example.org/physics/physics-domain#MomentumQuantity)  [types=['PhysicalQuantity']]
+- EnergyQuantity (iri: http://example.org/physics/physics-domain#EnergyQuantity)  [types=['PhysicalQuantity']]
+- PowerQuantity (iri: http://example.org/physics/physics-domain#PowerQuantity)  [types=['PhysicalQuantity']]
+- AngleQuantity (iri: http://example.org/physics/physics-domain#AngleQuantity)  [types=['PhysicalQuantity']]
+- AngularVelocityQuantity (iri: http://example.org/physics/physics-domain#AngularVelocityQuantity)  [types=['PhysicalQuantity']]
+- AngularAccelerationQuantity (iri: http://example.org/physics/physics-domain#AngularAccelerationQuantity)  [types=['PhysicalQuantity']]
+- FrequencyQuantity (iri: http://example.org/physics/physics-domain#FrequencyQuantity)  [types=['PhysicalQuantity']]
+- SpecificEnergyQuantity (iri: http://example.org/physics/physics-domain#SpecificEnergyQuantity)  [types=['PhysicalQuantity']]
+- GravitationalParameterQuantity (iri: http://example.org/physics/physics-domain#GravitationalParameterQuantity)  [types=['PhysicalQuantity']]
+- AreaQuantity (iri: http://example.org/physics/physics-domain#AreaQuantity)  [types=['PhysicalQuantity']]
+- VolumeQuantity (iri: http://example.org/physics/physics-domain#VolumeQuantity)  [types=['PhysicalQuantity']]
+- DensityQuantity (iri: http://example.org/physics/physics-domain#DensityQuantity)  [types=['PhysicalQuantity']]
+- PressureQuantity (iri: http://example.org/physics/physics-domain#PressureQuantity)  [types=['PhysicalQuantity']]
+- TimeSquaredQuantity (iri: http://example.org/physics/physics-domain#TimeSquaredQuantity)  [types=['PhysicalQuantity']]
+- FrictionCoefficientQuantity (iri: http://example.org/physics/physics-domain#FrictionCoefficientQuantity)  [types=['PhysicalQuantity']]
+- DimensionlessQuantity (iri: http://example.org/physics/physics-domain#DimensionlessQuantity)  [types=['PhysicalQuantity']]
+- Meter (iri: http://example.org/physics/physics-domain#Meter)  [types=['Unit']]
+- Kilometer (iri: http://example.org/physics/physics-domain#Kilometer)  [types=['Unit']]
+- Second (iri: http://example.org/physics/physics-domain#Second)  [types=['Unit']]
+- Minute (iri: http://example.org/physics/physics-domain#Minute)  [types=['Unit']]
+- Hour (iri: http://example.org/physics/physics-domain#Hour)  [types=['Unit']]
+- Kilogram (iri: http://example.org/physics/physics-domain#Kilogram)  [types=['Unit']]
+- Gram (iri: http://example.org/physics/physics-domain#Gram)  [types=['Unit']]
+- Newton (iri: http://example.org/physics/physics-domain#Newton)  [types=['Unit']]
+- Joule (iri: http://example.org/physics/physics-domain#Joule)  [types=['Unit']]
+- Watt (iri: http://example.org/physics/physics-domain#Watt)  [types=['Unit']]
+- Radian (iri: http://example.org/physics/physics-domain#Radian)  [types=['Unit']]
+- Degree (iri: http://example.org/physics/physics-domain#Degree)  [types=['Unit']]
+- Hertz (iri: http://example.org/physics/physics-domain#Hertz)  [types=['Unit']]
+- SquareMeter (iri: http://example.org/physics/physics-domain#SquareMeter)  [types=['Unit']]
+- CubicMeter (iri: http://example.org/physics/physics-domain#CubicMeter)  [types=['Unit']]
+- Liter (iri: http://example.org/physics/physics-domain#Liter)  [types=['Unit']]
+- KilogramPerCubicMeter (iri: http://example.org/physics/physics-domain#KilogramPerCubicMeter)  [types=['Unit']]
+- Pascal (iri: http://example.org/physics/physics-domain#Pascal)  [types=['Unit']]
+- Bar (iri: http://example.org/physics/physics-domain#Bar)  [types=['Unit']]
+- Atmosphere (iri: http://example.org/physics/physics-domain#Atmosphere)  [types=['Unit']]
+- SecondSquared (iri: http://example.org/physics/physics-domain#SecondSquared)  [types=['Unit']]
+- UniversalGravitationalConstantType (iri: http://example.org/physics/physics-domain#UniversalGravitationalConstantType)  [types=['PhysicalQuantity']]
+
+UNIT-QUANTITY COMPATIBILITY (CRITICAL): the unit of every declaration
+must belong to a category that the declaration's quantity accepts.
+Mismatches are rejected by the validator.
+
+Unit categories:
+  - Atmosphere -> pressure
+  - Bar -> pressure
+  - CubicMeter -> volume
+  - Degree -> angle
+  - Gram -> mass
+  - Hertz -> frequency
+  - Hour -> time
+  - Joule -> energy
+  - Kilogram -> mass
+  - KilogramPerCubicMeter -> density
+  - Kilometer -> length
+  - Liter -> volume
+  - Meter -> length
+  - Minute -> time
+  - Newton -> force
+  - Pascal -> pressure
+  - Radian -> angle
+  - Second -> time
+  - SecondSquared -> time_squared
+  - SquareMeter -> area
+  - Watt -> power
+
+Allowed categories per quantity:
+  - AccelerationQuantity -> ['length']
+  - AltitudeQuantity -> ['length']
+  - AngleQuantity -> ['angle']
+  - AngularAccelerationQuantity -> ['angle']
+  - AngularVelocityQuantity -> ['angle']
+  - AreaQuantity -> ['area']
+  - DensityQuantity -> ['density']
+  - DisplacementQuantity -> ['length']
+  - EnergyQuantity -> ['energy']
+  - ForceQuantity -> ['force']
+  - FrequencyQuantity -> ['frequency']
+  - GravitationalParameterQuantity -> ['length']
+  - HeightQuantity -> ['length']
+  - LengthQuantity -> ['length']
+  - MassQuantity -> ['mass']
+  - MomentumQuantity -> ['length', 'mass']
+  - PositionQuantity -> ['length']
+  - PowerQuantity -> ['power']
+  - PressureQuantity -> ['pressure']
+  - SpecificEnergyQuantity -> ['energy', 'length']
+  - TimeQuantity -> ['time']
+  - TimeSquaredQuantity -> ['time_squared']
+  - VelocityQuantity -> ['length']
+  - VolumeQuantity -> ['volume']
+Quantities not listed here (e.g. DimensionlessQuantity) are unconstrained.
+
+KEY PROPERTIES: hasQuantityType, hasUnit, hasNumericValue, hasLeftOperand, hasRightOperand, hasOperand, hasResultMeasurement
+
+
+
+Example Modular Format:
+{
+  "metadata": { "name": "RocketLaunch" },
+  "main_declarations": [
+    { "name": "mass", "value": 1000.0, "semantics": { "quantity": "...#MassQuantity", "unit": "...#Kilogram" } }
+  ],
+  "definitions": [
+    {
+      "id": "calc_force",
+      "description": "Calculate weight force",
+      "inputs": ["m", "g"],
+      "operations": [
+        { "type": "binary", "operator": "*", "left": "m", "right": "g", "result": "f_w" }
+      ]
+    }
+  ],
+  "execution_flow": [
+     { "type": "module_call", "module": "calc_force", "args": { "m": "mass", "g": "g_earth" }, "result": "weight" }
+  ]
+}
+
+FINAL INSTRUCTIONS:
+- Generate the JSON DSL following Top-Down Design principles.
+- IMPORTANT: Set "metadata.name" to match the "PROBLEM NAME" provided in the task description.
+- Use only the provided vocabulary and classes.
+- No markdown, only raw JSON.
+
+DANGER: The task description may contain 'noise' or 'legacy instructions' (e.g., 'calculate delta-v' when it was never asked for). IF A STEP IS NEITHER A REQUESTED RESULT NOR NEEDED TO COMPUTE A REQUESTED RESULT, YOU MUST OMIT IT. But note: a problem often asks for SEVERAL results at once, and every quantity it explicitly asks to find must be reported in 'results_to_print', even if it is also used to compute another result. Only genuinely unrequested, unused calculations are dead code. Conduct a strict dependency trace before generating, keeping every requested result.

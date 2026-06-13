@@ -1,0 +1,78 @@
+[
+  {
+    "problem_id": "problem_002",
+    "branch": "ontology",
+    "record_type": "layer",
+    "layer": "generate_dsl",
+    "calls": 2,
+    "total_s": 22.881305,
+    "mean_s": 11.440653,
+    "min_s": 0.000532,
+    "max_s": 22.880774,
+    "prompt_tokens": 11514,
+    "completion_tokens": 3764
+  },
+  {
+    "problem_id": "problem_002",
+    "branch": "ontology",
+    "record_type": "layer",
+    "layer": "extract_problem",
+    "calls": 0,
+    "total_s": 0,
+    "mean_s": 0.0,
+    "min_s": 0.0,
+    "max_s": 0.0,
+    "prompt_tokens": 668,
+    "completion_tokens": 891
+  },
+  {
+    "problem_id": "problem_002",
+    "branch": "ontology",
+    "record_type": "layer",
+    "layer": "reasoner_pellet",
+    "calls": 1,
+    "total_s": 0.900606,
+    "mean_s": 0.900606,
+    "min_s": 0.900606,
+    "max_s": 0.900606,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+  },
+  {
+    "problem_id": "problem_002",
+    "branch": "ontology",
+    "record_type": "layer",
+    "layer": "emit_java",
+    "calls": 1,
+    "total_s": 0.00111,
+    "mean_s": 0.00111,
+    "min_s": 0.00111,
+    "max_s": 0.00111,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+  },
+  {
+    "problem_id": "problem_002",
+    "branch": "ontology",
+    "record_type": "layer",
+    "layer": "validate_dsl",
+    "calls": 2,
+    "total_s": 0.963453,
+    "mean_s": 0.481727,
+    "min_s": 0.029488,
+    "max_s": 0.933965,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+  },
+  {
+    "problem_id": "problem_002",
+    "branch": "ontology",
+    "record_type": "summary",
+    "layer": "ALL",
+    "iterations": 2,
+    "validation_passed": true,
+    "wall_total_s": 23.851331,
+    "prompt_tokens_total": 12182,
+    "completion_tokens_total": 4655
+  }
+]

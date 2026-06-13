@@ -1,0 +1,279 @@
+{
+  "program": "problem_006",
+  "steps": [
+    {
+      "expression": "Op_10_temp_diff",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_two_over_r_9",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_R_E",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 6370000.0
+        }
+      ],
+      "result": {
+        "name": "Res_temp_diff_10",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_r",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_R_E",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 6370000.0
+        },
+        {
+          "name": "phys_h",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 500000.0
+        }
+      ],
+      "result": {
+        "name": "Res_r_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v_orb",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_v_orb_sq_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_orb_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_12_v0",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_v0_sq_11",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v0_12",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M_E",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 5.98e+24
+        }
+      ],
+      "result": {
+        "name": "Res_GM_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M_E",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 5.98e+24
+        }
+      ],
+      "result": {
+        "name": "Res_GM_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_two_pi",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        }
+      ],
+      "result": {
+        "name": "Res_two_pi_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_circumference",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_pi_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_r_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_circumference_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_11_v0_sq",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_GM_8",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_temp_diff_10",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v0_sq_11",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_v_orb_sq",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GM_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_r_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_orb_sq_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_T",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_circumference_6",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_v_orb_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_T_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_two_over_r",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "Res_r_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_two_over_r_9",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "domain": "dynamics",
+  "applicable": 0,
+  "passed": 0,
+  "lcs": null,
+  "checks": [],
+  "branch": "ontology",
+  "lcs_std": null,
+  "lcs_max_correct": null,
+  "lcs_min_correct": null,
+  "problem_id": "problem_024__ontology"
+}

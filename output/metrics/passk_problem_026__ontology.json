@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "density_g_ml": {
+      "reference": 3.75,
+      "generated": 3.75,
+      "match": true,
+      "matched_by": "value"
+    },
+    "density_kg_m3": {
+      "reference": 3750.0,
+      "generated": 3750.0000000000005,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "rho_g_per_mL": 3.75,
+    "rho_kg_per_m3": 3750.0000000000005
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 3,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.6,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_026__ontology"
+}

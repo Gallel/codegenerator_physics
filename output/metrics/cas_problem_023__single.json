@@ -1,0 +1,49 @@
+{
+  "total_goals": 5,
+  "covered": 2,
+  "reported_by_name": 0,
+  "value_only": 2,
+  "reported_and_correct": 2,
+  "cas_lax": 0.16,
+  "cas_strict": 0.16,
+  "goals": {
+    "advance_force": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "return_force": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "air_volume_advance": {
+      "matched_by": null,
+      "correct": false,
+      "covered": false,
+      "reported_by_name": false
+    },
+    "air_volume_return": {
+      "matched_by": null,
+      "correct": false,
+      "covered": false,
+      "reported_by_name": false
+    },
+    "total_air_volume_cycle": {
+      "matched_by": null,
+      "correct": false,
+      "covered": false,
+      "reported_by_name": false
+    }
+  },
+  "branch": "single",
+  "cas_lax_std": 0.19595917942265426,
+  "cas_lax_max_correct": null,
+  "cas_lax_min_correct": null,
+  "cas_strict_std": 0.19595917942265426,
+  "cas_strict_max_correct": null,
+  "cas_strict_min_correct": null,
+  "problem_id": "problem_023__single"
+}

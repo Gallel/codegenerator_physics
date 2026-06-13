@@ -1,0 +1,5 @@
+Outcome,single,ontology
+not well formed,4 (3.0%),0 (0.0%)
+"well formed, not correct",29 (21.5%),28 (20.7%)
+correct,102 (75.6%),107 (79.3%)
+total samples,135,135

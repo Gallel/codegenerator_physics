@@ -1,0 +1,53 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": false,
+  "error": null,
+  "goals": {
+    "advance_force": {
+      "reference": 2307.9,
+      "generated": 2309.070600388498,
+      "match": true,
+      "matched_by": "value"
+    },
+    "return_force": {
+      "reference": 2013.52,
+      "generated": 2014.5462891144552,
+      "match": true,
+      "matched_by": "value"
+    },
+    "air_volume_advance": {
+      "reference": 0.38,
+      "generated": null,
+      "match": false,
+      "matched_by": null
+    },
+    "air_volume_return": {
+      "reference": 0.34,
+      "generated": null,
+      "match": false,
+      "matched_by": null
+    },
+    "total_air_volume_cycle": {
+      "reference": 0.72,
+      "generated": null,
+      "match": false,
+      "matched_by": null
+    }
+  },
+  "produced": {
+    "F_advance": 2309.070600388498,
+    "F_return": 2014.5462891144552,
+    "V_advance": 0.0003848451000647497,
+    "V_return": 0.0003357577148524092,
+    "V_total": 0.0007206028149171589
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 0,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.0,
+  "pass_at_5": 0.0,
+  "problem_id": "problem_023__ontology"
+}

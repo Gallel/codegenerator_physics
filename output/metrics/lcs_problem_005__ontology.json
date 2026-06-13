@@ -1,0 +1,31 @@
+{
+  "domain": "gravitation",
+  "applicable": 3,
+  "passed": 3,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "mass_positive",
+      "goal": "mass_of_didymos",
+      "value": 535280523455.96045,
+      "passed": true
+    },
+    {
+      "rule": "surface_gravity_positive",
+      "goal": "surface_gravity_didymos",
+      "value": 0.00023413438508043997,
+      "passed": true
+    },
+    {
+      "rule": "force_positive",
+      "goal": "gravitational_force_on_dimorphos",
+      "value": 1258037.2468283284,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_005__ontology"
+}

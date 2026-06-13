@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "period": {
+      "reference": 0.1,
+      "generated": 0.1,
+      "match": true,
+      "matched_by": "value"
+    },
+    "angular_velocity": {
+      "reference": 62.83,
+      "generated": 62.83185307179586,
+      "match": true,
+      "matched_by": "value"
+    },
+    "linear_velocity": {
+      "reference": 31.42,
+      "generated": 31.41592653589793,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "T": 0.1,
+    "omega": 62.83185307179586,
+    "v": 31.41592653589793
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_014__single"
+}

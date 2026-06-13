@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resultats del benchmark — TFM</title>
+<style>
+  :root {
+    --bg:        #f7f7f5;
+    --panel:    #ffffff;
+    --border:   #d8d8d4;
+    --ink:      #1f2933;
+    --muted:    #5b6573;
+    --accent:   #2d6a4f;
+    --accent-l: #d8f1e2;
+    --code-bg:  #f0efe8;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.5;
+    display: flex; flex-direction: column; min-height: 100vh;
+  }
+  header {
+    padding: 24px 32px; background: var(--panel); border-bottom: 1px solid var(--border);
+    flex: 0 0 auto;
+  }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header p  { margin: 0; color: var(--muted); font-size: 14px; }
+  main {
+    padding: 24px 32px 60px; max-width: 1200px; width: 100%;
+    flex: 1 1 auto; margin: 0 auto;
+  }
+  main h2 { margin: 0 0 8px; font-size: 20px; }
+  main > p.lead { margin: 0 0 18px; color: var(--muted); }
+  h3 { margin: 26px 0 8px; font-size: 16px; }
+  p.fig-desc { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+
+  /* Tabs */
+  .tabs {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    border-bottom: 1px solid var(--border); margin-bottom: 24px;
+  }
+  .tab-btn {
+    background: transparent; border: 1px solid var(--border); border-bottom: none;
+    padding: 10px 16px; cursor: pointer; font-size: 14px;
+    color: var(--muted); border-radius: 6px 6px 0 0;
+    font-family: inherit; transition: background 0.15s, color 0.15s;
+  }
+  .tab-btn:hover { background: var(--accent-l); color: var(--accent); }
+  .tab-btn.active {
+    background: var(--panel); color: var(--accent); font-weight: 600;
+    border-color: var(--border); position: relative; top: 1px;
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Figure cards */
+  .figure-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+    padding: 18px; margin-bottom: 22px;
+  }
+  .figure-card img {
+    max-width: 100%; height: auto; display: block;
+    margin: 0 auto; border: 1px solid var(--border); border-radius: 4px;
+    background: #fff;
+  }
+  .figure-card h3 { margin-top: 0; }
+
+  /* Grids for status per problem */
+  .grid-status {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px; margin-top: 8px;
+  }
+  .grid-status .figure-card { padding: 10px; margin-bottom: 0; }
+  .grid-status .figure-card img { border-radius: 4px; }
+  .grid-status .figure-card p { margin: 6px 0 0; font-size: 13px; text-align: center; color: var(--muted); }
+
+  /* Tables */
+  table {
+    border-collapse: collapse; width: 100%; background: var(--panel);
+    border: 1px solid var(--border); margin: 8px 0 18px; font-size: 14px;
+  }
+  th, td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: #efefea; font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--code-bg); border-radius: 3px; padding: 1px 6px; font-size: 13px;
+  }
+  .small { font-size: 13px; color: var(--muted); }
+  .tag {
+    display: inline-block; padding: 1px 8px; border-radius: 10px;
+    background: var(--accent-l); color: var(--accent); font-size: 12px; font-weight: 500;
+  }
+  footer {
+    padding: 16px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px;
+    background: var(--panel); flex: 0 0 auto;
+  }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 960px) {
+    header { padding: 18px 22px; }
+    main { padding: 20px 22px 48px; }
+    footer { padding: 14px 22px; }
+  }
+  @media (max-width: 760px) {
+    header { padding: 16px 18px; }
+    header h1 { font-size: 19px; }
+    header p { font-size: 13px; }
+    main { padding: 18px 18px 40px; }
+    footer { padding: 12px 18px; font-size: 12px; }
+    main h2 { font-size: 18px; }
+    th, td { padding: 7px 10px; }
+    main table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tab-btn { padding: 8px 12px; font-size: 13px; }
+  }
+  @media (max-width: 420px) {
+    header { padding: 14px 14px; }
+    header h1 { font-size: 17px; }
+    main { padding: 14px 14px 36px; }
+    body { font-size: 14px; }
+    table { font-size: 13px; }
+    .grid-status { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Resultats del benchmark</h1>
+  <p>Recull de totes les gràfiques i taules generades durant l'execució del benchmark del prototip. Es presenten organitzades per categories per facilitar la consulta dels resultats de cada mètrica.</p>
+</header>
+
+<main>
+
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="summary">Visió general</button>
+    <button class="tab-btn" data-tab="passk">Pass@k</button>
+    <button class="tab-btn" data-tab="lcs-cas">LCS i CAS</button>
+    <button class="tab-btn" data-tab="codebleu">CodeBLEU</button>
+    <button class="tab-btn" data-tab="efficiency">Eficiència</button>
+    <button class="tab-btn" data-tab="correlation">Correlacions</button>
+    <button class="tab-btn" data-tab="per-problem">Per problema</button>
+    <button class="tab-btn" data-tab="tables">Taules</button>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- VISIÓ GENERAL                                                -->
+  <!-- ============================================================ -->
+  <div class="tab-content active" id="tab-summary">
+    <h2>Visió general</h2>
+    <p class="lead">Resum global de l'execució del benchmark sobre els 27 problemes del corpus, amb 5 mostres per problema i les dues branques (single i ontology).</p>
+
+    <div class="figure-card">
+      <h3>Resum d'ablació: single vs ontology</h3>
+      <p class="fig-desc">Comparació de les mètriques principals (Pass@1, CodeBLEU, LCS, CAS-strict) entre les dues branques, amb intervals de confiança al 95%.</p>
+      <img src="../output/metrics/plots/12_ablation_summary.png" alt="Resum d'ablació amb les mètriques principals">
+    </div>
+
+    <div class="figure-card">
+      <h3>Outcome per problema</h3>
+      <p class="fig-desc">Distribució dels samples per problema i per branca, separats en tres categories: correct, well formed but not correct, i not well formed.</p>
+      <img src="../output/metrics/plots/04_status_per_problem.png" alt="Outcome per problema">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PASS@K                                                       -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-passk">
+    <h2>Pass@k</h2>
+    <p class="lead">Mètrica de correctesa funcional. Pass@1 i Pass@5 calculats amb l'estimador no esbiaixat de Chen et al. sobre les 5 mostres per problema.</p>
+
+    <div class="figure-card">
+      <h3>Pass@k per domini físic</h3>
+      <p class="fig-desc">Distribució de Pass@k per cadascun dels subdominis físics representats al corpus, amb el nombre d'execucions anotat.</p>
+      <img src="../output/metrics/plots/02_passk_by_domain.png" alt="Pass@k per domini">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- LCS I CAS                                                    -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-lcs-cas">
+    <h2>LCS i CAS</h2>
+    <p class="lead">Mètriques de coherència lògica (LCS) i contextual (CAS). LCS comprova si el codi respecta unes regles físiques predefinides. CAS comprova si el programa cobreix els objectius de l'enunciat.</p>
+
+    <div class="figure-card">
+      <h3>Compliment per regla de LCS</h3>
+      <p class="fig-desc">Fracció de comprovacions superades per cada regla LCS, restringit a les regles amb un mínim d'aplicacions sobre el corpus.</p>
+      <img src="../output/metrics/plots/07_lcs_rule_compliance.png" alt="Compliment per regla LCS">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CODEBLEU                                                     -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-codebleu">
+    <h2>CodeBLEU</h2>
+    <p class="lead">Mètrica de similitud estructural entre el codi Java emès i la solució de referència del corpus. Mesura n-grams, n-grams ponderats, similitud sintàctica i flux de dades.</p>
+
+    <div class="figure-card">
+      <h3>Distribució de CodeBLEU per branca</h3>
+      <p class="fig-desc">Diagrama de caixa amb la distribució de CodeBLEU per branca.</p>
+      <img src="../output/metrics/plots/05_codebleu_distribution.png" alt="Distribució de CodeBLEU">
+    </div>
+
+    <div class="figure-card">
+      <h3>Components de CodeBLEU</h3>
+      <p class="fig-desc">Desglossament de CodeBLEU als seus quatre components (ngram_match, weighted_ngram_match, syntax_match, dataflow_match) per branca.</p>
+      <img src="../output/metrics/plots/06_codebleu_components.png" alt="Components de CodeBLEU">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- EFICIÈNCIA                                                   -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-efficiency">
+    <h2>Eficiència</h2>
+    <p class="lead">Mètriques d'eficiència computacional: temps per fase de la pipeline, distribució d'iteracions del cicle d'autocorrecció i cost en tokens per resposta correcta.</p>
+
+    <div class="figure-card">
+      <h3>Temps per capa de la pipeline</h3>
+      <p class="fig-desc">Temps mitjà per capa (extracció, generació del DSL, validació, raonament Pellet i emissió Java) per cadascuna de les dues branques.</p>
+      <img src="../output/metrics/plots/09_efficiency_time_per_layer.png" alt="Temps per capa">
+    </div>
+
+    <div class="figure-card">
+      <h3>Distribució d'iteracions del cicle d'autocorrecció</h3>
+      <p class="fig-desc">Nombre de samples que validen el DSL a cada iteració del cicle d'autocorrecció, fins al límit configurat de 5 iteracions.</p>
+      <img src="../output/metrics/plots/10_iterations_histogram.png" alt="Histograma d'iteracions">
+    </div>
+
+    <div class="figure-card">
+      <h3>Iteracions vs resultat de Pass@k</h3>
+      <p class="fig-desc">Distribució d'iteracions creuada amb el resultat de Pass@k. Permet veure si el cicle d'autocorrecció convergeix a samples correctes o incorrectes.</p>
+      <img src="../output/metrics/plots/14_iterations_outcome.png" alt="Iteracions vs outcome">
+    </div>
+
+    <div class="figure-card">
+      <h3>Cost en tokens per resposta correcta</h3>
+      <p class="fig-desc">Tokens consumits per resposta correcta per problema i per branca. Mètrica que reflecteix l'equilibri real entre cost addicional i guany en correctesa.</p>
+      <img src="../output/metrics/plots/13_cost_per_correct.png" alt="Cost per resposta correcta">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CORRELACIONS                                                 -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-correlation">
+    <h2>Correlacions</h2>
+    <p class="lead">Anàlisi de correlacions entre les diferents mètriques per identificar si mesuren aspectes complementaris o redundants.</p>
+
+    <div class="figure-card">
+      <h3>Pass@1 vs CodeBLEU per problema</h3>
+      <p class="fig-desc">Dispersió de Pass@1 enfront de CodeBLEU per cada problema. Inclou la correlació de Spearman al títol.</p>
+      <img src="../output/metrics/plots/11_pass_vs_codebleu.png" alt="Pass vs CodeBLEU">
+    </div>
+
+    <div class="figure-card">
+      <h3>Matriu de correlació entre mètriques</h3>
+      <p class="fig-desc">Matriu de correlació de Spearman entre Pass@1, Pass@5, LCS, CAS-strict i CodeBLEU sobre la branca ontology.</p>
+      <img src="../output/metrics/plots/15_metrics_correlation.png" alt="Matriu de correlació">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PER PROBLEMA                                                 -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-per-problem">
+    <h2>Per problema</h2>
+    <p class="lead">Outcome individual de cadascun dels 27 problemes del corpus, mostrant la distribució de samples per branca. Permet localitzar ràpidament casos destacats com els grans guanys, les regressions o els problemes irresolubles.</p>
+
+    <div class="grid-status">
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_001.png" alt="Problema 001"><p>problem_001</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_002.png" alt="Problema 002"><p>problem_002</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_003.png" alt="Problema 003"><p>problem_003</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_004.png" alt="Problema 004"><p>problem_004</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_005.png" alt="Problema 005"><p>problem_005</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_006.png" alt="Problema 006"><p>problem_006</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_007.png" alt="Problema 007"><p>problem_007</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_008.png" alt="Problema 008"><p>problem_008</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_009.png" alt="Problema 009"><p>problem_009</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_010.png" alt="Problema 010"><p>problem_010</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_011.png" alt="Problema 011"><p>problem_011</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_012.png" alt="Problema 012"><p>problem_012</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_013.png" alt="Problema 013"><p>problem_013</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_014.png" alt="Problema 014"><p>problem_014</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_015.png" alt="Problema 015"><p>problem_015</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_016.png" alt="Problema 016"><p>problem_016</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_017.png" alt="Problema 017"><p>problem_017</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_018.png" alt="Problema 018"><p>problem_018</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_019.png" alt="Problema 019"><p>problem_019</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_020.png" alt="Problema 020"><p>problem_020</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_021.png" alt="Problema 021"><p>problem_021</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_022.png" alt="Problema 022"><p>problem_022</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_023.png" alt="Problema 023"><p>problem_023</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_024.png" alt="Problema 024"><p>problem_024</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_025.png" alt="Problema 025"><p>problem_025</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_026.png" alt="Problema 026"><p>problem_026</p></div>
+      <div class="figure-card"><img src="../output/metrics/plots/status_per_problem/status_problem_027.png" alt="Problema 027"><p>problem_027</p></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- TAULES                                                       -->
+  <!-- ============================================================ -->
+  <div class="tab-content" id="tab-tables">
+    <h2>Taules resum</h2>
+    <p class="lead">Taules consolidades amb les xifres exactes de cada mètrica. Cada taula es presenta com a imatge i té els fitxers CSV i HTML associats al directori <code>output/metrics/tables/</code>.</p>
+
+    <div class="figure-card">
+      <h3>Taula 1: Resum principal</h3>
+      <p class="fig-desc">Mitjana de cada mètrica principal (Pass@1, Pass@5, LCS, CAS-lax, CAS-strict, CodeBLEU) per branca amb intervals de confiança al 95%.</p>
+      <img src="../output/metrics/tables/table1_main_results.png" alt="Taula 1 - Resum principal">
+    </div>
+
+    <div class="figure-card">
+      <h3>Taula 2: Per domini físic</h3>
+      <p class="fig-desc">Pass@k segregat per subdomini físic del corpus.</p>
+      <img src="../output/metrics/tables/table2_by_domain.png" alt="Taula 2 - Per domini">
+    </div>
+
+    <div class="figure-card">
+      <h3>Taula 3: Components de CodeBLEU</h3>
+      <p class="fig-desc">Desglossament dels quatre components de CodeBLEU per branca.</p>
+      <img src="../output/metrics/tables/table3_codebleu_components.png" alt="Taula 3 - Components CodeBLEU">
+    </div>
+
+    <div class="figure-card">
+      <h3>Taula 4: Outcome per branca</h3>
+      <p class="fig-desc">Distribució de samples per categoria d'outcome (correct, compiled not correct, not well formed) per branca.</p>
+      <img src="../output/metrics/tables/table4_outcome_by_branch.png" alt="Taula 4 - Outcome per branca">
+    </div>
+
+    <div class="figure-card">
+      <h3>Taula 5: Eficiència en tokens</h3>
+      <p class="fig-desc">Cost mitjà en tokens per branca i per resposta correcta.</p>
+      <img src="../output/metrics/tables/table5_token_efficiency.png" alt="Taula 5 - Eficiència en tokens">
+    </div>
+
+    <div class="figure-card">
+      <h3>Taula A: Compliment de regles LCS</h3>
+      <p class="fig-desc">Llistat complet de regles LCS aplicades durant el benchmark amb el nombre d'aplicacions i el percentatge de compliment de cadascuna.</p>
+      <img src="../output/metrics/tables/tableA_lcs_rules.png" alt="Taula A - Regles LCS">
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="https://github.com/Gallel/codegenerator_physics" target="_blank" rel="noopener">github.com/Gallel/codegenerator_physics</a>
+</footer>
+
+<script>
+  document.addEventListener('click', function (event) {
+    var btn = event.target.closest('.tab-btn');
+    if (!btn) return;
+    var tabId = btn.getAttribute('data-tab');
+    var tabsRoot = btn.closest('.tabs');
+    var allBtns = tabsRoot.querySelectorAll('.tab-btn');
+    allBtns.forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var allContents = document.querySelectorAll('.tab-content');
+    allContents.forEach(function (c) { c.classList.remove('active'); });
+    var target = document.getElementById('tab-' + tabId);
+    if (target) target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  });
+</script>
+
+</body>
+</html>

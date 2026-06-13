@@ -1,0 +1,25 @@
+{
+  "total_goals": 1,
+  "covered": 1,
+  "reported_by_name": 1,
+  "value_only": 0,
+  "reported_and_correct": 1,
+  "cas_lax": 1.0,
+  "cas_strict": 1.0,
+  "goals": {
+    "kinetic_energy": {
+      "matched_by": "name",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": true
+    }
+  },
+  "branch": "single",
+  "cas_lax_std": 0.0,
+  "cas_lax_max_correct": 1.0,
+  "cas_lax_min_correct": 1.0,
+  "cas_strict_std": 0.0,
+  "cas_strict_max_correct": 1.0,
+  "cas_strict_min_correct": 1.0,
+  "problem_id": "problem_022__single"
+}

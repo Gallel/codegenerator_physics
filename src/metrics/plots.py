@@ -57,9 +57,10 @@ def _problem_meta():
     return meta
 
 
-def _save(fig, filename):
-    PLOTS_DIR.mkdir(parents=True, exist_ok=True)
-    path = PLOTS_DIR / filename
+def _save(fig, filename, subdir=None):
+    target = PLOTS_DIR / subdir if subdir else PLOTS_DIR
+    target.mkdir(parents=True, exist_ok=True)
+    path = target / filename
     fig.savefig(path, dpi=DPI, bbox_inches="tight")
     plt.close(fig)
     print("[INFO] wrote " + str(path))
@@ -528,6 +529,246 @@ def plot_ablation_summary(passk, codebleu, lcsSummary, cas):
     _save(fig, "12_ablation_summary.png")
 
 
+# ---------------------------------------------------------------------------
+# Single-problem status: same categorisation as plot_status_per_problem, but
+# for ONE problem only. Useful when a specific problem deserves a callout in
+# the results chapter (e.g. an interesting failure or a clear ablation gain).
+# Saves to status_<problem_id>.png so multiple calls don't overwrite.
+# ---------------------------------------------------------------------------
+def plot_status_single_problem(passk, problem_id):
+    branches = _branches_present(passk)
+    if not branches:
+        return
+    # passk_summary uses ids like 'problem_001__ontology'; normalise both sides.
+    rows = [r for r in passk if _strip_branch_suffix(r["problem_id"]) == problem_id]
+    if not rows:
+        print("[WARN] no rows for " + problem_id + " in passk_summary.csv")
+        return
+    byBranch = {r.get("branch") or "ontology": r for r in rows}
+
+    import numpy as np
+    cats = {}
+    for b in branches:
+        r = byBranch.get(b, {})
+        ni = _num(r.get("n_samples")) or 0
+        ci = _num(r.get("n_compiled")) or 0
+        co = _num(r.get("n_correct")) or 0
+        cats[b] = {"correct": co, "compNotOk": ci - co, "failComp": ni - ci, "total": ni}
+
+    x = np.arange(len(branches))
+    fig, ax = plt.subplots(figsize=(4.5, 4.5))
+    C_OK, C_WF, C_NF = "#55A868", "#DD8452", "#C44E52"
+    width = 0.55
+    for i, b in enumerate(branches):
+        c = cats[b]
+        ax.bar(x[i], c["correct"], width, color=C_OK,
+               label="correct" if i == 0 else None)
+        ax.bar(x[i], c["compNotOk"], width, bottom=c["correct"], color=C_WF,
+               label="well formed, not correct" if i == 0 else None)
+        ax.bar(x[i], c["failComp"], width,
+               bottom=c["correct"] + c["compNotOk"], color=C_NF,
+               label="not well formed" if i == 0 else None)
+        # Numeric annotation inside each segment if it's tall enough.
+        running = 0
+        for value, color in [(c["correct"], C_OK), (c["compNotOk"], C_WF), (c["failComp"], C_NF)]:
+            if value > 0:
+                ax.text(x[i], running + value / 2, str(int(value)),
+                        ha="center", va="center", color="white", fontsize=10, fontweight="bold")
+            running += value
+
+    ax.set_xticks(x)
+    ax.set_xticklabels([BRANCH_LABEL.get(b, b) for b in branches])
+    ax.set_ylabel("samples")
+    ax.set_title("Outcome for " + problem_id)
+    ax.legend(loc="upper right", fontsize=8)
+    # Saved under a dedicated subdir so the main plots directory stays tidy
+    # even with 27 single-problem charts.
+    _save(fig, "status_" + problem_id + ".png", subdir="status_per_problem")
+
+
+# ---------------------------------------------------------------------------
+# 13. Token cost per correct answer (single vs ontology, per problem).
+# ---------------------------------------------------------------------------
+def _strip_branch_suffix(pid):
+    # passk_summary uses 'problem_001__ontology' as id while efficiency_summary
+    # uses 'problem_001' + a separate branch column. Normalise to bare id.
+    for suf in ("__ontology", "__single"):
+        if pid.endswith(suf):
+            return pid[: -len(suf)]
+    return pid
+
+
+def plot_cost_per_correct(passk, effSummary):
+    # For each (problem, branch), compute total tokens / number of correct
+    # samples. This is the most fair efficiency comparison: it absorbs the
+    # difference in cost-per-call AND the difference in success rate. When a
+    # branch has 0 correct samples we drop the bar (cost is undefined).
+    correctById = {}
+    for r in passk:
+        pid = _strip_branch_suffix(r["problem_id"])
+        key = (pid, r["branch"])
+        n = _num(r.get("n_correct"))
+        if n is not None and n > 0:
+            correctById[key] = n
+
+    tokensById = {}
+    for r in effSummary:
+        pid = _strip_branch_suffix(r["problem_id"])
+        key = (pid, r["branch"])
+        prompt = _num(r.get("prompt_tokens_total")) or 0
+        compl = _num(r.get("completion_tokens_total")) or 0
+        # efficiency_summary has one row per sample; sum across samples.
+        prev = tokensById.get(key, 0.0)
+        tokensById[key] = prev + (prompt + compl)
+
+    branches = _branches_present(passk)
+    if not branches:
+        return
+    problems = sorted({_strip_branch_suffix(r["problem_id"]) for r in passk})
+    keepProblems = [pid for pid in problems if any((pid, b) in correctById for b in branches)]
+    if not keepProblems:
+        print("[WARN] cost_per_correct: no problem has correct samples in any branch")
+        return
+
+    fig, ax = plt.subplots(figsize=(max(8, len(keepProblems) * 0.55), 4.5))
+    width = 0.8 / max(1, len(branches))
+    xs = range(len(keepProblems))
+    for i, b in enumerate(branches):
+        vals = []
+        for pid in keepProblems:
+            tokens = tokensById.get((pid, b))
+            correct = correctById.get((pid, b))
+            if tokens is None or correct is None or correct == 0:
+                vals.append(0.0)
+            else:
+                vals.append(tokens / correct)
+        offs = [x + (i - (len(branches) - 1) / 2) * width for x in xs]
+        ax.bar(offs, vals, width,
+               label=BRANCH_LABEL.get(b, b), color=BRANCH_COLOR.get(b), alpha=0.85)
+
+    ax.set_xticks(list(xs))
+    ax.set_xticklabels(keepProblems, rotation=60, ha="right", fontsize=8)
+    ax.set_ylabel("tokens per correct answer")
+    ax.set_title("Token cost per correct sample")
+    ax.legend()
+    _save(fig, "13_cost_per_correct.png")
+
+
+# ---------------------------------------------------------------------------
+# 14. Iterations vs outcome (improved version of 10, splits by Pass@k).
+# ---------------------------------------------------------------------------
+def plot_iterations_outcome(effSummary, passk):
+    # Improvement over plot_iterations_histogram: instead of just
+    # 'validated vs exhausted', cross the iteration count with the actual
+    # Pass@k outcome of that sample. This shows whether the self-correction
+    # loop converges to correct samples or just to "validated but wrong".
+    rows = _filter_branch(effSummary, "ontology")
+    if not rows:
+        return
+
+    # Map (problem_id, sample) -> passed Pass@k. We use n_correct/n_samples at
+    # problem-level as a proxy if per-sample passing is not available; for an
+    # accurate per-sample mapping see _per_sample_correct() at run_benchmark.
+    correctRate = {}
+    for r in passk:
+        if r["branch"] != "ontology":
+            continue
+        n = _num(r.get("n_samples"))
+        c = _num(r.get("n_correct"))
+        if n and n > 0:
+            correctRate[_strip_branch_suffix(r["problem_id"])] = (c or 0) / n
+
+    correctIts, wrongIts = [], []
+    for r in rows:
+        it = _num(r["iterations"])
+        if it is None:
+            continue
+        rate = correctRate.get(_strip_branch_suffix(r["problem_id"]), 0.0)
+        # Approximate: treat the sample as correct with probability rate.
+        # This is a per-problem aggregate; for exact per-sample data, the
+        # benchmark would have to record passed-flag in efficiency_summary.
+        if rate >= 0.5:
+            correctIts.append(it)
+        else:
+            wrongIts.append(it)
+
+    if not correctIts and not wrongIts:
+        return
+    maxIt = int(max((correctIts + wrongIts) + [MAX_ITERATIONS]))
+    edges = [b - 0.5 for b in range(1, maxIt + 2)]
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.hist([correctIts, wrongIts], bins=edges, stacked=True,
+            color=["#55A868", "#C44E52"],
+            label=["mostly correct (Pass@k >= 0.5)", "mostly wrong (Pass@k < 0.5)"])
+    ax.set_xlabel("iterations to validate (ontology branch)")
+    ax.set_ylabel("number of runs")
+    ax.set_xticks(list(range(1, maxIt + 1)))
+    ax.set_title("Self-correction iterations vs Pass@k outcome")
+    ax.legend(fontsize=8)
+    _save(fig, "14_iterations_outcome.png")
+
+
+# ---------------------------------------------------------------------------
+# 15. Spearman correlation matrix across metrics (ontology branch).
+# ---------------------------------------------------------------------------
+def plot_metrics_correlation(passk, lcsSummary, cas, codebleu):
+    # Correlation matrix between Pass@1, Pass@5, LCS, CAS-strict, CodeBLEU
+    # over the ontology branch. Spearman because the metrics are not normal
+    # and Pass@k is discretised. A near-1 correlation means the two metrics
+    # measure essentially the same thing; a near-0 means they capture
+    # different aspects. Useful evidence for the multi-metric decision.
+    series = {}
+
+    def collect(rows, col, label):
+        if not rows:
+            return
+        m = {}
+        for r in _filter_branch(rows, "ontology"):
+            v = _num(r.get(col))
+            if v is not None:
+                m[_strip_branch_suffix(r["problem_id"])] = v
+        if m:
+            series[label] = m
+
+    collect(passk, "pass_at_1", "Pass@1")
+    collect(passk, "pass_at_5", "Pass@5")
+    collect(lcsSummary, "lcs", "LCS")
+    collect(cas, "cas_strict", "CAS-strict")
+    collect(codebleu, "codebleu", "CodeBLEU")
+
+    if len(series) < 2:
+        return
+
+    labels = list(series.keys())
+    n = len(labels)
+    matrix = [[1.0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(i + 1, n):
+            common = set(series[labels[i]]).intersection(series[labels[j]])
+            if len(common) < 3:
+                rho = None
+            else:
+                xs = [series[labels[i]][p] for p in common]
+                ys = [series[labels[j]][p] for p in common]
+                rho, _ = spearman(xs, ys)
+            matrix[i][j] = rho if rho is not None else 0.0
+            matrix[j][i] = matrix[i][j]
+
+    fig, ax = plt.subplots(figsize=(6, 5))
+    im = ax.imshow(matrix, cmap="RdBu_r", vmin=-1, vmax=1)
+    ax.set_xticks(range(n))
+    ax.set_yticks(range(n))
+    ax.set_xticklabels(labels, rotation=45, ha="right")
+    ax.set_yticklabels(labels)
+    for i in range(n):
+        for j in range(n):
+            ax.text(j, i, "%.2f" % matrix[i][j], ha="center", va="center",
+                    color="white" if abs(matrix[i][j]) > 0.5 else "black", fontsize=9)
+    ax.set_title("Spearman correlation between metrics (ontology branch)")
+    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+    _save(fig, "15_metrics_correlation.png")
+
+
 def main():
     meta = _problem_meta()
     passk = _read_csv("passk_summary.csv")
@@ -545,6 +786,11 @@ def main():
     if passk:
         plot_status_per_problem(passk)            # per-problem outcome (27 bars)
         plot_passk_by_domain(passk, meta)         # single vs ontology per domain, n annotated
+        # One status chart per problem, saved under plots/status_per_problem/
+        # so the main plots directory stays clean. Useful to highlight specific
+        # problems in chapter 5.
+        for pid in sorted({_strip_branch_suffix(r["problem_id"]) for r in passk}):
+            plot_status_single_problem(passk, pid)
     if codebleu:
         plot_codebleu_distribution(codebleu)      # boxplot by branch
         plot_codebleu_components(codebleu)        # 4-component breakdown
@@ -558,9 +804,27 @@ def main():
         plot_pass_vs_codebleu(passk, codebleu)    # scatter + Spearman
     if passk:
         plot_ablation_summary(passk, codebleu or [], lcsSummary or [], cas or [])  # headline
+    if passk and effSummary:
+        plot_cost_per_correct(passk, effSummary)      # 13: tokens per correct sample
+        plot_iterations_outcome(effSummary, passk)    # 14: iterations vs Pass@k outcome
+    if passk:
+        plot_metrics_correlation(passk, lcsSummary or [], cas or [], codebleu or [])  # 15
 
     print("[INFO] plots written to " + str(PLOTS_DIR))
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    # Quick mode: `python -m src.metrics.plots status problem_007 problem_018`
+    # only regenerates the single-problem status plots, without rerunning all
+    # the (heavier) summary figures. Useful when iterating on the chapter.
+    if len(sys.argv) >= 3 and sys.argv[1] == "status":
+        passk = _read_csv("passk_summary.csv")
+        if not passk:
+            print("[ERROR] passk_summary.csv is empty or missing; run the benchmark first.")
+            sys.exit(1)
+        for pid in sys.argv[2:]:
+            plot_status_single_problem(passk, pid)
+        print("[INFO] single-problem status plots written to " + str(PLOTS_DIR))
+    else:
+        main()

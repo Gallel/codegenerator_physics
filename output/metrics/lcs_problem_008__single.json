@@ -1,0 +1,31 @@
+{
+  "domain": "linear_kinematics",
+  "applicable": 3,
+  "passed": 3,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "acceleration_finite",
+      "goal": "acceleration_segment_1",
+      "value": 3.0,
+      "passed": true
+    },
+    {
+      "rule": "acceleration_finite",
+      "goal": "acceleration_segment_2",
+      "value": 0.0,
+      "passed": true
+    },
+    {
+      "rule": "acceleration_finite",
+      "goal": "acceleration_segment_3",
+      "value": -2.0,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_008__single"
+}

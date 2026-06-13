@@ -1,0 +1,25 @@
+{
+  "domain": "free_fall",
+  "applicable": 2,
+  "passed": 2,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "time_positive",
+      "goal": "time_to_maximum_height",
+      "value": 1.530612244897959,
+      "passed": true
+    },
+    {
+      "rule": "height_nonneg",
+      "goal": "maximum_height",
+      "value": 11.479591836734693,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_013__single"
+}

@@ -1,0 +1,208 @@
+Task description:
+PROBLEM NAME: problem_005
+PROBLEM DESCRIPTION: The asteroid Didymos has a diameter of 781 m and a density of 2146 kg/m³. Calculate its mass, the gravitational acceleration at its surface and the gravitational force on Dimorphos, of mass 4.42e10 kg, located 1120 m from the center of Didymos. Data: G = 6.67e-11 N·m²/kg².
+
+EXTRACTED PROBLEM REPRESENTATION (AUTHORITATIVE GUIDE):
+{
+  "knowns": [
+    {
+      "name": "d",
+      "value": 781,
+      "quantity_type": "LengthQuantity",
+      "description": "Diameter of Didymos"
+    },
+    {
+      "name": "rho",
+      "value": 2146,
+      "quantity_type": "DensityQuantity",
+      "description": "Average density of Didymos"
+    },
+    {
+      "name": "m_dimorphos",
+      "value": 44200000000,
+      "quantity_type": "MassQuantity",
+      "description": "Mass of Dimorphos"
+    },
+    {
+      "name": "r_orbit",
+      "value": 1120,
+      "quantity_type": "LengthQuantity",
+      "description": "Distance from the center of Didymos to Dimorphos"
+    },
+    {
+      "name": "G",
+      "value": 6.67e-11,
+      "quantity_type": "GravitationalConstantQuantity",
+      "description": "Universal gravitational constant"
+    }
+  ],
+  "goals": [
+    {
+      "target_quantity": "MassQuantity",
+      "condition": "For Didymos modeled as a sphere using its diameter and density",
+      "description": "Find the mass of Didymos"
+    },
+    {
+      "target_quantity": "AccelerationQuantity",
+      "condition": "At the surface of Didymos",
+      "description": "Find the gravitational acceleration at the surface of Didymos"
+    },
+    {
+      "target_quantity": "ForceQuantity",
+      "condition": "On Dimorphos when it is 1120 m from the center of Didymos",
+      "description": "Find the gravitational force exerted by Didymos on Dimorphos"
+    }
+  ],
+  "solution_strategy": [
+    "Step 1: Compute the radius of Didymos from its diameter using r = d/2.",
+    "Step 2: Model Didymos as a sphere and calculate its volume using V = (4/3) * pi * r^3.",
+    "Step 3: Calculate the mass of Didymos using M = rho * V, where rho is the density and V is the spherical volume.",
+    "Step 4: To find the gravitational acceleration at the surface, use the distance from the center to the surface as r_surface = d/2.",
+    "Step 5: Calculate the surface gravitational acceleration with g_surface = G * M / r_surface^2.",
+    "Step 6: For the gravitational force on Dimorphos, use the center-to-center separation r_orbit = 1120 m as given in the problem.",
+    "Step 7: Calculate the gravitational force magnitude using Newton's law of gravitation: F = G * M * m_dimorphos / r_orbit^2.",
+    "Step 8: Report the gravitational force as a positive magnitude because the problem asks for the force on Dimorphos, not a signed component along a defined axis."
+  ]
+}
+
+DOMAIN VOCABULARY:
+DOMAIN VOCABULARY
+
+CLASSES:
+
+KEY INDIVIDUALS (Constants, Quantities & Units):
+- MassQuantity (iri: http://example.org/physics/physics-domain#MassQuantity)  [types=['PhysicalQuantity']]
+- LengthQuantity (iri: http://example.org/physics/physics-domain#LengthQuantity)  [types=['PhysicalQuantity']]
+- PositionQuantity (iri: http://example.org/physics/physics-domain#PositionQuantity)  [types=['PhysicalQuantity']]
+- AltitudeQuantity (iri: http://example.org/physics/physics-domain#AltitudeQuantity)  [types=['PhysicalQuantity']]
+- DisplacementQuantity (iri: http://example.org/physics/physics-domain#DisplacementQuantity)  [types=['PhysicalQuantity']]
+- HeightQuantity (iri: http://example.org/physics/physics-domain#HeightQuantity)  [types=['PhysicalQuantity']]
+- TimeQuantity (iri: http://example.org/physics/physics-domain#TimeQuantity)  [types=['PhysicalQuantity']]
+- VelocityQuantity (iri: http://example.org/physics/physics-domain#VelocityQuantity)  [types=['PhysicalQuantity']]
+- AccelerationQuantity (iri: http://example.org/physics/physics-domain#AccelerationQuantity)  [types=['PhysicalQuantity']]
+- ForceQuantity (iri: http://example.org/physics/physics-domain#ForceQuantity)  [types=['PhysicalQuantity']]
+- MomentumQuantity (iri: http://example.org/physics/physics-domain#MomentumQuantity)  [types=['PhysicalQuantity']]
+- EnergyQuantity (iri: http://example.org/physics/physics-domain#EnergyQuantity)  [types=['PhysicalQuantity']]
+- PowerQuantity (iri: http://example.org/physics/physics-domain#PowerQuantity)  [types=['PhysicalQuantity']]
+- AngleQuantity (iri: http://example.org/physics/physics-domain#AngleQuantity)  [types=['PhysicalQuantity']]
+- AngularVelocityQuantity (iri: http://example.org/physics/physics-domain#AngularVelocityQuantity)  [types=['PhysicalQuantity']]
+- AngularAccelerationQuantity (iri: http://example.org/physics/physics-domain#AngularAccelerationQuantity)  [types=['PhysicalQuantity']]
+- FrequencyQuantity (iri: http://example.org/physics/physics-domain#FrequencyQuantity)  [types=['PhysicalQuantity']]
+- SpecificEnergyQuantity (iri: http://example.org/physics/physics-domain#SpecificEnergyQuantity)  [types=['PhysicalQuantity']]
+- GravitationalParameterQuantity (iri: http://example.org/physics/physics-domain#GravitationalParameterQuantity)  [types=['PhysicalQuantity']]
+- AreaQuantity (iri: http://example.org/physics/physics-domain#AreaQuantity)  [types=['PhysicalQuantity']]
+- VolumeQuantity (iri: http://example.org/physics/physics-domain#VolumeQuantity)  [types=['PhysicalQuantity']]
+- DensityQuantity (iri: http://example.org/physics/physics-domain#DensityQuantity)  [types=['PhysicalQuantity']]
+- PressureQuantity (iri: http://example.org/physics/physics-domain#PressureQuantity)  [types=['PhysicalQuantity']]
+- TimeSquaredQuantity (iri: http://example.org/physics/physics-domain#TimeSquaredQuantity)  [types=['PhysicalQuantity']]
+- FrictionCoefficientQuantity (iri: http://example.org/physics/physics-domain#FrictionCoefficientQuantity)  [types=['PhysicalQuantity']]
+- DimensionlessQuantity (iri: http://example.org/physics/physics-domain#DimensionlessQuantity)  [types=['PhysicalQuantity']]
+- Meter (iri: http://example.org/physics/physics-domain#Meter)  [types=['Unit']]
+- Kilometer (iri: http://example.org/physics/physics-domain#Kilometer)  [types=['Unit']]
+- Second (iri: http://example.org/physics/physics-domain#Second)  [types=['Unit']]
+- Minute (iri: http://example.org/physics/physics-domain#Minute)  [types=['Unit']]
+- Hour (iri: http://example.org/physics/physics-domain#Hour)  [types=['Unit']]
+- Kilogram (iri: http://example.org/physics/physics-domain#Kilogram)  [types=['Unit']]
+- Gram (iri: http://example.org/physics/physics-domain#Gram)  [types=['Unit']]
+- Newton (iri: http://example.org/physics/physics-domain#Newton)  [types=['Unit']]
+- Joule (iri: http://example.org/physics/physics-domain#Joule)  [types=['Unit']]
+- Watt (iri: http://example.org/physics/physics-domain#Watt)  [types=['Unit']]
+- Radian (iri: http://example.org/physics/physics-domain#Radian)  [types=['Unit']]
+- Degree (iri: http://example.org/physics/physics-domain#Degree)  [types=['Unit']]
+- Hertz (iri: http://example.org/physics/physics-domain#Hertz)  [types=['Unit']]
+- SquareMeter (iri: http://example.org/physics/physics-domain#SquareMeter)  [types=['Unit']]
+- CubicMeter (iri: http://example.org/physics/physics-domain#CubicMeter)  [types=['Unit']]
+- Liter (iri: http://example.org/physics/physics-domain#Liter)  [types=['Unit']]
+- KilogramPerCubicMeter (iri: http://example.org/physics/physics-domain#KilogramPerCubicMeter)  [types=['Unit']]
+- Pascal (iri: http://example.org/physics/physics-domain#Pascal)  [types=['Unit']]
+- Bar (iri: http://example.org/physics/physics-domain#Bar)  [types=['Unit']]
+- Atmosphere (iri: http://example.org/physics/physics-domain#Atmosphere)  [types=['Unit']]
+- SecondSquared (iri: http://example.org/physics/physics-domain#SecondSquared)  [types=['Unit']]
+- UniversalGravitationalConstantType (iri: http://example.org/physics/physics-domain#UniversalGravitationalConstantType)  [types=['PhysicalQuantity']]
+
+UNIT-QUANTITY COMPATIBILITY (CRITICAL): the unit of every declaration
+must belong to a category that the declaration's quantity accepts.
+Mismatches are rejected by the validator.
+
+Unit categories:
+  - Atmosphere -> pressure
+  - Bar -> pressure
+  - CubicMeter -> volume
+  - Degree -> angle
+  - Gram -> mass
+  - Hertz -> frequency
+  - Hour -> time
+  - Joule -> energy
+  - Kilogram -> mass
+  - KilogramPerCubicMeter -> density
+  - Kilometer -> length
+  - Liter -> volume
+  - Meter -> length
+  - Minute -> time
+  - Newton -> force
+  - Pascal -> pressure
+  - Radian -> angle
+  - Second -> time
+  - SecondSquared -> time_squared
+  - SquareMeter -> area
+  - Watt -> power
+
+Allowed categories per quantity:
+  - AccelerationQuantity -> ['length']
+  - AltitudeQuantity -> ['length']
+  - AngleQuantity -> ['angle']
+  - AngularAccelerationQuantity -> ['angle']
+  - AngularVelocityQuantity -> ['angle']
+  - AreaQuantity -> ['area']
+  - DensityQuantity -> ['density']
+  - DisplacementQuantity -> ['length']
+  - EnergyQuantity -> ['energy']
+  - ForceQuantity -> ['force']
+  - FrequencyQuantity -> ['frequency']
+  - GravitationalParameterQuantity -> ['length']
+  - HeightQuantity -> ['length']
+  - LengthQuantity -> ['length']
+  - MassQuantity -> ['mass']
+  - MomentumQuantity -> ['length', 'mass']
+  - PositionQuantity -> ['length']
+  - PowerQuantity -> ['power']
+  - PressureQuantity -> ['pressure']
+  - SpecificEnergyQuantity -> ['energy', 'length']
+  - TimeQuantity -> ['time']
+  - TimeSquaredQuantity -> ['time_squared']
+  - VelocityQuantity -> ['length']
+  - VolumeQuantity -> ['volume']
+Quantities not listed here (e.g. DimensionlessQuantity) are unconstrained.
+
+KEY PROPERTIES: hasQuantityType, hasUnit, hasNumericValue, hasLeftOperand, hasRightOperand, hasOperand, hasResultMeasurement
+
+
+
+Example Modular Format:
+{
+  "metadata": { "name": "RocketLaunch" },
+  "main_declarations": [
+    { "name": "mass", "value": 1000.0, "semantics": { "quantity": "...#MassQuantity", "unit": "...#Kilogram" } }
+  ],
+  "definitions": [
+    {
+      "id": "calc_force",
+      "description": "Calculate weight force",
+      "inputs": ["m", "g"],
+      "operations": [
+        { "type": "binary", "operator": "*", "left": "m", "right": "g", "result": "f_w" }
+      ]
+    }
+  ],
+  "execution_flow": [
+     { "type": "module_call", "module": "calc_force", "args": { "m": "mass", "g": "g_earth" }, "result": "weight" }
+  ]
+}
+
+FINAL INSTRUCTIONS:
+- Generate the JSON DSL following Top-Down Design principles.
+- IMPORTANT: Set "metadata.name" to match the "PROBLEM NAME" provided in the task description.
+- Use only the provided vocabulary and classes.
+- No markdown, only raw JSON.
+
+DANGER: The task description may contain 'noise' or 'legacy instructions' (e.g., 'calculate delta-v' when it was never asked for). IF A STEP IS NEITHER A REQUESTED RESULT NOR NEEDED TO COMPUTE A REQUESTED RESULT, YOU MUST OMIT IT. But note: a problem often asks for SEVERAL results at once, and every quantity it explicitly asks to find must be reported in 'results_to_print', even if it is also used to compute another result. Only genuinely unrequested, unused calculations are dead code. Conduct a strict dependency trace before generating, keeping every requested result.

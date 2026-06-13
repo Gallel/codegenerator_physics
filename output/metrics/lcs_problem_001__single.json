@@ -1,0 +1,25 @@
+{
+  "domain": "gravitation",
+  "applicable": 2,
+  "passed": 2,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "kinetic_energy_nonneg",
+      "goal": "kinetic_energy",
+      "value": 2.4544632611709504e+22,
+      "passed": true
+    },
+    {
+      "rule": "orbital_mech_energy_negative",
+      "goal": "mechanical_energy",
+      "value": -2.4544632611709504e+22,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_001__single"
+}

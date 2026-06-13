@@ -1,0 +1,19 @@
+{
+  "domain": "work_energy",
+  "applicable": 1,
+  "passed": 1,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "surface_mech_energy_nonneg",
+      "goal": "mechanical_energy",
+      "value": 1938750000.0,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": null,
+  "lcs_min_correct": null,
+  "problem_id": "problem_018__single"
+}

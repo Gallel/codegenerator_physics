@@ -1,0 +1,25 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "fall_height": {
+      "reference": 11.5,
+      "generated": 11.479591836734693,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "height": 11.479591836734693
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_012__single"
+}

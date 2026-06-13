@@ -1,0 +1,98 @@
+{
+  "sample": 0,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "final_velocity": {
+        "reference": 90.0,
+        "generated": 90.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "distance_covered": {
+        "reference": 270.0,
+        "generated": 270.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "engine_force": {
+        "reference": 992.0,
+        "generated": 992.0,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "v": 90.0,
+      "distance": 270.0,
+      "F_engine": 992.0
+    }
+  },
+  "lcs": {
+    "domain": "dynamics",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "distance_nonneg",
+        "goal": "distance_covered",
+        "value": 270.0,
+        "passed": true
+      },
+      {
+        "rule": "force_positive",
+        "goal": "engine_force",
+        "value": 992.0,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "final_velocity",
+        "value": 90.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 3,
+    "reported_by_name": 0,
+    "value_only": 3,
+    "reported_and_correct": 3,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "final_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "distance_covered": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "engine_force": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.46965684850092454,
+    "ngram_match": 0.14260636712545052,
+    "weighted_ngram_match": 0.43984114293240645,
+    "syntax_match": 0.8068181818181818,
+    "dataflow_match": 0.48936170212765956
+  }
+}

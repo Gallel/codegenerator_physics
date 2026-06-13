@@ -1,0 +1,297 @@
+{
+  "program": "problem_006",
+  "steps": [
+    {
+      "expression": "Op_7_v_orb_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "Res_v_orb_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_orb_sq_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_T",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_two_r_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_v_orb_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_T_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_mu_over_r",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_mu_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_r_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_mu_over_r_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_mu_over_RE",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_mu_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_R_E",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 6370000.0
+        }
+      ],
+      "result": {
+        "name": "Res_mu_over_RE_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_mu_over_r",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_mu_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_r_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_mu_over_r_9",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v_orb",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_mu_over_r_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_orb_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_13_v_0",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_v0_sq_12",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_0_13",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_mu",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M_E",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 5.98e+24
+        }
+      ],
+      "result": {
+        "name": "Res_mu_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_two_r",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "Res_r_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_two_r_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_11_double_potential_term",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "Res_potential_term_10",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_double_potential_term_11",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_r",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_R_E",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 6370000.0
+        },
+        {
+          "name": "phys_h",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 500000.0
+        }
+      ],
+      "result": {
+        "name": "Res_r_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_12_v0_sq",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_v_orb_sq_7",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_double_potential_term_11",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v0_sq_12",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_10_potential_term",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_mu_over_RE_8",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_mu_over_r_9",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_potential_term_10",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

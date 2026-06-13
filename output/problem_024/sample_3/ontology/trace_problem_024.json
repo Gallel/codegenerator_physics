@@ -1,0 +1,223 @@
+{
+  "program": "problem_024",
+  "steps": [
+    {
+      "expression": "Op_8_combined_mass",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_m_zipi",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 50.0
+        },
+        {
+          "name": "phys_m_ball",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.2
+        }
+      ],
+      "result": {
+        "name": "Res_combined_mass_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_total_momentum",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_ball_momentum_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_person_momentum_6",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_total_momentum_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_ball_relative_ice_return",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_neg_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": -1.0
+        },
+        {
+          "name": "phys_v_ball_relative_ice_return_speed",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 21.5
+        }
+      ],
+      "result": {
+        "name": "Res_v_ball_relative_ice_return_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_ball_momentum",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m_ball",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.2
+        },
+        {
+          "name": "phys_v_ball_relative_ice_initial",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 21.5
+        }
+      ],
+      "result": {
+        "name": "Res_ball_momentum_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_negative_ball_momentum",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_neg_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": -1.0
+        },
+        {
+          "name": "Res_ball_momentum_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_negative_ball_momentum_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_ball_momentum",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m_ball",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.2
+        },
+        {
+          "name": "Res_v_ball_relative_ice_return_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_ball_momentum_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_person_momentum",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m_zipi",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 50.0
+        },
+        {
+          "name": "Res_v_thrower_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_person_momentum_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v_thrower",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_negative_ball_momentum_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_m_zipi",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 50.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_thrower_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_v_final",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_total_momentum_7",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_combined_mass_8",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_final_9",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

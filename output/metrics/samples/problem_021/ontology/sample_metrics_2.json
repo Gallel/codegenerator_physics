@@ -1,0 +1,85 @@
+{
+  "sample": 2,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "energy_consumed_kwh": {
+        "reference": 0.18,
+        "generated": 0.18,
+        "match": true,
+        "matched_by": "value"
+      },
+      "energy_consumed_j": {
+        "reference": 648000.0,
+        "generated": 648000.0,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "E_kWh": 0.18,
+      "E_J": 648000.0
+    }
+  },
+  "lcs": {
+    "domain": "work_energy",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "energy_consumed_nonneg",
+        "goal": "energy_consumed_kwh",
+        "value": 0.18,
+        "passed": true
+      },
+      {
+        "rule": "energy_consumed_nonneg",
+        "goal": "energy_consumed_j",
+        "value": 648000.0,
+        "passed": true
+      },
+      {
+        "rule": "energy_kwh_joule_consistency",
+        "goal": "(relational)",
+        "value": null,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "energy_consumed_kwh": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "energy_consumed_j": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.4452734888633713,
+    "ngram_match": 0.16854762763473277,
+    "weighted_ngram_match": 0.39525045424544253,
+    "syntax_match": 0.7761194029850746,
+    "dataflow_match": 0.4411764705882353
+  }
+}

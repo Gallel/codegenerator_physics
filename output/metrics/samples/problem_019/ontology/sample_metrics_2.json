@@ -1,0 +1,85 @@
+{
+  "sample": 2,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "daily_energy_consumed": {
+        "reference": 86400000.0,
+        "generated": 86400000.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "monthly_energy_consumed": {
+        "reference": 2590000000.0,
+        "generated": 2592000000.0,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "E_day": 86400000.0,
+      "E_month": 2592000000.0
+    }
+  },
+  "lcs": {
+    "domain": "work_energy",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "energy_consumed_nonneg",
+        "goal": "daily_energy_consumed",
+        "value": 86400000.0,
+        "passed": true
+      },
+      {
+        "rule": "energy_consumed_nonneg",
+        "goal": "monthly_energy_consumed",
+        "value": 2592000000.0,
+        "passed": true
+      },
+      {
+        "rule": "monthly_energy_is_30_daily",
+        "goal": "(relational)",
+        "value": null,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "daily_energy_consumed": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "monthly_energy_consumed": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.47826396985627506,
+    "ngram_match": 0.1477163366951648,
+    "weighted_ngram_match": 0.4502601776505702,
+    "syntax_match": 0.8428571428571429,
+    "dataflow_match": 0.4722222222222222
+  }
+}

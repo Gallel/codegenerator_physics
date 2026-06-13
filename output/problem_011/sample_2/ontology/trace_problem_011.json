@@ -1,0 +1,151 @@
+{
+  "program": "problem_011",
+  "steps": [
+    {
+      "expression": "Op_6_distance",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_v_avg_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 10.0
+        }
+      ],
+      "result": {
+        "name": "Res_distance_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_a",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 10.0
+        }
+      ],
+      "result": {
+        "name": "Res_a_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_f",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_v_f_kmh",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 108.0
+        },
+        {
+          "name": "phys_conversion_factor",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.6
+        }
+      ],
+      "result": {
+        "name": "Res_v_f_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_v_avg",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_v_sum_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_avg_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_v_f_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v_sum",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "Res_v_f_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_sum_4",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

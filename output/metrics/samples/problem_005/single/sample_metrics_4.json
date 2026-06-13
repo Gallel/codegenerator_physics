@@ -1,0 +1,79 @@
+{
+  "sample": 4,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "mass_of_didymos": {
+        "reference": 535000000000.0,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "surface_gravity_didymos": {
+        "reference": 0.000234,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "gravitational_force_on_dimorphos": {
+        "reference": 1260000.0,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      }
+    },
+    "produced": {
+      "M_didymos": 401460392591.97034,
+      "g_surface": 0.00017560078881032997,
+      "F_on_dimorphos": 943527.9351212465
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 0,
+    "passed": 0,
+    "lcs": null,
+    "checks": []
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 0,
+    "reported_by_name": 0,
+    "value_only": 0,
+    "reported_and_correct": 0,
+    "cas_lax": 0.0,
+    "cas_strict": 0.0,
+    "goals": {
+      "mass_of_didymos": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "surface_gravity_didymos": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "gravitational_force_on_dimorphos": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3968750240576814,
+    "ngram_match": 0.09552979088338649,
+    "weighted_ngram_match": 0.29961666138079174,
+    "syntax_match": 0.7407407407407407,
+    "dataflow_match": 0.45161290322580644
+  }
+}

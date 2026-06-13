@@ -1,0 +1,73 @@
+{
+  "sample": 3,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "acceleration": {
+        "reference": -5.0,
+        "generated": -5.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "distance_covered": {
+        "reference": 62.5,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      }
+    },
+    "produced": {
+      "a": -5.0,
+      "delta_x": Infinity
+    }
+  },
+  "lcs": {
+    "domain": "linear_kinematics",
+    "applicable": 1,
+    "passed": 1,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "acceleration_finite",
+        "goal": "acceleration",
+        "value": -5.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 1,
+    "reported_by_name": 0,
+    "value_only": 1,
+    "reported_and_correct": 1,
+    "cas_lax": 0.5,
+    "cas_strict": 0.5,
+    "goals": {
+      "acceleration": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "distance_covered": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3689052910509264,
+    "ngram_match": 0.1356478438403906,
+    "weighted_ngram_match": 0.39687532247079654,
+    "syntax_match": 0.7123287671232876,
+    "dataflow_match": 0.23076923076923078
+  }
+}

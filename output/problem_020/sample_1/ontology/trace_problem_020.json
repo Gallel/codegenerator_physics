@@ -1,0 +1,322 @@
+{
+  "program": "problem_020",
+  "steps": [
+    {
+      "expression": "Op_4_mg",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.15
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_mg_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_K_0",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_half_m_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_v0_sq_1",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_K_0_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_U_0",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_mg_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_y_0",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 8.0
+        }
+      ],
+      "result": {
+        "name": "Res_U_0_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_a",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_minus_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": -1.0
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_a_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_10_two_a",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "Res_a_8",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_two_a_10",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_11_two_a_delta_y",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_a_10",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_delta_y_7",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_two_a_delta_y_11",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_half_m",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_half",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 0.5
+        },
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.15
+        }
+      ],
+      "result": {
+        "name": "Res_half_m_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_delta_y",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_y_f",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "phys_y_0",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 8.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_y_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_13_v_f",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_v_f_sq_12",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_f_13",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v0_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 3.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v0_sq_1",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_v0_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 3.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v0_sq_9",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_E_mech",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_K_0_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_U_0_5",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_E_mech_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_12_v_f_sq",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_v0_sq_9",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        },
+        {
+          "name": "Res_two_a_delta_y_11",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_f_sq_12",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

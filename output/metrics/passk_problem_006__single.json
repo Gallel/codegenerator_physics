@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": false,
+  "error": null,
+  "goals": {
+    "orbital_velocity": {
+      "reference": 7620.0,
+      "generated": 7619.652060656909,
+      "match": true,
+      "matched_by": "value"
+    },
+    "orbital_period": {
+      "reference": 5660.0,
+      "generated": 5665.020228837372,
+      "match": true,
+      "matched_by": "value"
+    },
+    "initial_velocity_from_surface": {
+      "reference": 8200.0,
+      "generated": null,
+      "match": false,
+      "matched_by": null
+    }
+  },
+  "produced": {
+    "v_orb": 7619.652060656909,
+    "T": 5665.020228837372,
+    "v0": NaN
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 0,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.0,
+  "pass_at_5": 0.0,
+  "problem_id": "problem_006__single"
+}

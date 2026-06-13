@@ -1,0 +1,117 @@
+{
+  "sample": 1,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "period": {
+        "reference": 0.2,
+        "generated": 0.2,
+        "match": true,
+        "matched_by": "name"
+      },
+      "frequency": {
+        "reference": 5.0,
+        "generated": 5.0,
+        "match": true,
+        "matched_by": "name"
+      },
+      "centripetal_acceleration_surface": {
+        "reference": 98.596,
+        "generated": 98.69604401089359,
+        "match": true,
+        "matched_by": "value"
+      },
+      "centripetal_acceleration_at_5_cm": {
+        "reference": 49.298,
+        "generated": 49.34802200544679,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "period": 0.2,
+      "frequency": 5.0,
+      "a_c_edge": 98.69604401089359,
+      "a_c_inner": 49.34802200544679
+    }
+  },
+  "lcs": {
+    "domain": "angular_kinematics",
+    "applicable": 4,
+    "passed": 4,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "period",
+        "value": 0.2,
+        "passed": true
+      },
+      {
+        "rule": "frequency_positive",
+        "goal": "frequency",
+        "value": 5.0,
+        "passed": true
+      },
+      {
+        "rule": "centripetal_accel_positive",
+        "goal": "centripetal_acceleration_surface",
+        "value": 98.69604401089359,
+        "passed": true
+      },
+      {
+        "rule": "centripetal_accel_positive",
+        "goal": "centripetal_acceleration_at_5_cm",
+        "value": 49.34802200544679,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 4,
+    "covered": 4,
+    "reported_by_name": 2,
+    "value_only": 2,
+    "reported_and_correct": 4,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "period": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      },
+      "frequency": {
+        "matched_by": "name",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": true
+      },
+      "centripetal_acceleration_surface": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "centripetal_acceleration_at_5_cm": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.46714286906420766,
+    "ngram_match": 0.15926388804595826,
+    "weighted_ngram_match": 0.44498651324623295,
+    "syntax_match": 0.7821782178217822,
+    "dataflow_match": 0.48214285714285715
+  }
+}

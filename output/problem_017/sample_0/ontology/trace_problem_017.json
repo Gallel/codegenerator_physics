@@ -1,0 +1,231 @@
+{
+  "program": "problem_017",
+  "steps": [
+    {
+      "expression": "Op_1_a_t",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_a",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 15.0
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 6.0
+        }
+      ],
+      "result": {
+        "name": "Res_a_t_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_v0_t",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 6.0
+        }
+      ],
+      "result": {
+        "name": "Res_v0_t_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_a_t_squared",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_a",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 15.0
+        },
+        {
+          "name": "Res_t_squared_4",
+          "quantities": [
+            "TimeSquaredQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_a_t_squared_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_half_a_t_squared",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_one_half",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 0.5
+        },
+        {
+          "name": "Res_a_t_squared_5",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_half_a_t_squared_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_F_engine",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 40.0
+        },
+        {
+          "name": "Res_a_plus_g_8",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_F_engine_9",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_t_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 6.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_t_squared_4",
+        "quantities": [
+          "TimeSquaredQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_v",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "Res_a_t_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_distance",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_v0_t_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_half_a_t_squared_6",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_distance_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_a_plus_g",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_a",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 15.0
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_a_plus_g_8",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

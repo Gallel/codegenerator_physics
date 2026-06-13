@@ -1,0 +1,85 @@
+{
+  "sample": 2,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "orbital_velocity": {
+        "reference": 1020.0,
+        "generated": 1018.4910202516925,
+        "match": true,
+        "matched_by": "value"
+      },
+      "orbital_period": {
+        "reference": 2370000.0,
+        "generated": 2368939.0578629915,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "v": 1018.4910202516925,
+      "T": 2368939.0578629915
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "orbital_period",
+        "value": 2368939.0578629915,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "orbital_velocity",
+        "value": 1018.4910202516925,
+        "passed": true
+      },
+      {
+        "rule": "orbital_v_period_consistency",
+        "goal": "(relational)",
+        "value": null,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "orbital_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "orbital_period": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.46192581390997606,
+    "ngram_match": 0.14590705060377418,
+    "weighted_ngram_match": 0.4139913269873495,
+    "syntax_match": 0.8,
+    "dataflow_match": 0.4878048780487805
+  }
+}

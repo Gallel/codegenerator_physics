@@ -1,0 +1,55 @@
+{
+  "program": "problem_027",
+  "steps": [
+    {
+      "expression": "Op_1_area_ratio",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_S1",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": 10.0
+        },
+        {
+          "name": "phys_S2",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": 250.0
+        }
+      ],
+      "result": {
+        "name": "Res_area_ratio_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_F1",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_F2",
+          "quantities": [
+            "ForceQuantity"
+          ],
+          "value": 12000.0
+        },
+        {
+          "name": "Res_area_ratio_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_F1_2",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "total_goals": 3,
+  "covered": 3,
+  "reported_by_name": 0,
+  "value_only": 3,
+  "reported_and_correct": 3,
+  "cas_lax": 1.0,
+  "cas_strict": 1.0,
+  "goals": {
+    "orbital_period": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "mechanical_energy": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "lunar_escape_velocity": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    }
+  },
+  "branch": "single",
+  "cas_lax_std": 0.0,
+  "cas_lax_max_correct": 1.0,
+  "cas_lax_min_correct": 1.0,
+  "cas_strict_std": 0.0,
+  "cas_strict_max_correct": 1.0,
+  "cas_strict_min_correct": 1.0,
+  "problem_id": "problem_007__single"
+}

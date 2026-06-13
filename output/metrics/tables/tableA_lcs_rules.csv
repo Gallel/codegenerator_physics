@@ -1,0 +1,22 @@
+Rule,n (applied),passed,compliance
+kinetic_energy_nonneg,4,4,1.00
+orbital_mech_energy_negative,4,4,1.00
+period_positive,14,14,1.00
+velocity_below_c,20,20,1.00
+orbital_energy_required_positive,2,2,1.00
+orbital_v_period_consistency,6,6,1.00
+mass_positive,4,4,1.00
+surface_gravity_positive,4,4,1.00
+force_positive,12,12,1.00
+escape_velocity_positive,2,2,1.00
+acceleration_finite,10,10,1.00
+distance_nonneg,8,8,1.00
+height_nonneg,4,4,1.00
+time_positive,2,2,1.00
+frequency_positive,4,4,1.00
+centripetal_accel_positive,6,6,1.00
+surface_mech_energy_nonneg,4,4,1.00
+energy_consumed_nonneg,8,8,1.00
+monthly_energy_is_30_daily,2,2,1.00
+energy_kwh_joule_consistency,2,2,1.00
+density_positive,4,4,1.00

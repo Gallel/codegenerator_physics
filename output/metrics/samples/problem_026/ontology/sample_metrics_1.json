@@ -1,0 +1,79 @@
+{
+  "sample": 1,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "density_g_ml": {
+        "reference": 3.75,
+        "generated": 3.75,
+        "match": true,
+        "matched_by": "value"
+      },
+      "density_kg_m3": {
+        "reference": 3750.0,
+        "generated": 3750.0000000000005,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "rho_g_per_mL": 3.75,
+      "rho_kg_per_m3": 3750.0000000000005
+    }
+  },
+  "lcs": {
+    "domain": "fluid_statics",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "density_positive",
+        "goal": "density_g_ml",
+        "value": 3.75,
+        "passed": true
+      },
+      {
+        "rule": "density_positive",
+        "goal": "density_kg_m3",
+        "value": 3750.0000000000005,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "density_g_ml": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "density_kg_m3": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.44962692512303715,
+    "ngram_match": 0.1210746116716468,
+    "weighted_ngram_match": 0.404705816093229,
+    "syntax_match": 0.8181818181818182,
+    "dataflow_match": 0.45454545454545453
+  }
+}

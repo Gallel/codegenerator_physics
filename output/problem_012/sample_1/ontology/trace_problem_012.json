@@ -1,0 +1,83 @@
+{
+  "program": "problem_012",
+  "steps": [
+    {
+      "expression": "Op_3_h",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_v_f_squared_1",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        },
+        {
+          "name": "Res_two_g_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_h_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_two_g",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_two_g_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_f_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v_ground",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 15.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_f_squared_1",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    }
+  ]
+}

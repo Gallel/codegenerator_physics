@@ -1,0 +1,213 @@
+Task description:
+PROBLEM NAME: problem_017
+PROBLEM DESCRIPTION: A test rocket has a mass of 40 kg. It takes off and, during 6 s, ascends with a constant acceleration of 15 m/s². Air resistance is neglected. Calculate the velocity it reaches at 6 s, the distance it covers in those 6 s and the force exerted by the engine. Data: g = 9.8 m/s².
+
+EXTRACTED PROBLEM REPRESENTATION (AUTHORITATIVE GUIDE):
+{
+  "knowns": [
+    {
+      "name": "m",
+      "value": 40,
+      "quantity_type": "MassQuantity",
+      "description": "Mass of the rocket"
+    },
+    {
+      "name": "t",
+      "value": 6,
+      "quantity_type": "TimeQuantity",
+      "description": "Duration of the powered ascent"
+    },
+    {
+      "name": "a",
+      "value": 15,
+      "quantity_type": "AccelerationQuantity",
+      "description": "Constant upward acceleration of the rocket during ascent"
+    },
+    {
+      "name": "g",
+      "value": 9.8,
+      "quantity_type": "AccelerationQuantity",
+      "description": "Magnitude of gravitational acceleration downward"
+    },
+    {
+      "name": "v0",
+      "value": 0,
+      "quantity_type": "VelocityQuantity",
+      "description": "Initial velocity at takeoff, starting from rest"
+    },
+    {
+      "name": "y0",
+      "value": 0,
+      "quantity_type": "LengthQuantity",
+      "description": "Initial vertical position chosen as the origin"
+    }
+  ],
+  "goals": [
+    {
+      "target_quantity": "VelocityQuantity",
+      "condition": "At t = 6 s after takeoff",
+      "description": "Velocity reached by the rocket at the end of the 6 s ascent"
+    },
+    {
+      "target_quantity": "LengthQuantity",
+      "condition": "During the interval from t = 0 s to t = 6 s",
+      "description": "Vertical distance covered by the rocket in the first 6 s"
+    },
+    {
+      "target_quantity": "ForceQuantity",
+      "condition": "During the powered ascent with constant acceleration",
+      "description": "Engine thrust exerted on the rocket"
+    }
+  ],
+  "solution_strategy": [
+    "Step 1: Choose upward as the positive vertical direction. Then use the given constant acceleration as a = +15 m/s^2, gravitational acceleration as -g, and the initial velocity as v0 = 0 because the rocket takes off from rest.",
+    "Step 2: Find the velocity at 6 s using the constant-acceleration relation v = v0 + a t. Substitute the given v0, a, and t to obtain the rocket's vertical velocity after 6 s. Since the rocket is ascending and the problem asks for the velocity reached at that instant, report the upward value; if reporting speed, use the positive magnitude.",
+    "Step 3: Isolate the vertical displacement first as delta_y = y - y0. Since y0 is chosen as 0, the distance covered in the ascent interval equals delta_y.",
+    "Step 4: Compute the displacement during the 6 s using delta_y = v0 t + (1/2) a t^2. Substitute v0 = 0, a = +15 m/s^2, and t = 6 s. Because the motion is upward throughout this interval, the distance covered equals the positive displacement magnitude.",
+    "Step 5: Draw the free-body relation for the rocket during powered ascent. The engine thrust F_engine acts upward and the weight mg acts downward. Apply Newton's second law along the vertical axis: F_engine - mg = m a.",
+    "Step 6: Solve the force equation algebraically for the engine thrust: F_engine = m(a + g). Substitute the given mass m, upward acceleration a, and gravitational magnitude g to obtain the thrust.",
+    "Step 7: Present the three results with SI units: velocity in m/s, distance in m, and engine force in N."
+  ]
+}
+
+DOMAIN VOCABULARY:
+DOMAIN VOCABULARY
+
+CLASSES:
+
+KEY INDIVIDUALS (Constants, Quantities & Units):
+- MassQuantity (iri: http://example.org/physics/physics-domain#MassQuantity)  [types=['PhysicalQuantity']]
+- LengthQuantity (iri: http://example.org/physics/physics-domain#LengthQuantity)  [types=['PhysicalQuantity']]
+- PositionQuantity (iri: http://example.org/physics/physics-domain#PositionQuantity)  [types=['PhysicalQuantity']]
+- AltitudeQuantity (iri: http://example.org/physics/physics-domain#AltitudeQuantity)  [types=['PhysicalQuantity']]
+- DisplacementQuantity (iri: http://example.org/physics/physics-domain#DisplacementQuantity)  [types=['PhysicalQuantity']]
+- HeightQuantity (iri: http://example.org/physics/physics-domain#HeightQuantity)  [types=['PhysicalQuantity']]
+- TimeQuantity (iri: http://example.org/physics/physics-domain#TimeQuantity)  [types=['PhysicalQuantity']]
+- VelocityQuantity (iri: http://example.org/physics/physics-domain#VelocityQuantity)  [types=['PhysicalQuantity']]
+- AccelerationQuantity (iri: http://example.org/physics/physics-domain#AccelerationQuantity)  [types=['PhysicalQuantity']]
+- ForceQuantity (iri: http://example.org/physics/physics-domain#ForceQuantity)  [types=['PhysicalQuantity']]
+- MomentumQuantity (iri: http://example.org/physics/physics-domain#MomentumQuantity)  [types=['PhysicalQuantity']]
+- EnergyQuantity (iri: http://example.org/physics/physics-domain#EnergyQuantity)  [types=['PhysicalQuantity']]
+- PowerQuantity (iri: http://example.org/physics/physics-domain#PowerQuantity)  [types=['PhysicalQuantity']]
+- AngleQuantity (iri: http://example.org/physics/physics-domain#AngleQuantity)  [types=['PhysicalQuantity']]
+- AngularVelocityQuantity (iri: http://example.org/physics/physics-domain#AngularVelocityQuantity)  [types=['PhysicalQuantity']]
+- AngularAccelerationQuantity (iri: http://example.org/physics/physics-domain#AngularAccelerationQuantity)  [types=['PhysicalQuantity']]
+- FrequencyQuantity (iri: http://example.org/physics/physics-domain#FrequencyQuantity)  [types=['PhysicalQuantity']]
+- SpecificEnergyQuantity (iri: http://example.org/physics/physics-domain#SpecificEnergyQuantity)  [types=['PhysicalQuantity']]
+- GravitationalParameterQuantity (iri: http://example.org/physics/physics-domain#GravitationalParameterQuantity)  [types=['PhysicalQuantity']]
+- AreaQuantity (iri: http://example.org/physics/physics-domain#AreaQuantity)  [types=['PhysicalQuantity']]
+- VolumeQuantity (iri: http://example.org/physics/physics-domain#VolumeQuantity)  [types=['PhysicalQuantity']]
+- DensityQuantity (iri: http://example.org/physics/physics-domain#DensityQuantity)  [types=['PhysicalQuantity']]
+- PressureQuantity (iri: http://example.org/physics/physics-domain#PressureQuantity)  [types=['PhysicalQuantity']]
+- TimeSquaredQuantity (iri: http://example.org/physics/physics-domain#TimeSquaredQuantity)  [types=['PhysicalQuantity']]
+- FrictionCoefficientQuantity (iri: http://example.org/physics/physics-domain#FrictionCoefficientQuantity)  [types=['PhysicalQuantity']]
+- DimensionlessQuantity (iri: http://example.org/physics/physics-domain#DimensionlessQuantity)  [types=['PhysicalQuantity']]
+- Meter (iri: http://example.org/physics/physics-domain#Meter)  [types=['Unit']]
+- Kilometer (iri: http://example.org/physics/physics-domain#Kilometer)  [types=['Unit']]
+- Second (iri: http://example.org/physics/physics-domain#Second)  [types=['Unit']]
+- Minute (iri: http://example.org/physics/physics-domain#Minute)  [types=['Unit']]
+- Hour (iri: http://example.org/physics/physics-domain#Hour)  [types=['Unit']]
+- Kilogram (iri: http://example.org/physics/physics-domain#Kilogram)  [types=['Unit']]
+- Gram (iri: http://example.org/physics/physics-domain#Gram)  [types=['Unit']]
+- Newton (iri: http://example.org/physics/physics-domain#Newton)  [types=['Unit']]
+- Joule (iri: http://example.org/physics/physics-domain#Joule)  [types=['Unit']]
+- Watt (iri: http://example.org/physics/physics-domain#Watt)  [types=['Unit']]
+- Radian (iri: http://example.org/physics/physics-domain#Radian)  [types=['Unit']]
+- Degree (iri: http://example.org/physics/physics-domain#Degree)  [types=['Unit']]
+- Hertz (iri: http://example.org/physics/physics-domain#Hertz)  [types=['Unit']]
+- SquareMeter (iri: http://example.org/physics/physics-domain#SquareMeter)  [types=['Unit']]
+- CubicMeter (iri: http://example.org/physics/physics-domain#CubicMeter)  [types=['Unit']]
+- Liter (iri: http://example.org/physics/physics-domain#Liter)  [types=['Unit']]
+- KilogramPerCubicMeter (iri: http://example.org/physics/physics-domain#KilogramPerCubicMeter)  [types=['Unit']]
+- Pascal (iri: http://example.org/physics/physics-domain#Pascal)  [types=['Unit']]
+- Bar (iri: http://example.org/physics/physics-domain#Bar)  [types=['Unit']]
+- Atmosphere (iri: http://example.org/physics/physics-domain#Atmosphere)  [types=['Unit']]
+- SecondSquared (iri: http://example.org/physics/physics-domain#SecondSquared)  [types=['Unit']]
+- UniversalGravitationalConstantType (iri: http://example.org/physics/physics-domain#UniversalGravitationalConstantType)  [types=['PhysicalQuantity']]
+
+UNIT-QUANTITY COMPATIBILITY (CRITICAL): the unit of every declaration
+must belong to a category that the declaration's quantity accepts.
+Mismatches are rejected by the validator.
+
+Unit categories:
+  - Atmosphere -> pressure
+  - Bar -> pressure
+  - CubicMeter -> volume
+  - Degree -> angle
+  - Gram -> mass
+  - Hertz -> frequency
+  - Hour -> time
+  - Joule -> energy
+  - Kilogram -> mass
+  - KilogramPerCubicMeter -> density
+  - Kilometer -> length
+  - Liter -> volume
+  - Meter -> length
+  - Minute -> time
+  - Newton -> force
+  - Pascal -> pressure
+  - Radian -> angle
+  - Second -> time
+  - SecondSquared -> time_squared
+  - SquareMeter -> area
+  - Watt -> power
+
+Allowed categories per quantity:
+  - AccelerationQuantity -> ['length']
+  - AltitudeQuantity -> ['length']
+  - AngleQuantity -> ['angle']
+  - AngularAccelerationQuantity -> ['angle']
+  - AngularVelocityQuantity -> ['angle']
+  - AreaQuantity -> ['area']
+  - DensityQuantity -> ['density']
+  - DisplacementQuantity -> ['length']
+  - EnergyQuantity -> ['energy']
+  - ForceQuantity -> ['force']
+  - FrequencyQuantity -> ['frequency']
+  - GravitationalParameterQuantity -> ['length']
+  - HeightQuantity -> ['length']
+  - LengthQuantity -> ['length']
+  - MassQuantity -> ['mass']
+  - MomentumQuantity -> ['length', 'mass']
+  - PositionQuantity -> ['length']
+  - PowerQuantity -> ['power']
+  - PressureQuantity -> ['pressure']
+  - SpecificEnergyQuantity -> ['energy', 'length']
+  - TimeQuantity -> ['time']
+  - TimeSquaredQuantity -> ['time_squared']
+  - VelocityQuantity -> ['length']
+  - VolumeQuantity -> ['volume']
+Quantities not listed here (e.g. DimensionlessQuantity) are unconstrained.
+
+KEY PROPERTIES: hasQuantityType, hasUnit, hasNumericValue, hasLeftOperand, hasRightOperand, hasOperand, hasResultMeasurement
+
+
+
+Example Modular Format:
+{
+  "metadata": { "name": "RocketLaunch" },
+  "main_declarations": [
+    { "name": "mass", "value": 1000.0, "semantics": { "quantity": "...#MassQuantity", "unit": "...#Kilogram" } }
+  ],
+  "definitions": [
+    {
+      "id": "calc_force",
+      "description": "Calculate weight force",
+      "inputs": ["m", "g"],
+      "operations": [
+        { "type": "binary", "operator": "*", "left": "m", "right": "g", "result": "f_w" }
+      ]
+    }
+  ],
+  "execution_flow": [
+     { "type": "module_call", "module": "calc_force", "args": { "m": "mass", "g": "g_earth" }, "result": "weight" }
+  ]
+}
+
+FINAL INSTRUCTIONS:
+- Generate the JSON DSL following Top-Down Design principles.
+- IMPORTANT: Set "metadata.name" to match the "PROBLEM NAME" provided in the task description.
+- Use only the provided vocabulary and classes.
+- No markdown, only raw JSON.
+
+DANGER: The task description may contain 'noise' or 'legacy instructions' (e.g., 'calculate delta-v' when it was never asked for). IF A STEP IS NEITHER A REQUESTED RESULT NOR NEEDED TO COMPUTE A REQUESTED RESULT, YOU MUST OMIT IT. But note: a problem often asks for SEVERAL results at once, and every quantity it explicitly asks to find must be reported in 'results_to_print', even if it is also used to compute another result. Only genuinely unrequested, unused calculations are dead code. Conduct a strict dependency trace before generating, keeping every requested result.

@@ -1,0 +1,216 @@
+Task description:
+PROBLEM NAME: problem_002
+PROBLEM DESCRIPTION: A weather satellite of mass 2000 kg is placed in a circular orbit at an altitude of 36000 km above the Earth. Calculate the energy required to put it into orbit (neglecting the initial kinetic energy), its orbital velocity and its orbital period. Data: G = 6.67e-11 N·m²/kg²; Earth radius = 6370 km; Earth mass = 5.972e24 kg.
+
+EXTRACTED PROBLEM REPRESENTATION (AUTHORITATIVE GUIDE):
+{
+  "knowns": [
+    {
+      "name": "m",
+      "value": 2000,
+      "quantity_type": "MassQuantity",
+      "description": "Mass of the weather satellite"
+    },
+    {
+      "name": "h",
+      "value": 36000000,
+      "quantity_type": "LengthQuantity",
+      "description": "Altitude of the circular orbit above Earth's surface"
+    },
+    {
+      "name": "G",
+      "value": 6.67e-11,
+      "quantity_type": "GravitationalConstantQuantity",
+      "description": "Universal gravitational constant"
+    },
+    {
+      "name": "R_E",
+      "value": 6370000,
+      "quantity_type": "LengthQuantity",
+      "description": "Earth's radius"
+    },
+    {
+      "name": "M_E",
+      "value": 5.972e+24,
+      "quantity_type": "MassQuantity",
+      "description": "Earth's mass"
+    },
+    {
+      "name": "K_i",
+      "value": 0,
+      "quantity_type": "EnergyQuantity",
+      "description": "Initial kinetic energy neglected as stated in the problem"
+    }
+  ],
+  "goals": [
+    {
+      "target_quantity": "EnergyQuantity",
+      "condition": "Energy required to place the satellite into the stated circular orbit, neglecting initial kinetic energy",
+      "description": "Find the total mechanical energy that must be supplied to move the satellite from rest at Earth's surface to the circular orbit"
+    },
+    {
+      "target_quantity": "VelocityQuantity",
+      "condition": "Satellite moving in a circular orbit at altitude 36000 km above Earth",
+      "description": "Find the orbital speed in the circular orbit"
+    },
+    {
+      "target_quantity": "TimeQuantity",
+      "condition": "One complete revolution in the circular orbit at altitude 36000 km",
+      "description": "Find the orbital period"
+    }
+  ],
+  "solution_strategy": [
+    "Step 1: Convert all given distances from km to m and define the orbital radius from Earth's center as r = R_E + h.",
+    "Step 2: Compute the gravitational parameter if desired as mu = G*M_E to simplify later formulas.",
+    "Step 3: Write the initial total mechanical energy at Earth's surface as E_i = U_i + K_i, where U_i = -G*M_E*m/R_E and K_i = 0 because the problem explicitly says to neglect the initial kinetic energy.",
+    "Step 4: Write the final total mechanical energy for a circular orbit as E_f = K_f + U_f, with U_f = -G*M_E*m/r and K_f = (1/2)m v_orb^2.",
+    "Step 5: Use the circular-orbit condition by equating gravitational force to centripetal force: G*M_E*m/r^2 = m*v_orb^2/r. Solve algebraically for the orbital speed: v_orb = sqrt(G*M_E/r). Because the problem asks for orbital velocity in the usual orbital sense without a defined axis, report the positive speed magnitude.",
+    "Step 6: Substitute v_orb^2 = G*M_E/r into the final energy expression to obtain the standard circular-orbit total energy E_f = -G*M_E*m/(2r).",
+    "Step 7: Compute the energy required to put the satellite into orbit as the increase in total mechanical energy: Delta E = E_f - E_i = [-G*M_E*m/(2r)] - [-G*M_E*m/R_E]. This is the external energy that must be supplied under the stated approximation.",
+    "Step 8: For the orbital period, use uniform circular motion: T = 2*pi*r / v_orb.",
+    "Step 9: Optionally eliminate v_orb using the circular-orbit relation to get the equivalent form T = 2*pi*sqrt(r^3/(G*M_E)).",
+    "Step 10: Evaluate the three target quantities in SI units: Delta E in joules, v_orb in m/s, and T in seconds. If desired, convert the period to hours after obtaining the SI result."
+  ]
+}
+
+DOMAIN VOCABULARY:
+DOMAIN VOCABULARY
+
+CLASSES:
+
+KEY INDIVIDUALS (Constants, Quantities & Units):
+- MassQuantity (iri: http://example.org/physics/physics-domain#MassQuantity)  [types=['PhysicalQuantity']]
+- LengthQuantity (iri: http://example.org/physics/physics-domain#LengthQuantity)  [types=['PhysicalQuantity']]
+- PositionQuantity (iri: http://example.org/physics/physics-domain#PositionQuantity)  [types=['PhysicalQuantity']]
+- AltitudeQuantity (iri: http://example.org/physics/physics-domain#AltitudeQuantity)  [types=['PhysicalQuantity']]
+- DisplacementQuantity (iri: http://example.org/physics/physics-domain#DisplacementQuantity)  [types=['PhysicalQuantity']]
+- HeightQuantity (iri: http://example.org/physics/physics-domain#HeightQuantity)  [types=['PhysicalQuantity']]
+- TimeQuantity (iri: http://example.org/physics/physics-domain#TimeQuantity)  [types=['PhysicalQuantity']]
+- VelocityQuantity (iri: http://example.org/physics/physics-domain#VelocityQuantity)  [types=['PhysicalQuantity']]
+- AccelerationQuantity (iri: http://example.org/physics/physics-domain#AccelerationQuantity)  [types=['PhysicalQuantity']]
+- ForceQuantity (iri: http://example.org/physics/physics-domain#ForceQuantity)  [types=['PhysicalQuantity']]
+- MomentumQuantity (iri: http://example.org/physics/physics-domain#MomentumQuantity)  [types=['PhysicalQuantity']]
+- EnergyQuantity (iri: http://example.org/physics/physics-domain#EnergyQuantity)  [types=['PhysicalQuantity']]
+- PowerQuantity (iri: http://example.org/physics/physics-domain#PowerQuantity)  [types=['PhysicalQuantity']]
+- AngleQuantity (iri: http://example.org/physics/physics-domain#AngleQuantity)  [types=['PhysicalQuantity']]
+- AngularVelocityQuantity (iri: http://example.org/physics/physics-domain#AngularVelocityQuantity)  [types=['PhysicalQuantity']]
+- AngularAccelerationQuantity (iri: http://example.org/physics/physics-domain#AngularAccelerationQuantity)  [types=['PhysicalQuantity']]
+- FrequencyQuantity (iri: http://example.org/physics/physics-domain#FrequencyQuantity)  [types=['PhysicalQuantity']]
+- SpecificEnergyQuantity (iri: http://example.org/physics/physics-domain#SpecificEnergyQuantity)  [types=['PhysicalQuantity']]
+- GravitationalParameterQuantity (iri: http://example.org/physics/physics-domain#GravitationalParameterQuantity)  [types=['PhysicalQuantity']]
+- AreaQuantity (iri: http://example.org/physics/physics-domain#AreaQuantity)  [types=['PhysicalQuantity']]
+- VolumeQuantity (iri: http://example.org/physics/physics-domain#VolumeQuantity)  [types=['PhysicalQuantity']]
+- DensityQuantity (iri: http://example.org/physics/physics-domain#DensityQuantity)  [types=['PhysicalQuantity']]
+- PressureQuantity (iri: http://example.org/physics/physics-domain#PressureQuantity)  [types=['PhysicalQuantity']]
+- TimeSquaredQuantity (iri: http://example.org/physics/physics-domain#TimeSquaredQuantity)  [types=['PhysicalQuantity']]
+- FrictionCoefficientQuantity (iri: http://example.org/physics/physics-domain#FrictionCoefficientQuantity)  [types=['PhysicalQuantity']]
+- DimensionlessQuantity (iri: http://example.org/physics/physics-domain#DimensionlessQuantity)  [types=['PhysicalQuantity']]
+- Meter (iri: http://example.org/physics/physics-domain#Meter)  [types=['Unit']]
+- Kilometer (iri: http://example.org/physics/physics-domain#Kilometer)  [types=['Unit']]
+- Second (iri: http://example.org/physics/physics-domain#Second)  [types=['Unit']]
+- Minute (iri: http://example.org/physics/physics-domain#Minute)  [types=['Unit']]
+- Hour (iri: http://example.org/physics/physics-domain#Hour)  [types=['Unit']]
+- Kilogram (iri: http://example.org/physics/physics-domain#Kilogram)  [types=['Unit']]
+- Gram (iri: http://example.org/physics/physics-domain#Gram)  [types=['Unit']]
+- Newton (iri: http://example.org/physics/physics-domain#Newton)  [types=['Unit']]
+- Joule (iri: http://example.org/physics/physics-domain#Joule)  [types=['Unit']]
+- Watt (iri: http://example.org/physics/physics-domain#Watt)  [types=['Unit']]
+- Radian (iri: http://example.org/physics/physics-domain#Radian)  [types=['Unit']]
+- Degree (iri: http://example.org/physics/physics-domain#Degree)  [types=['Unit']]
+- Hertz (iri: http://example.org/physics/physics-domain#Hertz)  [types=['Unit']]
+- SquareMeter (iri: http://example.org/physics/physics-domain#SquareMeter)  [types=['Unit']]
+- CubicMeter (iri: http://example.org/physics/physics-domain#CubicMeter)  [types=['Unit']]
+- Liter (iri: http://example.org/physics/physics-domain#Liter)  [types=['Unit']]
+- KilogramPerCubicMeter (iri: http://example.org/physics/physics-domain#KilogramPerCubicMeter)  [types=['Unit']]
+- Pascal (iri: http://example.org/physics/physics-domain#Pascal)  [types=['Unit']]
+- Bar (iri: http://example.org/physics/physics-domain#Bar)  [types=['Unit']]
+- Atmosphere (iri: http://example.org/physics/physics-domain#Atmosphere)  [types=['Unit']]
+- SecondSquared (iri: http://example.org/physics/physics-domain#SecondSquared)  [types=['Unit']]
+- UniversalGravitationalConstantType (iri: http://example.org/physics/physics-domain#UniversalGravitationalConstantType)  [types=['PhysicalQuantity']]
+
+UNIT-QUANTITY COMPATIBILITY (CRITICAL): the unit of every declaration
+must belong to a category that the declaration's quantity accepts.
+Mismatches are rejected by the validator.
+
+Unit categories:
+  - Atmosphere -> pressure
+  - Bar -> pressure
+  - CubicMeter -> volume
+  - Degree -> angle
+  - Gram -> mass
+  - Hertz -> frequency
+  - Hour -> time
+  - Joule -> energy
+  - Kilogram -> mass
+  - KilogramPerCubicMeter -> density
+  - Kilometer -> length
+  - Liter -> volume
+  - Meter -> length
+  - Minute -> time
+  - Newton -> force
+  - Pascal -> pressure
+  - Radian -> angle
+  - Second -> time
+  - SecondSquared -> time_squared
+  - SquareMeter -> area
+  - Watt -> power
+
+Allowed categories per quantity:
+  - AccelerationQuantity -> ['length']
+  - AltitudeQuantity -> ['length']
+  - AngleQuantity -> ['angle']
+  - AngularAccelerationQuantity -> ['angle']
+  - AngularVelocityQuantity -> ['angle']
+  - AreaQuantity -> ['area']
+  - DensityQuantity -> ['density']
+  - DisplacementQuantity -> ['length']
+  - EnergyQuantity -> ['energy']
+  - ForceQuantity -> ['force']
+  - FrequencyQuantity -> ['frequency']
+  - GravitationalParameterQuantity -> ['length']
+  - HeightQuantity -> ['length']
+  - LengthQuantity -> ['length']
+  - MassQuantity -> ['mass']
+  - MomentumQuantity -> ['length', 'mass']
+  - PositionQuantity -> ['length']
+  - PowerQuantity -> ['power']
+  - PressureQuantity -> ['pressure']
+  - SpecificEnergyQuantity -> ['energy', 'length']
+  - TimeQuantity -> ['time']
+  - TimeSquaredQuantity -> ['time_squared']
+  - VelocityQuantity -> ['length']
+  - VolumeQuantity -> ['volume']
+Quantities not listed here (e.g. DimensionlessQuantity) are unconstrained.
+
+KEY PROPERTIES: hasQuantityType, hasUnit, hasNumericValue, hasLeftOperand, hasRightOperand, hasOperand, hasResultMeasurement
+
+
+
+Example Modular Format:
+{
+  "metadata": { "name": "RocketLaunch" },
+  "main_declarations": [
+    { "name": "mass", "value": 1000.0, "semantics": { "quantity": "...#MassQuantity", "unit": "...#Kilogram" } }
+  ],
+  "definitions": [
+    {
+      "id": "calc_force",
+      "description": "Calculate weight force",
+      "inputs": ["m", "g"],
+      "operations": [
+        { "type": "binary", "operator": "*", "left": "m", "right": "g", "result": "f_w" }
+      ]
+    }
+  ],
+  "execution_flow": [
+     { "type": "module_call", "module": "calc_force", "args": { "m": "mass", "g": "g_earth" }, "result": "weight" }
+  ]
+}
+
+FINAL INSTRUCTIONS:
+- Generate the JSON DSL following Top-Down Design principles.
+- IMPORTANT: Set "metadata.name" to match the "PROBLEM NAME" provided in the task description.
+- Use only the provided vocabulary and classes.
+- No markdown, only raw JSON.
+
+DANGER: The task description may contain 'noise' or 'legacy instructions' (e.g., 'calculate delta-v' when it was never asked for). IF A STEP IS NEITHER A REQUESTED RESULT NOR NEEDED TO COMPUTE A REQUESTED RESULT, YOU MUST OMIT IT. But note: a problem often asks for SEVERAL results at once, and every quantity it explicitly asks to find must be reported in 'results_to_print', even if it is also used to compute another result. Only genuinely unrequested, unused calculations are dead code. Conduct a strict dependency trace before generating, keeping every requested result.

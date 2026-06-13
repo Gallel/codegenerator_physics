@@ -1,0 +1,227 @@
+{
+  "program": "problem_008",
+  "steps": [
+    {
+      "expression": "Op_1_delta_t",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_t1_end",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_t1_start",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 0.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_t_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_v1_end",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 8.0
+        },
+        {
+          "name": "phys_v1_start",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_delta_t",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_t2_end",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 4.0
+        },
+        {
+          "name": "phys_t2_start",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_t_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_v2_constant",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 8.0
+        },
+        {
+          "name": "phys_v2_constant",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 8.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_delta_t",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_t3_end",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 6.0
+        },
+        {
+          "name": "phys_t3_start",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 4.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_t_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_v3_end",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 4.0
+        },
+        {
+          "name": "phys_v3_start",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 8.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_a_avg",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_delta_t_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_a_avg_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_a_avg",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_delta_t_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_a_avg_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_a_avg",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_8",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_delta_t_7",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_a_avg_9",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

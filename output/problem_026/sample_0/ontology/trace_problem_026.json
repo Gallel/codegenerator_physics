@@ -1,0 +1,57 @@
+{
+  "program": "problem_026",
+  "steps": [
+    {
+      "expression": "Op_1_rho",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_m_g",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 450.0
+        },
+        {
+          "name": "phys_V_L",
+          "quantities": [
+            "VolumeQuantity"
+          ],
+          "value": 0.12
+        }
+      ],
+      "result": {
+        "name": "Res_rho_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_rho",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_m_g",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 450.0
+        },
+        {
+          "name": "phys_V_m3",
+          "quantities": [
+            "VolumeQuantity"
+          ],
+          "value": 0.00012
+        }
+      ],
+      "result": {
+        "name": "Res_rho_2",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

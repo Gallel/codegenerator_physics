@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "orbital_period": {
+      "reference": 20.2,
+      "generated": 20.227846998843553,
+      "match": true,
+      "matched_by": "value"
+    },
+    "mechanical_energy": {
+      "reference": -1400000000.0,
+      "generated": -1408750000.0,
+      "match": true,
+      "matched_by": "value"
+    },
+    "lunar_escape_velocity": {
+      "reference": 2373.8,
+      "generated": 2373.815494093844,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "T_hours": 20.227846998843553,
+    "E_mech": -1408750000.0,
+    "v_escape": 2373.815494093844
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 4,
+  "n_compiled": 4,
+  "n_ran": 4,
+  "pass_at_1": 0.8,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_007__single"
+}

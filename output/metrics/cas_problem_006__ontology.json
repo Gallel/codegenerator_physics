@@ -1,0 +1,37 @@
+{
+  "total_goals": 3,
+  "covered": 2,
+  "reported_by_name": 0,
+  "value_only": 2,
+  "reported_and_correct": 2,
+  "cas_lax": 0.6666666666666666,
+  "cas_strict": 0.6666666666666666,
+  "goals": {
+    "orbital_velocity": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "orbital_period": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "initial_velocity_from_surface": {
+      "matched_by": null,
+      "correct": false,
+      "covered": false,
+      "reported_by_name": false
+    }
+  },
+  "branch": "ontology",
+  "cas_lax_std": 0.0,
+  "cas_lax_max_correct": null,
+  "cas_lax_min_correct": null,
+  "cas_strict_std": 0.0,
+  "cas_strict_max_correct": null,
+  "cas_strict_min_correct": null,
+  "problem_id": "problem_006__ontology"
+}

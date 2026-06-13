@@ -1,0 +1,199 @@
+{
+  "program": "problem_016",
+  "steps": [
+    {
+      "expression": "Op_1_f",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_rotation_rate_rpm",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 300.0
+        },
+        {
+          "name": "phys_sixty",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 60.0
+        }
+      ],
+      "result": {
+        "name": "Res_f_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_T",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 1.0
+        },
+        {
+          "name": "Res_f_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_T_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_omega_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "Res_omega_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_omega_sq_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_omega_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "Res_omega_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_omega_sq_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_two_pi",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        }
+      ],
+      "result": {
+        "name": "Res_two_pi_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_omega",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_pi_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_f_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_omega_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_a_c",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_omega_sq_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r_edge",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.1
+        }
+      ],
+      "result": {
+        "name": "Res_a_c_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_a_c",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_omega_sq_7",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r_inner",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.05
+        }
+      ],
+      "result": {
+        "name": "Res_a_c_8",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

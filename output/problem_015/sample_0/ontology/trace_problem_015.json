@@ -1,0 +1,131 @@
+{
+  "program": "problem_015",
+  "steps": [
+    {
+      "expression": "Op_1_v",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_omega",
+          "quantities": [
+            "AngularVelocityQuantity"
+          ],
+          "value": 1.5707963267948966
+        },
+        {
+          "name": "phys_R",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.5
+        }
+      ],
+      "result": {
+        "name": "Res_v_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_a_c",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_omega_sq_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_R",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.5
+        }
+      ],
+      "result": {
+        "name": "Res_a_c_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_omega_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_omega",
+          "quantities": [
+            "AngularVelocityQuantity"
+          ],
+          "value": 1.5707963267948966
+        },
+        {
+          "name": "phys_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 1.0
+        }
+      ],
+      "result": {
+        "name": "Res_omega_sq_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_T",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_two_pi",
+          "quantities": [
+            "AngleQuantity"
+          ],
+          "value": 6.283185307179586
+        },
+        {
+          "name": "phys_omega",
+          "quantities": [
+            "AngularVelocityQuantity"
+          ],
+          "value": 1.5707963267948966
+        }
+      ],
+      "result": {
+        "name": "Res_T_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_f",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 1.0
+        },
+        {
+          "name": "Res_T_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_f_5",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

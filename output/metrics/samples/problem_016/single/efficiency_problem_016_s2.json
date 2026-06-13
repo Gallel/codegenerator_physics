@@ -1,0 +1,52 @@
+[
+  {
+    "problem_id": "problem_016",
+    "branch": "single",
+    "record_type": "layer",
+    "layer": "extract_problem",
+    "calls": 0,
+    "total_s": 0,
+    "mean_s": 0.0,
+    "min_s": 0.0,
+    "max_s": 0.0,
+    "prompt_tokens": 625,
+    "completion_tokens": 570
+  },
+  {
+    "problem_id": "problem_016",
+    "branch": "single",
+    "record_type": "layer",
+    "layer": "generate_dsl",
+    "calls": 1,
+    "total_s": 13.800524,
+    "mean_s": 13.800524,
+    "min_s": 13.800524,
+    "max_s": 13.800524,
+    "prompt_tokens": 5290,
+    "completion_tokens": 1056
+  },
+  {
+    "problem_id": "problem_016",
+    "branch": "single",
+    "record_type": "layer",
+    "layer": "emit_java",
+    "calls": 1,
+    "total_s": 0.025429,
+    "mean_s": 0.025429,
+    "min_s": 0.025429,
+    "max_s": 0.025429,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+  },
+  {
+    "problem_id": "problem_016",
+    "branch": "single",
+    "record_type": "summary",
+    "layer": "ALL",
+    "iterations": 1,
+    "validation_passed": true,
+    "wall_total_s": 13.829801,
+    "prompt_tokens_total": 5915,
+    "completion_tokens_total": 1626
+  }
+]

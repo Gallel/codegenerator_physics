@@ -1,0 +1,32 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "maximum_height": {
+      "reference": 11.5,
+      "generated": 11.479591836734693,
+      "match": true,
+      "matched_by": "value"
+    },
+    "time_to_maximum_height": {
+      "reference": 1.53,
+      "generated": 1.530612244897959,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "max_height": 11.479591836734693,
+    "time_to_max_height": 1.530612244897959
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_013__ontology"
+}

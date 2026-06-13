@@ -1,0 +1,104 @@
+{
+  "sample": 3,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "orbital_energy_required": {
+        "reference": 115000000000.0,
+        "generated": 115663833812.0964,
+        "match": true,
+        "matched_by": "value"
+      },
+      "orbital_velocity": {
+        "reference": 3066.15,
+        "generated": 3066.151321658319,
+        "match": true,
+        "matched_by": "value"
+      },
+      "orbital_period": {
+        "reference": 86840.0,
+        "generated": 86824.99118184928,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "Delta_E": 115663833812.0964,
+      "v": 3066.151321658319,
+      "T": 86824.99118184928
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 4,
+    "passed": 4,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "orbital_period",
+        "value": 86824.99118184928,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "orbital_velocity",
+        "value": 3066.151321658319,
+        "passed": true
+      },
+      {
+        "rule": "orbital_energy_required_positive",
+        "goal": "orbital_energy_required",
+        "value": 115663833812.0964,
+        "passed": true
+      },
+      {
+        "rule": "orbital_v_period_consistency",
+        "goal": "(relational)",
+        "value": null,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 3,
+    "reported_by_name": 0,
+    "value_only": 3,
+    "reported_and_correct": 3,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "orbital_energy_required": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "orbital_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "orbital_period": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3788680636009243,
+    "ngram_match": 0.07516213007851752,
+    "weighted_ngram_match": 0.2559351243251796,
+    "syntax_match": 0.7,
+    "dataflow_match": 0.484375
+  }
+}

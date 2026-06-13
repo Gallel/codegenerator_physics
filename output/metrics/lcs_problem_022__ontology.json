@@ -1,0 +1,19 @@
+{
+  "domain": "work_energy",
+  "applicable": 1,
+  "passed": 1,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "kinetic_energy_nonneg",
+      "goal": "kinetic_energy",
+      "value": 585000.0,
+      "passed": true
+    }
+  ],
+  "branch": "ontology",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_022__ontology"
+}

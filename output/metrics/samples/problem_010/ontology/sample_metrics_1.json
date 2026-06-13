@@ -1,0 +1,79 @@
+{
+  "sample": 1,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "acceleration": {
+        "reference": -5.0,
+        "generated": -5.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "distance_covered": {
+        "reference": 62.5,
+        "generated": 62.5,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "a": -5.0,
+      "distance": 62.5
+    }
+  },
+  "lcs": {
+    "domain": "linear_kinematics",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "distance_nonneg",
+        "goal": "distance_covered",
+        "value": 62.5,
+        "passed": true
+      },
+      {
+        "rule": "acceleration_finite",
+        "goal": "acceleration",
+        "value": -5.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "acceleration": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "distance_covered": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3837407613943542,
+    "ngram_match": 0.15688668187306054,
+    "weighted_ngram_match": 0.44692076131587727,
+    "syntax_match": 0.726027397260274,
+    "dataflow_match": 0.20512820512820512
+  }
+}

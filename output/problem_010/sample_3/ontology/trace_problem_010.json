@@ -1,0 +1,129 @@
+{
+  "program": "problem_010",
+  "steps": [
+    {
+      "expression": "Op_5_delta_x",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_v_avg_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 5.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_x_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_a",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 5.0
+        }
+      ],
+      "result": {
+        "name": "Res_a_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v_avg",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_velocity_sum_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_half",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_avg_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_velocity_sum",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 25.0
+        },
+        {
+          "name": "phys_v_f",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        }
+      ],
+      "result": {
+        "name": "Res_velocity_sum_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_v_f",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 25.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_1",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

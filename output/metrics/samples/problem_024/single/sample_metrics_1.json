@@ -1,0 +1,53 @@
+{
+  "sample": 1,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "final_velocity_zipi": {
+        "reference": 0.17,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      }
+    },
+    "produced": {
+      "v_zipi_final_after_catch": -0.17131474103585656
+    }
+  },
+  "lcs": {
+    "domain": "dynamics",
+    "applicable": 0,
+    "passed": 0,
+    "lcs": null,
+    "checks": []
+  },
+  "cas": {
+    "total_goals": 1,
+    "covered": 0,
+    "reported_by_name": 0,
+    "value_only": 0,
+    "reported_and_correct": 0,
+    "cas_lax": 0.0,
+    "cas_strict": 0.0,
+    "goals": {
+      "final_velocity_zipi": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3302070907341537,
+    "ngram_match": 0.0723476967381346,
+    "weighted_ngram_match": 0.2766191943370083,
+    "syntax_match": 0.6623376623376623,
+    "dataflow_match": 0.30952380952380953
+  }
+}

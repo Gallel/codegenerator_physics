@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorador de l'ontologia de física — TFM</title>
+<style>
+  :root {
+    --bg:        #f7f7f5;
+    --panel:    #ffffff;
+    --border:   #d8d8d4;
+    --ink:      #1f2933;
+    --muted:    #5b6573;
+    --accent:   #2d6a4f;
+    --accent-l: #d8f1e2;
+    --code-bg:  #f0efe8;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.5;
+    display: flex; flex-direction: column; min-height: 100vh;
+  }
+  header {
+    padding: 24px 32px; background: var(--panel); border-bottom: 1px solid var(--border);
+    flex: 0 0 auto;
+  }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header p  { margin: 0; color: var(--muted); font-size: 14px; }
+  .layout {
+    display: grid; grid-template-columns: 230px 1fr;
+    flex: 1 1 auto;
+  }
+  nav {
+    border-right: 1px solid var(--border); background: var(--panel); padding: 16px 0;
+  }
+  nav button {
+    display: block; width: 100%; padding: 10px 20px; border: 0; background: transparent;
+    text-align: left; font: inherit; color: var(--ink); cursor: pointer; border-left: 3px solid transparent;
+  }
+  nav button:hover { background: var(--bg); }
+  nav button.active {
+    background: var(--accent-l); border-left-color: var(--accent); font-weight: 600;
+  }
+  main { padding: 24px 32px 60px; max-width: 1100px; width: 100%; }
+  section { display: none; }
+  section.active { display: block; }
+  section h2 { margin: 0 0 8px; font-size: 20px; }
+  section > p.lead { margin: 0 0 18px; color: var(--muted); }
+  h3 { margin: 26px 0 8px; font-size: 16px; }
+  table {
+    border-collapse: collapse; width: 100%; background: var(--panel);
+    border: 1px solid var(--border); margin: 8px 0 18px; font-size: 14px;
+  }
+  th, td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: #efefea; font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--code-bg); border-radius: 3px; padding: 1px 6px; font-size: 13px;
+  }
+  pre {
+    padding: 12px 14px; overflow-x: auto; white-space: pre; line-height: 1.45;
+  }
+  .meta { color: var(--muted); font-size: 13px; }
+  .tag {
+    display: inline-block; padding: 1px 7px; border-radius: 10px;
+    background: var(--accent-l); color: var(--accent); font-size: 12px; margin-right: 4px;
+  }
+  .small { font-size: 13px; color: var(--muted); }
+  footer {
+    padding: 16px 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px;
+    background: var(--panel); flex: 0 0 auto;
+  }
+
+  /* ============== RESPONSIVE ============== */
+  /* Tauleta: navegació encara lateral però més estreta i contingut ajustat. */
+  @media (max-width: 960px) {
+    .layout { grid-template-columns: 190px 1fr; }
+    header { padding: 18px 22px; }
+    main { padding: 20px 22px 48px; }
+    footer { padding: 14px 22px; }
+  }
+
+  /* Mòbil: navegació passa a barra superior horitzontal amb scroll. */
+  @media (max-width: 760px) {
+    header { padding: 16px 18px; }
+    header h1 { font-size: 19px; }
+    header p { font-size: 13px; }
+    .layout {
+      display: flex; flex-direction: column;
+    }
+    nav {
+      border-right: 0; border-bottom: 1px solid var(--border);
+      padding: 0; display: flex; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; flex: 0 0 auto;
+      white-space: nowrap;
+    }
+    nav button {
+      width: auto; flex: 0 0 auto; padding: 12px 14px;
+      border-left: 0; border-bottom: 3px solid transparent;
+    }
+    nav button.active {
+      border-left-color: transparent; border-bottom-color: var(--accent);
+    }
+    main { padding: 18px 18px 40px; }
+    footer { padding: 12px 18px; font-size: 12px; }
+    section h2 { font-size: 18px; }
+    th, td { padding: 7px 10px; }
+    /* En mòbil, taules amples passen a bloc amb scroll horitzontal. */
+    section table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+
+  /* Mòbil molt petit. */
+  @media (max-width: 420px) {
+    header { padding: 14px 14px; }
+    header h1 { font-size: 17px; }
+    main { padding: 14px 14px 36px; }
+    nav button { padding: 10px 12px; font-size: 14px; }
+    body { font-size: 14px; }
+    table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Explorador de l'ontologia de física</h1>
+  <p>Catàleg del coneixement físic codificat al projecte: operacions matemàtiques, magnituds, unitats i regles de raonament. Concebut com a punt de consulta i base per a la col·laboració.</p>
+</header>
+
+<div class="layout">
+  <nav>
+    <button class="tabbtn active" data-tab="overview">Visió general</button>
+    <button class="tabbtn" data-tab="ops">Operacions</button>
+    <button class="tabbtn" data-tab="qty">Magnituds físiques</button>
+    <button class="tabbtn" data-tab="dims">Categories dimensionals</button>
+    <button class="tabbtn" data-tab="units">Unitats</button>
+    <button class="tabbtn" data-tab="consts">Constants físiques</button>
+    <button class="tabbtn" data-tab="formulas">Fórmules</button>
+    <button class="tabbtn" data-tab="prop">Regles de propagació</button>
+    <button class="tabbtn" data-tab="errors">Regles d'error</button>
+    <button class="tabbtn" data-tab="manual">Comprovacions del validador</button>
+    <button class="tabbtn" data-tab="contrib">Com col·laborar</button>
+  </nav>
+
+  <main>
+
+    <!-- ============ OVERVIEW ============ -->
+    <section id="overview" class="active">
+      <h2>Visió general</h2>
+      <p class="lead">L'ontologia codifica un model formal de física apte per a raonament automàtic: classifica els tipus de càlcul que el sistema sap fer, les magnituds físiques que reconeix, les unitats que entén, i les regles lògiques que permeten al raonador inferir la dimensió del resultat d'una operació o detectar inconsistències.</p>
+
+      <h3>Arquitectura en tres ontologies</h3>
+      <table>
+        <tr><th>Fitxer</th><th>Què hi ha</th></tr>
+        <tr><td><code>physics-math.owl</code></td><td>Les classes d'expressions matemàtiques: suma, resta, producte, divisió, potència, arrel, trigonomètriques, logaritmes, derivades, integrals.</td></tr>
+        <tr><td><code>physics-domain.owl</code></td><td>Les magnituds físiques (massa, longitud, temps, força...), les unitats (metre, segon, newton...), i les seves categories dimensionals.</td></tr>
+        <tr><td><code>physics-rules.owl</code></td><td>Les regles SWRL: com propagar el tipus de magnitud a través d'una operació i quan marcar inconsistència.</td></tr>
+      </table>
+
+      <h3>Xifres actuals</h3>
+      <table>
+        <tr><td>Classes d'expressions matemàtiques</td><td><b>14</b></td></tr>
+        <tr><td>Magnituds físiques</td><td><b>26</b></td></tr>
+        <tr><td>Categories dimensionals</td><td><b>13</b></td></tr>
+        <tr><td>Unitats físiques</td><td><b>21</b></td></tr>
+        <tr><td>Constants físiques predefinides</td><td><b>22</b></td></tr>
+        <tr><td>Fórmules catalogades (8 grups: cinemàtica, dinàmica, energia, gravitació, fluids…)</td><td><b>60</b></td></tr>
+        <tr><td>Regles de propagació (43 SWRL + 8 validador)</td><td><b>51</b></td></tr>
+        <tr><td>Regles SWRL d'error</td><td><b>6</b></td></tr>
+        <tr><td>Comprovacions del validador</td><td><b>5</b></td></tr>
+      </table>
+
+      <h3>Repositori</h3>
+      <p>El codi del projecte és a <a href="https://github.com/Gallel/codegenerator_physics" target="_blank" rel="noopener">github.com/Gallel/codegenerator_physics</a>.</p>
+    </section>
+
+    <!-- ============ OPERATIONS ============ -->
+    <section id="ops">
+      <h2>Operacions matemàtiques</h2>
+      <p class="lead">Cada expressió que apareix en el DSL es modela com una instància d'una d'aquestes classes. La jerarquia separa les operacions binàries (dos operands) de les unàries (un operand) i d'un cas especial d'assignació.</p>
+
+      <h3>Binàries</h3>
+      <table>
+        <tr><th>Classe</th><th>Símbol DSL</th><th>Descripció</th></tr>
+        <tr><td><code>AdditionExpression</code></td><td><code>+</code></td><td>Suma. Els operands han de tenir la mateixa magnitud.</td></tr>
+        <tr><td><code>SubtractionExpression</code></td><td><code>-</code></td><td>Resta. Mateixa restricció que la suma.</td></tr>
+        <tr><td><code>MultiplicationExpression</code></td><td><code>*</code></td><td>Producte. Es propaga combinant les magnituds dels operands.</td></tr>
+        <tr><td><code>DivisionExpression</code></td><td><code>/</code></td><td>Quocient. Es propaga inversament.</td></tr>
+        <tr><td><code>PowerExpression</code></td><td><code>^</code></td><td>Potència. Funciona bé amb exponent enter (Longitud² → Àrea, Longitud³ → Volum).</td></tr>
+        <tr><td><code>AssignmentOperation</code></td><td><code>=</code></td><td>Assignació. El resultat hereta la magnitud del costat dret.</td></tr>
+      </table>
+
+      <h3>Unàries</h3>
+      <table>
+        <tr><th>Classe</th><th>Funció DSL</th><th>Descripció</th></tr>
+        <tr><td><code>SqrtExpression</code></td><td><code>sqrt</code></td><td>Arrel quadrada. Pot tenir polaritat positiva, negativa o ambdues.</td></tr>
+        <tr><td><code>SineExpression</code></td><td><code>sin</code></td><td>Sinus. L'argument ha de ser un angle.</td></tr>
+        <tr><td><code>CosineExpression</code></td><td><code>cos</code></td><td>Cosinus. L'argument ha de ser un angle.</td></tr>
+        <tr><td><code>TangentExpression</code></td><td><code>tan</code></td><td>Tangent. L'argument ha de ser un angle.</td></tr>
+        <tr><td><code>LogarithmExpression</code></td><td><code>log</code></td><td>Logaritme decimal. El resultat sempre és sense dimensió.</td></tr>
+        <tr><td><code>NaturalLogarithmExpression</code></td><td><code>ln</code></td><td>Logaritme natural. El resultat sempre és sense dimensió.</td></tr>
+        <tr><td><code>DerivativeExpression</code></td><td><code>derivative</code></td><td>Derivada respecte al temps (per defecte).</td></tr>
+        <tr><td><code>IntegralExpression</code></td><td><code>integral</code></td><td>Integral respecte al temps (per defecte).</td></tr>
+      </table>
+    </section>
+
+    <!-- ============ QUANTITIES ============ -->
+    <section id="qty">
+      <h2>Magnituds físiques</h2>
+      <p class="lead">Cada variable que apareix al DSL té associada una magnitud física (qua), que el raonador propaga per la cadena d'operacions. La columna "categories acceptades" indica quines categories dimensionals d'unitat són vàlides per a aquesta magnitud.</p>
+
+      <h3>Cinemàtiques i posicionals</h3>
+      <table>
+        <tr><th>Magnitud</th><th>Categories d'unitat acceptades</th></tr>
+        <tr><td><code>MassQuantity</code></td><td>mass</td></tr>
+        <tr><td><code>LengthQuantity</code></td><td>length</td></tr>
+        <tr><td><code>PositionQuantity</code></td><td>length</td></tr>
+        <tr><td><code>AltitudeQuantity</code></td><td>length</td></tr>
+        <tr><td><code>DisplacementQuantity</code></td><td>length</td></tr>
+        <tr><td><code>HeightQuantity</code></td><td>length</td></tr>
+        <tr><td><code>TimeQuantity</code></td><td>time</td></tr>
+        <tr><td><code>VelocityQuantity</code></td><td>length</td></tr>
+        <tr><td><code>AccelerationQuantity</code></td><td>length</td></tr>
+      </table>
+
+      <h3>Dinàmiques i energètiques</h3>
+      <table>
+        <tr><th>Magnitud</th><th>Categories d'unitat acceptades</th></tr>
+        <tr><td><code>ForceQuantity</code></td><td>force</td></tr>
+        <tr><td><code>MomentumQuantity</code></td><td>length, mass</td></tr>
+        <tr><td><code>EnergyQuantity</code></td><td>energy</td></tr>
+        <tr><td><code>PowerQuantity</code></td><td>power</td></tr>
+        <tr><td><code>SpecificEnergyQuantity</code></td><td>energy, length</td></tr>
+        <tr><td><code>GravitationalParameterQuantity</code></td><td>length</td></tr>
+        <tr><td><code>FrictionCoefficientQuantity</code></td><td>(sense dimensió)</td></tr>
+      </table>
+
+      <h3>Angulars i de freqüència</h3>
+      <table>
+        <tr><th>Magnitud</th><th>Categories d'unitat acceptades</th></tr>
+        <tr><td><code>AngleQuantity</code></td><td>angle</td></tr>
+        <tr><td><code>AngularVelocityQuantity</code></td><td>angle</td></tr>
+        <tr><td><code>AngularAccelerationQuantity</code></td><td>angle</td></tr>
+        <tr><td><code>FrequencyQuantity</code></td><td>frequency</td></tr>
+      </table>
+
+      <h3>Geomètriques i de fluids</h3>
+      <table>
+        <tr><th>Magnitud</th><th>Categories d'unitat acceptades</th></tr>
+        <tr><td><code>AreaQuantity</code></td><td>area</td></tr>
+        <tr><td><code>VolumeQuantity</code></td><td>volume</td></tr>
+        <tr><td><code>DensityQuantity</code></td><td>density</td></tr>
+        <tr><td><code>PressureQuantity</code></td><td>pressure</td></tr>
+      </table>
+
+      <h3>Auxiliars</h3>
+      <table>
+        <tr><th>Magnitud</th><th>Comentari</th></tr>
+        <tr><td><code>TimeSquaredQuantity</code></td><td>Producte intermediari (per a fórmules tipus ½·a·t²).</td></tr>
+        <tr><td><code>DimensionlessQuantity</code></td><td>Sense restricció d'unitat. Cau aquí qualsevol resultat de log/sin/cos/etc.</td></tr>
+      </table>
+    </section>
+
+    <!-- ============ DIMENSIONS ============ -->
+    <section id="dims">
+      <h2>Categories dimensionals</h2>
+      <p class="lead">Les unitats s'agrupen en categories. Una declaració al DSL és vàlida si la categoria de la seva unitat està entre les categories acceptades per la seva magnitud. El validador comprova aquesta correspondència abans d'invocar el raonador.</p>
+
+      <table>
+        <tr><th>Categoria</th><th>Significat</th><th>Exemples d'unitat</th></tr>
+        <tr><td>mass</td><td>Massa</td><td>Kilogram, Gram</td></tr>
+        <tr><td>length</td><td>Longitud i derivades (m, m/s, m/s², m/s³…)</td><td>Meter, Kilometer</td></tr>
+        <tr><td>time</td><td>Temps</td><td>Second, Minute, Hour</td></tr>
+        <tr><td>force</td><td>Força</td><td>Newton</td></tr>
+        <tr><td>energy</td><td>Energia i treball</td><td>Joule</td></tr>
+        <tr><td>power</td><td>Potència</td><td>Watt</td></tr>
+        <tr><td>angle</td><td>Angle i derivades</td><td>Radian, Degree</td></tr>
+        <tr><td>frequency</td><td>Freqüència</td><td>Hertz</td></tr>
+        <tr><td>area</td><td>Àrea</td><td>SquareMeter</td></tr>
+        <tr><td>volume</td><td>Volum</td><td>CubicMeter, Liter</td></tr>
+        <tr><td>density</td><td>Densitat</td><td>KilogramPerCubicMeter</td></tr>
+        <tr><td>pressure</td><td>Pressió</td><td>Pascal, Bar, Atmosphere</td></tr>
+        <tr><td>time_squared</td><td>Temps al quadrat (auxiliar)</td><td>SecondSquared</td></tr>
+      </table>
+    </section>
+
+    <!-- ============ UNITS ============ -->
+    <section id="units">
+      <h2>Unitats físiques</h2>
+      <p class="lead">El factor de conversió a SI permet al sistema treballar internament amb unitats canòniques mentre el DSL pot declarar valors en l'escala que vulgui. La conversió s'aplica explícitament al flux d'execució.</p>
+
+      <h3>Mecàniques</h3>
+      <table>
+        <tr><th>Unitat</th><th>Categoria</th><th>Factor a SI</th></tr>
+        <tr><td>Meter</td><td>length</td><td>1.0</td></tr>
+        <tr><td>Kilometer</td><td>length</td><td>1000.0</td></tr>
+        <tr><td>Second</td><td>time</td><td>1.0</td></tr>
+        <tr><td>Minute</td><td>time</td><td>60.0</td></tr>
+        <tr><td>Hour</td><td>time</td><td>3600.0</td></tr>
+        <tr><td>Kilogram</td><td>mass</td><td>1.0</td></tr>
+        <tr><td>Gram</td><td>mass</td><td>0.001</td></tr>
+        <tr><td>Newton</td><td>force</td><td>1.0</td></tr>
+        <tr><td>Joule</td><td>energy</td><td>1.0</td></tr>
+        <tr><td>Watt</td><td>power</td><td>1.0</td></tr>
+      </table>
+
+      <h3>Angles i freqüència</h3>
+      <table>
+        <tr><th>Unitat</th><th>Categoria</th><th>Factor a SI</th></tr>
+        <tr><td>Radian</td><td>angle</td><td>1.0</td></tr>
+        <tr><td>Degree</td><td>angle</td><td>0.017453 (π/180)</td></tr>
+        <tr><td>Hertz</td><td>frequency</td><td>1.0</td></tr>
+      </table>
+
+      <h3>Geomètriques, fluids i auxiliars</h3>
+      <table>
+        <tr><th>Unitat</th><th>Categoria</th><th>Factor a SI</th></tr>
+        <tr><td>SquareMeter</td><td>area</td><td>1.0</td></tr>
+        <tr><td>CubicMeter</td><td>volume</td><td>1.0</td></tr>
+        <tr><td>Liter</td><td>volume</td><td>0.001</td></tr>
+        <tr><td>KilogramPerCubicMeter</td><td>density</td><td>1.0</td></tr>
+        <tr><td>Pascal</td><td>pressure</td><td>1.0</td></tr>
+        <tr><td>Bar</td><td>pressure</td><td>100000.0</td></tr>
+        <tr><td>Atmosphere</td><td>pressure</td><td>101325.0</td></tr>
+        <tr><td>SecondSquared</td><td>time_squared</td><td>1.0</td></tr>
+      </table>
+    </section>
+
+    <!-- ============ CONSTANTS ============ -->
+    <section id="consts">
+      <h2>Constants físiques</h2>
+      <p class="lead">L'ontologia inclou un conjunt de constants i valors de referència ja tipats amb la seva magnitud i unitat, perquè el sistema els pugui utilitzar directament sense que el model generador els hagi de declarar.</p>
+
+      <h3>Constants universals</h3>
+      <table>
+        <tr><th>Nom</th><th>Símbol</th><th>Valor</th><th>Magnitud</th><th>Unitat</th></tr>
+        <tr><td>Pi</td><td>π</td><td>3.141592653589793</td><td>DimensionlessQuantity</td><td>—</td></tr>
+        <tr><td>StandardGravity</td><td>g</td><td>9.80665</td><td>AccelerationQuantity</td><td>Meter</td></tr>
+        <tr><td>UniversalGravitationalConstant</td><td>G</td><td>6.67430·10⁻¹¹</td><td>UniversalGravitationalConstantType</td><td>—</td></tr>
+        <tr><td>SpeedOfLight</td><td>c</td><td>299792458.0</td><td>VelocityQuantity</td><td>Meter</td></tr>
+      </table>
+
+      <h3>Referències de longitud i temps</h3>
+      <table>
+        <tr><th>Nom</th><th>Símbol</th><th>Valor</th><th>Magnitud</th><th>Unitat</th></tr>
+        <tr><td>AstronomicalUnit</td><td>AU</td><td>149597870700.0</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Day</td><td>day</td><td>86400.0</td><td>TimeQuantity</td><td>Second</td></tr>
+        <tr><td>JulianYear</td><td>yr</td><td>31557600.0</td><td>TimeQuantity</td><td>Second</td></tr>
+      </table>
+
+      <h3>Atmosfera i fluids</h3>
+      <table>
+        <tr><th>Nom</th><th>Símbol</th><th>Valor</th><th>Magnitud</th><th>Unitat</th></tr>
+        <tr><td>StandardAtmosphericPressure</td><td>P_atm</td><td>101325.0</td><td>PressureQuantity</td><td>Pascal</td></tr>
+        <tr><td>StandardWaterDensity</td><td>rho_water</td><td>1000.0</td><td>DensityQuantity</td><td>KilogramPerCubicMeter</td></tr>
+        <tr><td>StandardAirDensity</td><td>rho_air</td><td>1.225</td><td>DensityQuantity</td><td>KilogramPerCubicMeter</td></tr>
+      </table>
+
+      <h3>Cossos celestes</h3>
+      <table>
+        <tr><th>Nom</th><th>Símbol</th><th>Valor</th><th>Magnitud</th><th>Unitat</th></tr>
+        <tr><td>Earth_Mass</td><td>M_earth</td><td>5.97217·10²⁴</td><td>MassQuantity</td><td>Kilogram</td></tr>
+        <tr><td>Earth_MeanRadius</td><td>R_earth</td><td>6371000.0</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Earth_EquatorialRadius</td><td>R_eq_earth</td><td>6378136.6</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Earth_GravitationalParameter</td><td>mu_earth</td><td>3.986004418·10¹⁴</td><td>GravitationalParameterQuantity</td><td>—</td></tr>
+        <tr><td>Mars_MeanRadius</td><td>R_mars</td><td>3389500.0</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Mars_GravitationalParameter</td><td>mu_mars</td><td>4.282837·10¹³</td><td>GravitationalParameterQuantity</td><td>—</td></tr>
+        <tr><td>Sun_MeanRadius</td><td>R_sun</td><td>695700000.0</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Sun_GravitationalParameter</td><td>mu_sun</td><td>1.32712440018·10²⁰</td><td>GravitationalParameterQuantity</td><td>—</td></tr>
+        <tr><td>Moon_MeanRadius</td><td>R_moon</td><td>1737400.0</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Moon_GravitationalParameter</td><td>mu_moon</td><td>4.902800066·10¹²</td><td>GravitationalParameterQuantity</td><td>—</td></tr>
+        <tr><td>Jupiter_MeanRadius</td><td>R_jup</td><td>69911000.0</td><td>LengthQuantity</td><td>Meter</td></tr>
+        <tr><td>Jupiter_GravitationalParameter</td><td>mu_jup</td><td>1.26686534·10¹⁷</td><td>GravitationalParameterQuantity</td><td>—</td></tr>
+      </table>
+
+      <p class="small">La magnitud <code>UniversalGravitationalConstantType</code> és una classe pròpia que es defineix només per acompanyar la constant G, ja que dimensionalment no encaixa amb cap altra de les magnituds estàndard.</p>
+    </section>
+
+    <!-- ============ FORMULAS ============ -->
+    <section id="formulas">
+      <h2>Fórmules</h2>
+      <p class="lead">Catàleg de les fórmules clàssiques de física que el sistema està preparat per generar i validar. Les operacions són elementals (suma, resta, producte, divisió, potència, arrel) i el raonador en garanteix la consistència dimensional. Aquesta llista serveix com a guia per a la cobertura actual i com a referència per a futures ampliacions.</p>
+
+      <h3>Cinemàtica lineal</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Velocitat mitjana</td><td>v = Δx / Δt</td><td>Quocient entre desplaçament i interval de temps.</td></tr>
+        <tr><td>Acceleració mitjana</td><td>a = Δv / Δt</td><td>Quocient entre variació de velocitat i temps.</td></tr>
+        <tr><td>MRU</td><td>x = x₀ + v · t</td><td>Posició en moviment rectilini uniforme.</td></tr>
+        <tr><td>MRUA, velocitat</td><td>v = v₀ + a · t</td><td>Velocitat en moviment uniformement accelerat.</td></tr>
+        <tr><td>MRUA, posició</td><td>x = x₀ + v₀ · t + ½ · a · t²</td><td>Posició en moviment uniformement accelerat.</td></tr>
+        <tr><td>Equació independent del temps</td><td>v² = v₀² + 2 · a · Δx</td><td>Relació entre velocitats, acceleració i desplaçament.</td></tr>
+      </table>
+
+      <h3>Caiguda lliure i tir vertical</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Velocitat de caiguda</td><td>v = g · t</td><td>Velocitat en caiguda lliure partint del repòs.</td></tr>
+        <tr><td>Alçada en caiguda lliure</td><td>h = ½ · g · t²</td><td>Distància recorreguda en caiguda lliure des del repòs.</td></tr>
+        <tr><td>Tir vertical, velocitat</td><td>v = v₀ − g · t</td><td>Velocitat en tir vertical amb eix positiu cap amunt.</td></tr>
+        <tr><td>Tir vertical, alçada</td><td>h = v₀ · t − ½ · g · t²</td><td>Alçada en tir vertical des del punt de llançament.</td></tr>
+        <tr><td>Equació de Torricelli</td><td>v² = 2 · g · h</td><td>Velocitat a una alçada h, sense intervenir el temps.</td></tr>
+      </table>
+
+      <h3>Cinemàtica circular</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Període</td><td>T = 1 / f</td><td>Invers de la freqüència.</td></tr>
+        <tr><td>Velocitat angular des del període</td><td>ω = 2π / T</td><td>Angle escombrat per unitat de temps.</td></tr>
+        <tr><td>Velocitat angular des de la freqüència</td><td>ω = 2π · f</td><td>Expressió equivalent en termes de freqüència.</td></tr>
+        <tr><td>Velocitat tangencial</td><td>v = ω · R</td><td>Velocitat lineal en moviment circular de radi R.</td></tr>
+        <tr><td>Acceleració angular</td><td>α = Δω / Δt</td><td>Variació de la velocitat angular per unitat de temps.</td></tr>
+        <tr><td>Acceleració centrípeta (a partir de v)</td><td>aₙ = v² / R</td><td>Acceleració dirigida al centre del moviment circular.</td></tr>
+        <tr><td>Acceleració centrípeta (a partir de ω)</td><td>aₙ = ω² · R</td><td>Forma equivalent en termes de velocitat angular.</td></tr>
+        <tr><td>Acceleració tangencial</td><td>aₜ = α · R</td><td>Component tangencial al moviment circular variat.</td></tr>
+      </table>
+
+      <h3>Dinàmica</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Segona llei de Newton</td><td>F = m · a</td><td>Força resultant igual a massa per acceleració.</td></tr>
+        <tr><td>Pes</td><td>P = m · g</td><td>Força gravitatòria sobre un cos en un camp uniforme.</td></tr>
+        <tr><td>Quantitat de moviment</td><td>p = m · v</td><td>Moment lineal d'una partícula.</td></tr>
+        <tr><td>Impuls mecànic</td><td>I = F · Δt</td><td>Producte de força per temps d'aplicació.</td></tr>
+        <tr><td>Teorema de l'impuls</td><td>F · Δt = m · Δv</td><td>L'impuls és igual a la variació del moment lineal.</td></tr>
+        <tr><td>Força centrípeta</td><td>F_c = m · v² / R</td><td>Força resultant que manté el moviment circular.</td></tr>
+        <tr><td>Força de fricció</td><td>F_f = μ · N</td><td>Producte del coeficient de fricció per la força normal.</td></tr>
+      </table>
+
+      <h3>Treball i energia</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Energia cinètica</td><td>E_c = ½ · m · v²</td><td>Energia associada al moviment d'un cos.</td></tr>
+        <tr><td>Energia potencial gravitatòria (uniforme)</td><td>E_p = m · g · h</td><td>Energia potencial en un camp gravitatori uniforme.</td></tr>
+        <tr><td>Energia mecànica</td><td>E_m = E_c + E_p</td><td>Suma d'energia cinètica i potencial.</td></tr>
+        <tr><td>Conservació de l'energia mecànica</td><td>E_m, inicial = E_m, final</td><td>Vàlida en absència de forces no conservatives.</td></tr>
+        <tr><td>Treball</td><td>W = F · d</td><td>Treball d'una força constant en la direcció del desplaçament.</td></tr>
+        <tr><td>Teorema del treball i energia cinètica</td><td>W = ΔE_c</td><td>El treball net iguala la variació d'energia cinètica.</td></tr>
+        <tr><td>Potència</td><td>P = E / t</td><td>Energia transferida per unitat de temps.</td></tr>
+      </table>
+
+      <h3>Gravitació universal</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Llei de gravitació universal</td><td>F = G · M · m / r²</td><td>Força gravitatòria entre dues masses.</td></tr>
+        <tr><td>Camp gravitatori</td><td>g = G · M / r²</td><td>Acceleració gravitatòria a distància r d'una massa M.</td></tr>
+        <tr><td>Paràmetre gravitatori</td><td>μ = G · M</td><td>Producte usat per simplificar expressions orbitals.</td></tr>
+        <tr><td>Energia potencial gravitatòria</td><td>E_p = −G · M · m / r</td><td>Energia potencial entre dos cossos puntuals.</td></tr>
+        <tr><td>Velocitat orbital circular</td><td>v = √(G · M / r)</td><td>Velocitat d'una òrbita circular de radi r.</td></tr>
+        <tr><td>Energia cinètica orbital</td><td>E_c = G · M · m / (2 · r)</td><td>Forma particular de E_c per a òrbita circular.</td></tr>
+        <tr><td>Energia mecànica orbital</td><td>E_m = −G · M · m / (2 · r)</td><td>Negativa per a òrbita lligada.</td></tr>
+        <tr><td>Període orbital (3a llei de Kepler)</td><td>T = 2π · √(r³ / (G · M))</td><td>Període d'una òrbita circular de radi r.</td></tr>
+        <tr><td>Velocitat d'escapament</td><td>v_e = √(2 · G · M / R)</td><td>Velocitat mínima per escapar del camp gravitatori.</td></tr>
+        <tr><td>Energia requerida per posar en òrbita</td><td>ΔE = E_m, final − E_m, inicial</td><td>Energia necessària per passar de la superfície a una òrbita.</td></tr>
+      </table>
+
+      <h3>Estàtica de fluids</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>Densitat</td><td>ρ = m / V</td><td>Quocient entre massa i volum.</td></tr>
+        <tr><td>Pressió</td><td>p = F / A</td><td>Força perpendicular per unitat d'àrea.</td></tr>
+        <tr><td>Pressió hidrostàtica</td><td>p = ρ · g · h</td><td>Pressió a una profunditat h dins un fluid en repòs.</td></tr>
+        <tr><td>Principi de Pascal</td><td>F₁ / A₁ = F₂ / A₂</td><td>Igualtat de pressions a parets de fluid en repòs (premses hidràuliques).</td></tr>
+        <tr><td>Empenta d'Arquímedes</td><td>E = ρ_fluid · V_submergit · g</td><td>Força ascendent sobre un cos submergit.</td></tr>
+        <tr><td>Àrea d'una circumferència</td><td>A = π · d² / 4</td><td>Àrea en funció del diàmetre (cilindres pneumàtics).</td></tr>
+        <tr><td>Àrea anular</td><td>A_anul = A_exterior − A_interior</td><td>Diferència d'àrees per a peces buides (èmbols amb biela).</td></tr>
+        <tr><td>Volum cilíndric</td><td>V = A · L</td><td>Volum d'un cilindre en funció de la secció i la longitud.</td></tr>
+        <tr><td>Volum d'una esfera</td><td>V = (4/3) · π · r³</td><td>Volum d'una esfera de radi r.</td></tr>
+      </table>
+
+      <h3>Conversions d'unitats</h3>
+      <table>
+        <tr><th>Nom</th><th>Expressió</th><th>Descripció</th></tr>
+        <tr><td>km/h a m/s</td><td>v [m/s] = v [km/h] / 3.6</td><td>Conversió de velocitat.</td></tr>
+        <tr><td>cm a m</td><td>l [m] = l [cm] / 100</td><td>Conversió de longitud.</td></tr>
+        <tr><td>g a kg</td><td>m [kg] = m [g] / 1000</td><td>Conversió de massa.</td></tr>
+        <tr><td>L a m³</td><td>V [m³] = V [L] / 1000</td><td>Conversió de volum.</td></tr>
+        <tr><td>bar a Pa</td><td>p [Pa] = p [bar] · 10⁵</td><td>Conversió de pressió.</td></tr>
+        <tr><td>rpm a rad/s</td><td>ω [rad/s] = rpm · 2π / 60</td><td>Conversió de velocitat angular.</td></tr>
+        <tr><td>graus a radians</td><td>θ [rad] = θ [°] · π / 180</td><td>Conversió d'angle.</td></tr>
+        <tr><td>kWh a J</td><td>E [J] = E [kWh] · 3.6 · 10⁶</td><td>Conversió d'energia.</td></tr>
+      </table>
+
+      <p class="small">El sistema no emmagatzema aquestes fórmules com a objectes cridables: el model generador les redacta al DSL i el raonador en valida la consistència dimensional a través de les regles de propagació.</p>
+    </section>
+
+    <!-- ============ PROPAGATION ============ -->
+    <section id="prop">
+      <h2>Regles de propagació</h2>
+      <p class="lead">Quan el raonador veu una operació amb operands d'unes magnituds determinades, aplica aquestes regles per inferir la magnitud del resultat. Cada regla està codificada en SWRL al fitxer <code>physics-rules.owl</code> i és generada per <code>scripts/rebuild_all_ontologies.py</code>.</p>
+
+      <h3>Aritmètiques generals</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_add</td><td>Suma de q + q</td><td>q</td></tr>
+        <tr><td>prop_sub</td><td>Resta de q − q</td><td>q</td></tr>
+        <tr><td>prop_assign</td><td>Assignació X = q</td><td>q</td></tr>
+      </table>
+
+      <h3>Posició, desplaçament i altitud</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_alt_disp_add</td><td>Altitud + Desplaçament</td><td>Altitud</td></tr>
+        <tr><td>prop_disp_disp_add</td><td>Desplaçament + Desplaçament</td><td>Desplaçament</td></tr>
+        <tr><td>prop_alt_alt_sub</td><td>Altitud − Altitud</td><td>Desplaçament</td></tr>
+      </table>
+
+      <h3>Cinemàtica</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_vel</td><td>Desplaçament / Temps</td><td>Velocitat</td></tr>
+        <tr><td>prop_acc</td><td>Velocitat / Temps</td><td>Acceleració</td></tr>
+        <tr><td>prop_mult_vt</td><td>Velocitat · Temps</td><td>Desplaçament</td></tr>
+        <tr><td>prop_mult_at</td><td>Acceleració · Temps</td><td>Velocitat</td></tr>
+      </table>
+
+      <h3>Cinemàtica angular</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_w</td><td>Angle / Temps</td><td>Velocitat angular</td></tr>
+        <tr><td>prop_alpha</td><td>Velocitat angular / Temps</td><td>Acceleració angular</td></tr>
+        <tr><td>prop_v_wR</td><td>Velocitat angular · Longitud</td><td>Velocitat lineal</td></tr>
+        <tr><td>prop_at_alphaR</td><td>Acceleració angular · Longitud</td><td>Acceleració tangencial</td></tr>
+      </table>
+
+      <h3>Dinàmica i energia</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_force</td><td>Massa · Acceleració</td><td>Força</td></tr>
+        <tr><td>prop_momentum</td><td>Massa · Velocitat</td><td>Quantitat de moviment</td></tr>
+        <tr><td>prop_work</td><td>Força · Longitud</td><td>Energia</td></tr>
+        <tr><td>prop_power</td><td>Energia / Temps</td><td>Potència</td></tr>
+        <tr><td>prop_impulse</td><td>Força · Temps</td><td>Impuls (= momentum)</td></tr>
+        <tr><td>prop_friction</td><td>Coef. fricció · Normal</td><td>Força de fricció</td></tr>
+        <tr><td>prop_accel_from_force</td><td>Força / Massa</td><td>Acceleració</td></tr>
+        <tr><td>prop_force_from_impulse</td><td>Moment / Temps</td><td>Força</td></tr>
+      </table>
+
+      <h3>Gravitació</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_mu</td><td>G · Massa</td><td>Paràmetre gravitatori (μ)</td></tr>
+        <tr><td>prop_eps_pot</td><td>μ / r</td><td>Energia específica</td></tr>
+        <tr><td>prop_v_sqrt</td><td>sqrt(energia específica)</td><td>Velocitat</td></tr>
+        <tr><td>prop_v_pm</td><td>Moment / Massa</td><td>Velocitat</td></tr>
+        <tr><td>prop_energy_from_specific</td><td>Energia específica · Massa</td><td>Energia</td></tr>
+        <tr><td>prop_grav_field</td><td>μ / r²</td><td>Acceleració gravitatòria</td></tr>
+        <tr><td>prop_force_from_accel</td><td>Acceleració · Massa</td><td>Força</td></tr>
+      </table>
+
+      <h3>Càlcul diferencial</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_deriv_v</td><td>d/dt(Longitud)</td><td>Velocitat</td></tr>
+        <tr><td>prop_deriv_a</td><td>d/dt(Velocitat)</td><td>Acceleració</td></tr>
+        <tr><td>prop_int_s</td><td>∫ Velocitat dt</td><td>Longitud</td></tr>
+      </table>
+
+      <h3>Trigonometria, logaritmes i potències</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_log</td><td>log(x)</td><td>Sense dimensió</td></tr>
+        <tr><td>prop_ln</td><td>ln(x)</td><td>Sense dimensió</td></tr>
+        <tr><td>prop_sin</td><td>sin(angle)</td><td>Sense dimensió</td></tr>
+        <tr><td>prop_cos</td><td>cos(angle)</td><td>Sense dimensió</td></tr>
+        <tr><td>prop_tan</td><td>tan(angle)</td><td>Sense dimensió</td></tr>
+        <tr><td>prop_pow_dimensionless</td><td>Sense dim. ^ Sense dim.</td><td>Sense dimensió</td></tr>
+      </table>
+
+      <h3>Àrees, volums i fluids</h3>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_area</td><td>Longitud · Longitud</td><td>Àrea</td></tr>
+        <tr><td>prop_volume</td><td>Àrea · Longitud</td><td>Volum</td></tr>
+        <tr><td>prop_density</td><td>Massa / Volum</td><td>Densitat</td></tr>
+        <tr><td>prop_pressure</td><td>Força / Àrea</td><td>Pressió</td></tr>
+        <tr><td>prop_force_from_pressure</td><td>Pressió · Àrea</td><td>Força</td></tr>
+      </table>
+
+      <h3>Regles complementàries (validador)</h3>
+      <p>Aquestes regles requereixen inspecció de valors numèrics dels operands (per exemple, distingir si un divisor és 1 o un exponent és 2). Per aquesta raó es codifiquen al validador en lloc de SWRL, però compleixen la mateixa funció de propagació dimensional.</p>
+      <table>
+        <tr><th>Regla</th><th>Condició</th><th>Resultat</th></tr>
+        <tr><td>prop_freq</td><td>1 / Temps</td><td>Freqüència</td></tr>
+        <tr><td>prop_period</td><td>1 / Freqüència</td><td>Temps</td></tr>
+        <tr><td>prop_h_attained</td><td>Energia / Acceleració</td><td>Alçada</td></tr>
+        <tr><td>prop_ke</td><td>½ · Energia (forma ½·m·v²)</td><td>Energia</td></tr>
+        <tr><td>prop_pow_length_2</td><td>Longitud²</td><td>Àrea</td></tr>
+        <tr><td>prop_pow_length_3</td><td>Longitud³</td><td>Volum</td></tr>
+        <tr><td>prop_pow_velocity_2</td><td>Velocitat²</td><td>Energia específica</td></tr>
+        <tr><td>prop_pow_time_2</td><td>Temps²</td><td>Temps al quadrat</td></tr>
+      </table>
+    </section>
+
+    <!-- ============ ERROR RULES ============ -->
+    <section id="errors">
+      <h2>Regles d'error</h2>
+      <p class="lead">A més de propagar, l'ontologia codifica situacions d'inconsistència que el raonador ha de marcar. Cada regla crea una instància de la subclasse corresponent de <code>PhysicsError</code>, que el validador recull i tradueix a feedback per al LLM.</p>
+
+      <table>
+        <tr><th>Regla</th><th>Detecta</th><th>Tipus d'error</th></tr>
+        <tr><td>err_add_q</td><td>Suma d'operands amb magnituds diferents</td><td>QuantityIncompatibilityError</td></tr>
+        <tr><td>err_sub_q</td><td>Resta d'operands amb magnituds diferents</td><td>QuantityIncompatibilityError</td></tr>
+        <tr><td>err_unit_incomp</td><td>Operació binària amb unitats diferents als operands</td><td>UnitIncompatibilityError</td></tr>
+        <tr><td>err_sin_angle</td><td>sin() amb argument que no és angle</td><td>InvalidTrigonometryArgumentError</td></tr>
+        <tr><td>err_cos_angle</td><td>cos() amb argument que no és angle</td><td>InvalidTrigonometryArgumentError</td></tr>
+        <tr><td>err_tan_angle</td><td>tan() amb argument que no és angle</td><td>InvalidTrigonometryArgumentError</td></tr>
+      </table>
+
+      <h3>Jerarquia de classes d'error</h3>
+      <pre>PhysicsError
+├── QuantityIncompatibilityError
+├── UnitIncompatibilityError
+├── InvalidTrigonometryArgumentError
+└── DimensionMismatchError</pre>
+      <p class="small">DimensionMismatchError es genera des del validador en Python (no des de SWRL); veure la pestanya següent.</p>
+    </section>
+
+    <!-- ============ MANUAL CHECKS ============ -->
+    <section id="manual">
+      <h2>Comprovacions del validador (Python)</h2>
+      <p class="lead">No tot el raonament viu en SWRL. Algunes comprovacions necessiten manipular valors numèrics o estructures que les regles lògiques no expressen amb naturalitat. Aquestes comprovacions estan a <code>src/validator.py</code> i complementen l'ontologia.</p>
+
+      <table>
+        <tr><th>Funció</th><th>Detecta</th><th>Implementació</th></tr>
+        <tr><td><code>check_manual_compatibility</code></td><td>Magnituds o unitats incompatibles en sumes i restes (versió més robusta que la SWRL).</td><td>Recorre les instàncies de <code>AdditionExpression</code> i <code>SubtractionExpression</code>, compara <code>hasQuantityType</code> i <code>hasUnit</code> dels dos operands.</td></tr>
+        <tr><td><code>check_manual_trigonometry</code></td><td>Funcions sin/cos/tan amb argument que no és angle.</td><td>Recorre instàncies de cada trigonomètrica i comprova que el seu operand té magnitud <code>AngleQuantity</code>.</td></tr>
+        <tr><td><code>check_invalid_power</code></td><td>Longitud elevada a un exponent que no és 2 ni 3 (per exemple Longitud⁴, error típic per confondre el divisor amb l'exponent en πd²/4).</td><td>Recorre <code>PowerExpression</code>: si la base és <code>LengthQuantity</code> i l'exponent enter no està en {2, 3}, marca <code>DimensionMismatchError</code>.</td></tr>
+        <tr><td><code>check_dsl_purity</code></td><td>Literals numèrics dins de mòduls (haurien de venir per inputs).</td><td>Recorre el DSL JSON abans del raonament.</td></tr>
+        <tr><td><code>check_declaration_unit_compatibility</code></td><td>Declaracions on la unitat declarada no entra a les categories acceptades per la seva magnitud (per exemple massa amb unitat de longitud).</td><td>Comprovació prèvia al raonament basada en les taules unit-quantity.</td></tr>
+      </table>
+    </section>
+
+    <!-- ============ CONTRIB ============ -->
+    <section id="contrib">
+      <h2>Com col·laborar</h2>
+      <p class="lead">L'ontologia es concep com un model extensible. L'ampliació del seu àmbit de cobertura requereix la incorporació de noves magnituds, unitats i regles d'inferència. Aquesta secció recull el procediment recomanat per introduir aquestes ampliacions de manera coherent amb l'arquitectura existent.</p>
+
+      <h3>Incorporació d'una nova magnitud física</h3>
+      <ol>
+        <li>Declaració de la magnitud al script <code>scripts/rebuild_all_ontologies.py</code>, mitjançant una invocació de <code>add_qty(...)</code>, indicant les categories d'unitat acceptades.</li>
+        <li>Regeneració dels fitxers <code>.owl</code> mitjançant l'execució del mateix script.</li>
+        <li>Si la magnitud ha de ser inferida automàticament a partir d'operacions sobre altres magnituds (per exemple, el producte de massa per velocitat dóna quantitat de moviment), s'afegirà la regla SWRL corresponent al bloc de propagació.</li>
+        <li>Actualització de la pestanya "Magnituds físiques" d'aquesta pàgina per mantenir la consistència documental.</li>
+      </ol>
+
+      <h3>Incorporació d'una nova unitat</h3>
+      <ol>
+        <li>Declaració de la unitat al mateix script, mitjançant <code>add_unit(...)</code>, especificant el factor de conversió al Sistema Internacional i la seva categoria dimensional.</li>
+        <li>Regeneració dels fitxers <code>.owl</code> i actualització de la pestanya "Unitats".</li>
+      </ol>
+
+      <h3>Incorporació d'una regla de propagació</h3>
+      <ol>
+        <li>Definició de la regla SWRL al bloc corresponent de <code>rebuild_all_ontologies.py</code>, seguint el patró sintàctic de les regles existents.</li>
+        <li>Addició de la corresponent entrada al fitxer de tests <code>tests/ontology/test_swrl_propagation.py</code>, dins de les estructures <code>BINARY_RULES</code> o <code>UNARY_RULES</code> segons correspongui. El conjunt de proves disposa d'un mecanisme de verificació que detecta regles no cobertes.</li>
+        <li>Documentació de la regla a la pestanya "Regles de propagació".</li>
+      </ol>
+
+      <h3>Incorporació d'una regla d'error</h3>
+      <ol>
+        <li>Si la inconsistència és de naturalesa estructural i és detectable pel raonador lògic, es definirà una regla SWRL al bloc d'errors, que generi una instància de la subclasse pertinent de <code>PhysicsError</code>.</li>
+        <li>Si la detecció requereix accés a valors numèrics o estructures que les regles lògiques no expressen amb facilitat, es recomana implementar-la com a funció complementària dins del validador.</li>
+        <li>S'aconsella proporcionar una descripció accionable de l'error a la funció <code>describe_error</code>, amb la finalitat que el retorn al model generador sigui interpretable i constructiu.</li>
+      </ol>
+
+      <h3>Convencions de nomenclatura i qualitat</h3>
+      <ul>
+        <li>Tota regla SWRL incorporada haurà d'anar acompanyada del seu test corresponent. El criteri mínim de qualitat estableix que el rebuig d'una inferència per part del raonador ha de ser sempre interpretable.</li>
+        <li>Les magnituds segueixen una convenció de nomenclatura autoexplicativa en notació CamelCase amb sufix <code>Quantity</code>, en coherència amb les existents.</li>
+        <li>Les unitats adopten el nom canònic anglès (Newton, Watt, Pascal, etc.) en notació CamelCase.</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <a href="https://github.com/Gallel/codegenerator_physics" target="_blank" rel="noopener">github.com/Gallel/codegenerator_physics</a>
+</footer>
+
+<script>
+  document.querySelectorAll(".tabbtn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".tabbtn").forEach(function(b){ b.classList.remove("active"); });
+      document.querySelectorAll("section").forEach(function(s){ s.classList.remove("active"); });
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>

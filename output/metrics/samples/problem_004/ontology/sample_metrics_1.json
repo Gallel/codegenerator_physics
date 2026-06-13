@@ -1,0 +1,66 @@
+{
+  "sample": 1,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "mass_of_mars": {
+        "reference": 6.43e+23,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "surface_gravity_mars": {
+        "reference": 3.73,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      }
+    },
+    "produced": {
+      "M_mars": 6.512632877029929e+22,
+      "g_mars": 0.37799237119229406
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 0,
+    "passed": 0,
+    "lcs": null,
+    "checks": []
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 0,
+    "reported_by_name": 0,
+    "value_only": 0,
+    "reported_and_correct": 0,
+    "cas_lax": 0.0,
+    "cas_strict": 0.0,
+    "goals": {
+      "mass_of_mars": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "surface_gravity_mars": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.43605429711460286,
+    "ngram_match": 0.1299590659099955,
+    "weighted_ngram_match": 0.29900315279906403,
+    "syntax_match": 0.7191011235955056,
+    "dataflow_match": 0.5961538461538461
+  }
+}

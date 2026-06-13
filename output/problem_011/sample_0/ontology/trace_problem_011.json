@@ -1,0 +1,155 @@
+{
+  "program": "problem_011",
+  "steps": [
+    {
+      "expression": "Op_2_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_v_ms_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_t_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 10.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_t_squared_4",
+        "quantities": [
+          "TimeSquaredQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_a_t_squared",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_a_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_t_squared_4",
+          "quantities": [
+            "TimeSquaredQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_a_t_squared_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_a",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 10.0
+        }
+      ],
+      "result": {
+        "name": "Res_a_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_ms",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_v_f_kmh",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 108.0
+        },
+        {
+          "name": "phys_conversion_factor",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.6
+        }
+      ],
+      "result": {
+        "name": "Res_v_ms_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_delta_x",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_a_t_squared_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_x_6",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

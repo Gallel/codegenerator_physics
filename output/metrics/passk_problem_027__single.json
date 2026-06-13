@@ -1,0 +1,25 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "force_small_piston": {
+      "reference": 480.0,
+      "generated": 480.0,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "F1": 480.0
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_027__single"
+}

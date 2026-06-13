@@ -1,0 +1,43 @@
+{
+  "total_goals": 4,
+  "covered": 4,
+  "reported_by_name": 0,
+  "value_only": 4,
+  "reported_and_correct": 4,
+  "cas_lax": 0.95,
+  "cas_strict": 0.95,
+  "goals": {
+    "linear_velocity": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "centripetal_acceleration": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "period": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "frequency": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    }
+  },
+  "branch": "ontology",
+  "cas_lax_std": 0.1,
+  "cas_lax_max_correct": 1.0,
+  "cas_lax_min_correct": 1.0,
+  "cas_strict_std": 0.1,
+  "cas_strict_max_correct": 1.0,
+  "cas_strict_min_correct": 1.0,
+  "problem_id": "problem_015__ontology"
+}

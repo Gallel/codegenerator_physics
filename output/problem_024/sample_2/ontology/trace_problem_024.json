@@ -1,0 +1,223 @@
+{
+  "program": "problem_024",
+  "steps": [
+    {
+      "expression": "Op_2_p_zipi",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_p_system_initial",
+          "quantities": [
+            "MomentumQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "Res_p_ball_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_p_zipi_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_v_ball_after_return_throw",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_neg_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": -1.0
+        },
+        {
+          "name": "phys_v_ball_relative_ice_return",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 21.5
+        }
+      ],
+      "result": {
+        "name": "Res_v_ball_after_return_throw_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_p_ball",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m_ball",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.2
+        },
+        {
+          "name": "phys_v_ball_relative_ice_initial",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 21.5
+        }
+      ],
+      "result": {
+        "name": "Res_p_ball_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_p_zipi_before_catch",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m_zipi",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 50.0
+        },
+        {
+          "name": "Res_v_zipi_after_throw_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_p_zipi_before_catch_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_p_ball_before_catch",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m_ball",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.2
+        },
+        {
+          "name": "Res_v_ball_after_return_throw_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_p_ball_before_catch_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_v_zipi_after_throw",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_p_zipi_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_m_zipi",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 50.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_zipi_after_throw_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_v_zipi_final_after_catch",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_p_total_before_final_catch_7",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_m_zipi_ball_total_8",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_zipi_final_after_catch_9",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_p_total_before_final_catch",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_p_zipi_before_catch_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_p_ball_before_catch_6",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_p_total_before_final_catch_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_m_zipi_ball_total",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_m_zipi",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 50.0
+        },
+        {
+          "name": "phys_m_ball",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.2
+        }
+      ],
+      "result": {
+        "name": "Res_m_zipi_ball_total_8",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

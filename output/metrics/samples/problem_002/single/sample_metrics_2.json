@@ -1,0 +1,36 @@
+{
+  "sample": 2,
+  "branch": "single",
+  "passk": {
+    "compiled": false,
+    "ran": false,
+    "passed": false,
+    "error": "compile error: C:\\git\\UOC\\Research\\tfm\\output\\problem_002\\sample_2\\single\\problem_002.java:24: error: method compute_final_orbital_energy in class problem_002 cannot be applied to given types;\n        double E_f = compute_final_orbital_energy(mu, m, r, two, K_i);\n                     ^\n  required: double,double,double,int\n  found:    double,double,double,int,double\n  reason: actual and formal argument lists differ in length\nC:\\git\\UOC\\Research\\tfm\\output\\problem_002\\sample_2\\single\\problem_002.java:69: error: cannot find symbol\n        double E_f = K_i - mu_m_over_2r;\n                     ^\n  symbol:   variable K_i\n  location: class problem_002\n2 errors",
+    "goals": {}
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 0,
+    "passed": 0,
+    "lcs": null,
+    "checks": []
+  },
+  "cas": {
+    "total_goals": 0,
+    "covered": 0,
+    "reported_by_name": 0,
+    "value_only": 0,
+    "reported_and_correct": 0,
+    "cas_lax": null,
+    "cas_strict": null,
+    "goals": {}
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.40162753345129687,
+    "ngram_match": 0.07666909935833015,
+    "weighted_ngram_match": 0.26734103444685725,
+    "syntax_match": 0.7,
+    "dataflow_match": 0.5625
+  }
+}

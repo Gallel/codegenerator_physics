@@ -1,0 +1,14 @@
+{
+  "error": null,
+  "codebleu": 0.4240656503379472,
+  "ngram_match": 0.13133671827625998,
+  "weighted_ngram_match": 0.3813226442091321,
+  "syntax_match": 0.8105263157894737,
+  "dataflow_match": 0.3730769230769231,
+  "branch": "single",
+  "codebleu_std": 0.027107687612664216,
+  "codebleu_max_correct": 0.47663844462606914,
+  "codebleu_min_correct": 0.4077486667468603,
+  "n_computed": 5,
+  "problem_id": "problem_015__single"
+}

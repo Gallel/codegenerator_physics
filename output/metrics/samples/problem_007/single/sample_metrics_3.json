@@ -1,0 +1,104 @@
+{
+  "sample": 3,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "orbital_period": {
+        "reference": 20.2,
+        "generated": 20.227846998843553,
+        "match": true,
+        "matched_by": "value"
+      },
+      "mechanical_energy": {
+        "reference": -1400000000.0,
+        "generated": -1408750000.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "lunar_escape_velocity": {
+        "reference": 2373.8,
+        "generated": 2373.815494093844,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "T_hours": 20.227846998843553,
+      "E_mech": -1408750000.0,
+      "v_escape": 2373.815494093844
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 4,
+    "passed": 4,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "period_positive",
+        "goal": "orbital_period",
+        "value": 20.227846998843553,
+        "passed": true
+      },
+      {
+        "rule": "escape_velocity_positive",
+        "goal": "lunar_escape_velocity",
+        "value": 2373.815494093844,
+        "passed": true
+      },
+      {
+        "rule": "velocity_below_c",
+        "goal": "lunar_escape_velocity",
+        "value": 2373.815494093844,
+        "passed": true
+      },
+      {
+        "rule": "orbital_mech_energy_negative",
+        "goal": "mechanical_energy",
+        "value": -1408750000.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 3,
+    "reported_by_name": 0,
+    "value_only": 3,
+    "reported_and_correct": 3,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "orbital_period": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "mechanical_energy": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "lunar_escape_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3768613328575947,
+    "ngram_match": 0.09404692330403,
+    "weighted_ngram_match": 0.27703477176271246,
+    "syntax_match": 0.6666666666666666,
+    "dataflow_match": 0.4696969696969697
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "program": "problem_001",
+  "steps": [
+    {
+      "expression": "Op_1_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 6.39e+23
+        }
+      ],
+      "result": {
+        "name": "Res_GM_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_GMm",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_GM_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 1.08e+16
+        }
+      ],
+      "result": {
+        "name": "Res_GMm_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_two_r",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_r",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 9377000.0
+        }
+      ],
+      "result": {
+        "name": "Res_two_r_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_E_mech",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_neg_one",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": -1.0
+        },
+        {
+          "name": "Res_K_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_E_mech_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_K",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GMm_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_two_r_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_K_4",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

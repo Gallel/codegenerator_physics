@@ -1,0 +1,98 @@
+{
+  "sample": 0,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "mass_of_didymos": {
+        "reference": 535000000000.0,
+        "generated": 535280523455.96045,
+        "match": true,
+        "matched_by": "value"
+      },
+      "surface_gravity_didymos": {
+        "reference": 0.000234,
+        "generated": 0.00023413438508043997,
+        "match": true,
+        "matched_by": "value"
+      },
+      "gravitational_force_on_dimorphos": {
+        "reference": 1260000.0,
+        "generated": 1258037.2468283284,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "M_didymos": 535280523455.96045,
+      "g_surface": 0.00023413438508043997,
+      "F_on_dimorphos": 1258037.2468283284
+    }
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "mass_positive",
+        "goal": "mass_of_didymos",
+        "value": 535280523455.96045,
+        "passed": true
+      },
+      {
+        "rule": "surface_gravity_positive",
+        "goal": "surface_gravity_didymos",
+        "value": 0.00023413438508043997,
+        "passed": true
+      },
+      {
+        "rule": "force_positive",
+        "goal": "gravitational_force_on_dimorphos",
+        "value": 1258037.2468283284,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 3,
+    "reported_by_name": 0,
+    "value_only": 3,
+    "reported_and_correct": 3,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "mass_of_didymos": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "surface_gravity_didymos": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "gravitational_force_on_dimorphos": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.400533629152407,
+    "ngram_match": 0.0940351790042246,
+    "weighted_ngram_match": 0.29961666138079174,
+    "syntax_match": 0.7407407407407407,
+    "dataflow_match": 0.46774193548387094
+  }
+}

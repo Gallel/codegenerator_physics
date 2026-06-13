@@ -1,0 +1,127 @@
+{
+  "program": "problem_012",
+  "steps": [
+    {
+      "expression": "Op_4_two_g",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_two_g_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_numerator",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_v_f_sq_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_v_0_sq_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_numerator_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_height",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_numerator_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_two_g_4",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_height_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_f_sq",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_v_f",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 15.0
+        },
+        {
+          "name": "phys_v_f",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 15.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_f_sq_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_v_0_sq",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        },
+        {
+          "name": "phys_v_0",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_0_sq_2",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

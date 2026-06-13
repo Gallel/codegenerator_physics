@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "final_velocity": {
+      "reference": 90.0,
+      "generated": 90.0,
+      "match": true,
+      "matched_by": "value"
+    },
+    "distance_covered": {
+      "reference": 270.0,
+      "generated": 270.0,
+      "match": true,
+      "matched_by": "value"
+    },
+    "engine_force": {
+      "reference": 992.0,
+      "generated": 992.0,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "v": 90.0,
+    "distance": 270.0,
+    "F_engine": 992.0
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_017__ontology"
+}

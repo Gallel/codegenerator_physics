@@ -1,0 +1,144 @@
+{
+  "program": "problem_003",
+  "steps": [
+    {
+      "expression": "Op_3_v",
+      "operation": "SqrtExpression",
+      "symbol": "sqrt",
+      "operands": [
+        {
+          "name": "Res_speed_sq_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_v_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "phys_M_earth",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 5.972e+24
+        }
+      ],
+      "result": {
+        "name": "Res_GM_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_two_pi",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        },
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        }
+      ],
+      "result": {
+        "name": "Res_two_pi_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_circumference",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_two_pi_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 384000000.0
+        }
+      ],
+      "result": {
+        "name": "Res_circumference_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_T",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_circumference_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_v_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_T_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_speed_sq",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GM_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_r",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 384000000.0
+        }
+      ],
+      "result": {
+        "name": "Res_speed_sq_2",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

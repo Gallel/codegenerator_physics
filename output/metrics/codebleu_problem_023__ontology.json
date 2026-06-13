@@ -1,0 +1,14 @@
+{
+  "error": null,
+  "codebleu": 0.43052788639945927,
+  "ngram_match": 0.13001936437347625,
+  "weighted_ngram_match": 0.3028213478910275,
+  "syntax_match": 0.8359375,
+  "dataflow_match": 0.4533333333333333,
+  "branch": "ontology",
+  "codebleu_std": 0.010183934809751364,
+  "codebleu_max_correct": null,
+  "codebleu_min_correct": null,
+  "n_computed": 5,
+  "problem_id": "problem_023__ontology"
+}

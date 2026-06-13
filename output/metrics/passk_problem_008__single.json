@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "acceleration_segment_1": {
+      "reference": 3.0,
+      "generated": 3.0,
+      "match": true,
+      "matched_by": "value"
+    },
+    "acceleration_segment_2": {
+      "reference": 0.0,
+      "generated": 0.0,
+      "match": true,
+      "matched_by": "value"
+    },
+    "acceleration_segment_3": {
+      "reference": -2.0,
+      "generated": -2.0,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "a_avg1": 3.0,
+    "a_avg2": 0.0,
+    "a_avg3": -2.0
+  },
+  "branch": "single",
+  "n_samples": 5,
+  "n_correct": 5,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 1.0,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_008__single"
+}

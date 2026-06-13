@@ -1,0 +1,62 @@
+/**
+ * Generated Physics-Validated Program: problem_016
+ * Automatically generated from Modular DSL.
+ */
+public class problem_016 {
+
+    public static void main(String[] args) {
+        // --- Main Declarations ---
+        double r_edge = 0.1; // LengthQuantity
+        double r_inner = 0.05; // LengthQuantity
+        double rotation_rate_rpm = 300.0; // DimensionlessQuantity
+        int sixty = 60; // DimensionlessQuantity
+        int one = 1; // DimensionlessQuantity
+        int two = 2; // DimensionlessQuantity
+        double pi = 3.141592653589793; // DimensionlessQuantity
+        int two_int = 2; // DimensionlessQuantity
+
+        // --- Main Execution Flow ---
+        double frequency = rpm_to_frequency(rotation_rate_rpm, sixty);
+        double period = frequency_to_period(one, frequency);
+        double omega = frequency_to_angular_speed(two, pi, frequency);
+        double a_c_edge = centripetal_acceleration(omega, r_edge, two_int);
+        double a_c_inner = centripetal_acceleration(omega, r_inner, two_int);
+        // --- Output Results in JSON format ---
+        System.out.println("{");
+        System.out.println("  \"problem\": \"problem_016\",");
+        System.out.println("  \"results\": {");
+        System.out.println("    \"period\": " + period + ",");
+        System.out.println("    \"frequency\": " + frequency + ",");
+        System.out.println("    \"a_c_edge\": " + a_c_edge + ",");
+        System.out.println("    \"a_c_inner\": " + a_c_inner + "");
+        System.out.println("  }");
+        System.out.println("}");
+    }
+
+    /** Convert rotation rate from revolutions per minute to frequency in hertz using f = rotation_rate_rpm / 60. */
+    public static double rpm_to_frequency(double rotation_rate_rpm, int sixty) {
+        double frequency_hz = rotation_rate_rpm / sixty;
+        return frequency_hz;
+    }
+
+    /** Calculate the period of rotation using T = 1 / f. */
+    public static double frequency_to_period(int one, double frequency_hz) {
+        double period = one / frequency_hz;
+        return period;
+    }
+
+    /** Convert rotational frequency to angular speed using omega = 2*pi*f. */
+    public static double frequency_to_angular_speed(int two, double pi, double frequency_hz) {
+        double two_pi = two * pi;
+        double omega = two_pi * frequency_hz;
+        return omega;
+    }
+
+    /** Calculate centripetal acceleration magnitude using a_c = omega^2 * r. */
+    public static double centripetal_acceleration(double omega, double r, int two_int) {
+        double omega_squared = Math.pow(omega, two_int);
+        double a_c = omega_squared * r;
+        return a_c;
+    }
+
+}

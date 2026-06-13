@@ -1,0 +1,98 @@
+{
+  "sample": 0,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "acceleration_segment_1": {
+        "reference": 3.0,
+        "generated": 3.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "acceleration_segment_2": {
+        "reference": 0.0,
+        "generated": 0.0,
+        "match": true,
+        "matched_by": "value"
+      },
+      "acceleration_segment_3": {
+        "reference": -2.0,
+        "generated": -2.0,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "a_avg1": 3.0,
+      "a_avg2": 0.0,
+      "a_avg3": -2.0
+    }
+  },
+  "lcs": {
+    "domain": "linear_kinematics",
+    "applicable": 3,
+    "passed": 3,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "acceleration_finite",
+        "goal": "acceleration_segment_1",
+        "value": 3.0,
+        "passed": true
+      },
+      {
+        "rule": "acceleration_finite",
+        "goal": "acceleration_segment_2",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "rule": "acceleration_finite",
+        "goal": "acceleration_segment_3",
+        "value": -2.0,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 3,
+    "covered": 3,
+    "reported_by_name": 0,
+    "value_only": 3,
+    "reported_and_correct": 3,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "acceleration_segment_1": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "acceleration_segment_2": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "acceleration_segment_3": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3650517122881767,
+    "ngram_match": 0.12209592800330918,
+    "weighted_ngram_match": 0.36375194679042305,
+    "syntax_match": 0.7435897435897436,
+    "dataflow_match": 0.23076923076923078
+  }
+}

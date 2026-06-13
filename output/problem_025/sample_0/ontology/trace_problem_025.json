@@ -1,0 +1,79 @@
+{
+  "program": "problem_025",
+  "steps": [
+    {
+      "expression": "Op_1_delta_v",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "phys_v_f",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.6
+        },
+        {
+          "name": "phys_v_i",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 0.0
+        }
+      ],
+      "result": {
+        "name": "Res_delta_v_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_F_avg",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 0.08
+        },
+        {
+          "name": "Res_a_avg_2",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_F_avg_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_a_avg",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_delta_v_1",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_delta_t",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 0.16
+        }
+      ],
+      "result": {
+        "name": "Res_a_avg_2",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

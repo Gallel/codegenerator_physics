@@ -1,0 +1,155 @@
+{
+  "program": "problem_018",
+  "steps": [
+    {
+      "expression": "Op_6_e_mech",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_ke_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_u_5",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_e_mech_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_mg",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 15000.0
+        },
+        {
+          "name": "phys_g",
+          "quantities": [
+            "AccelerationQuantity"
+          ],
+          "value": 9.8
+        }
+      ],
+      "result": {
+        "name": "Res_mg_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_u",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_mg_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_h",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 10000.0
+        }
+      ],
+      "result": {
+        "name": "Res_u_5",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_m_v_sq",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_m",
+          "quantities": [
+            "MassQuantity"
+          ],
+          "value": 15000.0
+        },
+        {
+          "name": "Res_v_sq_1",
+          "quantities": [
+            "SpecificEnergyQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_m_v_sq_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_1_v_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_v",
+          "quantities": [
+            "VelocityQuantity"
+          ],
+          "value": 250.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_v_sq_1",
+        "quantities": [
+          "SpecificEnergyQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_ke",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_m_v_sq_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_ke_3",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

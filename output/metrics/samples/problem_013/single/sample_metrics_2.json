@@ -1,0 +1,79 @@
+{
+  "sample": 2,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "maximum_height": {
+        "reference": 11.5,
+        "generated": 11.479591836734693,
+        "match": true,
+        "matched_by": "value"
+      },
+      "time_to_maximum_height": {
+        "reference": 1.53,
+        "generated": 1.530612244897959,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "y_max": 11.479591836734693,
+      "t_top": 1.530612244897959
+    }
+  },
+  "lcs": {
+    "domain": "free_fall",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "time_positive",
+        "goal": "time_to_maximum_height",
+        "value": 1.530612244897959,
+        "passed": true
+      },
+      {
+        "rule": "height_nonneg",
+        "goal": "maximum_height",
+        "value": 11.479591836734693,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "maximum_height": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "time_to_maximum_height": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.464251080909188,
+    "ngram_match": 0.10920672942444547,
+    "weighted_ngram_match": 0.3929321697816648,
+    "syntax_match": 0.8405797101449275,
+    "dataflow_match": 0.5142857142857142
+  }
+}

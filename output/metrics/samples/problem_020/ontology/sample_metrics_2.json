@@ -1,0 +1,79 @@
+{
+  "sample": 2,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "initial_mechanical_energy": {
+        "reference": 12.435,
+        "generated": 12.435,
+        "match": true,
+        "matched_by": "value"
+      },
+      "final_velocity": {
+        "reference": 12.88,
+        "generated": 12.876334882255899,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "E_mech": 12.435,
+      "v_f": 12.876334882255899
+    }
+  },
+  "lcs": {
+    "domain": "work_energy",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "velocity_below_c",
+        "goal": "final_velocity",
+        "value": 12.876334882255899,
+        "passed": true
+      },
+      {
+        "rule": "surface_mech_energy_nonneg",
+        "goal": "initial_mechanical_energy",
+        "value": 12.435,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 2,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "initial_mechanical_energy": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "final_velocity": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.46857406602455526,
+    "ngram_match": 0.09432003035852228,
+    "weighted_ngram_match": 0.34108734485080977,
+    "syntax_match": 0.75,
+    "dataflow_match": 0.6888888888888889
+  }
+}

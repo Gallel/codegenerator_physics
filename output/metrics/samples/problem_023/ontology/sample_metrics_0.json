@@ -1,0 +1,118 @@
+{
+  "sample": 0,
+  "branch": "ontology",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": false,
+    "error": null,
+    "goals": {
+      "advance_force": {
+        "reference": 2307.9,
+        "generated": 2309.070600388498,
+        "match": true,
+        "matched_by": "value"
+      },
+      "return_force": {
+        "reference": 2013.52,
+        "generated": 2014.5462891144552,
+        "match": true,
+        "matched_by": "value"
+      },
+      "air_volume_advance": {
+        "reference": 0.38,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "air_volume_return": {
+        "reference": 0.34,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      },
+      "total_air_volume_cycle": {
+        "reference": 0.72,
+        "generated": null,
+        "match": false,
+        "matched_by": null
+      }
+    },
+    "produced": {
+      "F_advance": 2309.070600388498,
+      "F_return": 2014.5462891144552,
+      "V_advance": 0.0003848451000647497,
+      "V_return": 0.0003357577148524092,
+      "V_total": 0.0007206028149171589
+    }
+  },
+  "lcs": {
+    "domain": "fluid_statics",
+    "applicable": 2,
+    "passed": 2,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "force_positive",
+        "goal": "advance_force",
+        "value": 2309.070600388498,
+        "passed": true
+      },
+      {
+        "rule": "force_positive",
+        "goal": "return_force",
+        "value": 2014.5462891144552,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 5,
+    "covered": 2,
+    "reported_by_name": 0,
+    "value_only": 2,
+    "reported_and_correct": 2,
+    "cas_lax": 0.4,
+    "cas_strict": 0.4,
+    "goals": {
+      "advance_force": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "return_force": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      },
+      "air_volume_advance": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "air_volume_return": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      },
+      "total_air_volume_cycle": {
+        "matched_by": null,
+        "correct": false,
+        "covered": false,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.4138721314443241,
+    "ngram_match": 0.11396758957341771,
+    "weighted_ngram_match": 0.26558343620387886,
+    "syntax_match": 0.8359375,
+    "dataflow_match": 0.44
+  }
+}

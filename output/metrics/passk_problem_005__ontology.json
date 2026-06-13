@@ -1,0 +1,39 @@
+{
+  "compiled": true,
+  "ran": true,
+  "passed": true,
+  "error": null,
+  "goals": {
+    "mass_of_didymos": {
+      "reference": 535000000000.0,
+      "generated": 535280523455.96045,
+      "match": true,
+      "matched_by": "value"
+    },
+    "surface_gravity_didymos": {
+      "reference": 0.000234,
+      "generated": 0.00023413438508043997,
+      "match": true,
+      "matched_by": "value"
+    },
+    "gravitational_force_on_dimorphos": {
+      "reference": 1260000.0,
+      "generated": 1258037.2468283284,
+      "match": true,
+      "matched_by": "value"
+    }
+  },
+  "produced": {
+    "M_didymos": 535280523455.96045,
+    "g_surface": 0.00023413438508043997,
+    "F_on_dimorphos": 1258037.2468283284
+  },
+  "branch": "ontology",
+  "n_samples": 5,
+  "n_correct": 4,
+  "n_compiled": 5,
+  "n_ran": 5,
+  "pass_at_1": 0.8,
+  "pass_at_5": 1.0,
+  "problem_id": "problem_005__ontology"
+}

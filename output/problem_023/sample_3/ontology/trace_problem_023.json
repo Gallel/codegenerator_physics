@@ -1,0 +1,301 @@
+{
+  "program": "problem_023",
+  "steps": [
+    {
+      "expression": "Op_1_diameter_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_piston_diameter",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.07
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_diameter_squared_1",
+        "quantities": [
+          "AreaQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_diameter_squared",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_rod_diameter",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.025
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_diameter_squared_4",
+        "quantities": [
+          "AreaQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_12_total_volume",
+      "operation": "AdditionExpression",
+      "symbol": "+",
+      "operands": [
+        {
+          "name": "Res_volume_10",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_volume_11",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_total_volume_12",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_return_area",
+      "operation": "SubtractionExpression",
+      "symbol": "-",
+      "operands": [
+        {
+          "name": "Res_area_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_area_6",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_return_area_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_area",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_pi_over_four_2",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_diameter_squared_1",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_area_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_area",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_pi_over_four_5",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_diameter_squared_4",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_area_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_force",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_working_pressure",
+          "quantities": [
+            "PressureQuantity"
+          ],
+          "value": 600000.0
+        },
+        {
+          "name": "Res_area_3",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_force_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_force",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_working_pressure",
+          "quantities": [
+            "PressureQuantity"
+          ],
+          "value": 600000.0
+        },
+        {
+          "name": "Res_return_area_7",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_force_9",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_10_volume",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_area_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_stroke",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.1
+        }
+      ],
+      "result": {
+        "name": "Res_volume_10",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_11_volume",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_return_area_7",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "phys_stroke",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 0.1
+        }
+      ],
+      "result": {
+        "name": "Res_volume_11",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_pi_over_four",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        },
+        {
+          "name": "phys_four",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 4.0
+        }
+      ],
+      "result": {
+        "name": "Res_pi_over_four_2",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_pi_over_four",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        },
+        {
+          "name": "phys_four",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 4.0
+        }
+      ],
+      "result": {
+        "name": "Res_pi_over_four_5",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Metric,single,ontology
+samples,135 (102 correct),135 (107 correct)
+prompt tokens (total),803232,916387
+completion tokens (total),207412,233650
+tokens per sample,7486,8519
+--- EFFICIENCY TOWARD CORRECTNESS (Pass@k) ---,,
+tokens per correct sample,9908,10748
+estimated cost (USD),$7.1273,$8.0867
+cost per correct sample (USD),$0.0699,$0.0756
+--- EFFICIENCY TOWARD CODE SIMILARITY (CodeBLEU) ---,,
+CodeBLEU (mean over problems),0.446,0.448
+CodeBLEU per 1000 tokens,0.0004,0.0004
+--- OVERALL ---,,
+ratio ontology / single (total tokens),-,1.14x

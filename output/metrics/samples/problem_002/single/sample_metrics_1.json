@@ -1,0 +1,36 @@
+{
+  "sample": 1,
+  "branch": "single",
+  "passk": {
+    "compiled": false,
+    "ran": false,
+    "passed": false,
+    "error": "compile error: C:\\git\\UOC\\Research\\tfm\\output\\problem_002\\sample_1\\single\\problem_002.java:51: error: cannot find symbol\n        double U_i = K_i_zero - Ui_mag;\n                     ^\n  symbol:   variable K_i_zero\n  location: class problem_002\nC:\\git\\UOC\\Research\\tfm\\output\\problem_002\\sample_1\\single\\problem_002.java:68: error: cannot find symbol\n        double E_f = zero_ref - Ef_mag;\n                     ^\n  symbol:   variable zero_ref\n  location: class problem_002\n2 errors",
+    "goals": {}
+  },
+  "lcs": {
+    "domain": "gravitation",
+    "applicable": 0,
+    "passed": 0,
+    "lcs": null,
+    "checks": []
+  },
+  "cas": {
+    "total_goals": 0,
+    "covered": 0,
+    "reported_by_name": 0,
+    "value_only": 0,
+    "reported_and_correct": 0,
+    "cas_lax": null,
+    "cas_strict": null,
+    "goals": {}
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.3959870799449644,
+    "ngram_match": 0.07673780224076199,
+    "weighted_ngram_match": 0.2759605175390957,
+    "syntax_match": 0.7,
+    "dataflow_match": 0.53125
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "domain": "dynamics",
+  "applicable": 1,
+  "passed": 1,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "force_positive",
+      "goal": "average_force",
+      "value": 0.3,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": 1.0,
+  "lcs_min_correct": 1.0,
+  "problem_id": "problem_025__single"
+}

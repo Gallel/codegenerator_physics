@@ -1,0 +1,259 @@
+{
+  "program": "problem_004",
+  "steps": [
+    {
+      "expression": "Op_1_pi_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_pi",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.141592653589793
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_pi_sq_1",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_5_T_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_T",
+          "quantities": [
+            "TimeQuantity"
+          ],
+          "value": 27554.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_T_sq_5",
+        "quantities": [
+          "TimeSquaredQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_9_R_sq",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_R_mars",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 3390000.0
+        },
+        {
+          "name": "phys_two",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 2.0
+        }
+      ],
+      "result": {
+        "name": "Res_R_sq_9",
+        "quantities": [
+          "AreaQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_2_r_cu",
+      "operation": "PowerExpression",
+      "symbol": "^",
+      "operands": [
+        {
+          "name": "phys_r_orbit",
+          "quantities": [
+            "LengthQuantity"
+          ],
+          "value": 9377000.0
+        },
+        {
+          "name": "phys_three",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 3.0
+        }
+      ],
+      "result": {
+        "name": "Res_r_cu_2",
+        "quantities": [
+          "VolumeQuantity"
+        ],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_8_GM",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "Res_M_mars_7",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_GM_8",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_4_numerator",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "Res_four_pi_sq_3",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_r_cu_2",
+          "quantities": [
+            "VolumeQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_numerator_4",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_6_denominator",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_G",
+          "quantities": [
+            "UniversalGravitationalConstantType"
+          ],
+          "value": 6.67e-11
+        },
+        {
+          "name": "Res_T_sq_5",
+          "quantities": [
+            "TimeSquaredQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_denominator_6",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_3_four_pi_sq",
+      "operation": "MultiplicationExpression",
+      "symbol": "*",
+      "operands": [
+        {
+          "name": "phys_four",
+          "quantities": [
+            "DimensionlessQuantity"
+          ],
+          "value": 4.0
+        },
+        {
+          "name": "Res_pi_sq_1",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_four_pi_sq_3",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_7_M_mars",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_numerator_4",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_denominator_6",
+          "quantities": [],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_M_mars_7",
+        "quantities": [],
+        "value": null
+      }
+    },
+    {
+      "expression": "Op_10_g_surface",
+      "operation": "DivisionExpression",
+      "symbol": "/",
+      "operands": [
+        {
+          "name": "Res_GM_8",
+          "quantities": [],
+          "value": null
+        },
+        {
+          "name": "Res_R_sq_9",
+          "quantities": [
+            "AreaQuantity"
+          ],
+          "value": null
+        }
+      ],
+      "result": {
+        "name": "Res_g_surface_10",
+        "quantities": [],
+        "value": null
+      }
+    }
+  ]
+}

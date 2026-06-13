@@ -1,0 +1,31 @@
+{
+  "domain": "gravitation",
+  "applicable": 3,
+  "passed": 3,
+  "lcs": 1.0,
+  "checks": [
+    {
+      "rule": "period_positive",
+      "goal": "orbital_period",
+      "value": 5665.020228837372,
+      "passed": true
+    },
+    {
+      "rule": "velocity_below_c",
+      "goal": "orbital_velocity",
+      "value": 7619.652060656909,
+      "passed": true
+    },
+    {
+      "rule": "orbital_v_period_consistency",
+      "goal": "(relational)",
+      "value": null,
+      "passed": true
+    }
+  ],
+  "branch": "single",
+  "lcs_std": 0.0,
+  "lcs_max_correct": null,
+  "lcs_min_correct": null,
+  "problem_id": "problem_006__single"
+}

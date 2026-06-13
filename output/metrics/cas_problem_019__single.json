@@ -1,0 +1,31 @@
+{
+  "total_goals": 2,
+  "covered": 2,
+  "reported_by_name": 0,
+  "value_only": 2,
+  "reported_and_correct": 2,
+  "cas_lax": 1.0,
+  "cas_strict": 1.0,
+  "goals": {
+    "daily_energy_consumed": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    },
+    "monthly_energy_consumed": {
+      "matched_by": "value",
+      "correct": true,
+      "covered": true,
+      "reported_by_name": false
+    }
+  },
+  "branch": "single",
+  "cas_lax_std": 0.0,
+  "cas_lax_max_correct": 1.0,
+  "cas_lax_min_correct": 1.0,
+  "cas_strict_std": 0.0,
+  "cas_strict_max_correct": 1.0,
+  "cas_strict_min_correct": 1.0,
+  "problem_id": "problem_019__single"
+}

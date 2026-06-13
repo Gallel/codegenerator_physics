@@ -1,0 +1,60 @@
+{
+  "sample": 1,
+  "branch": "single",
+  "passk": {
+    "compiled": true,
+    "ran": true,
+    "passed": true,
+    "error": null,
+    "goals": {
+      "fall_height": {
+        "reference": 11.5,
+        "generated": 11.479591836734693,
+        "match": true,
+        "matched_by": "value"
+      }
+    },
+    "produced": {
+      "h": 11.479591836734693
+    }
+  },
+  "lcs": {
+    "domain": "free_fall",
+    "applicable": 1,
+    "passed": 1,
+    "lcs": 1.0,
+    "checks": [
+      {
+        "rule": "height_nonneg",
+        "goal": "fall_height",
+        "value": 11.479591836734693,
+        "passed": true
+      }
+    ]
+  },
+  "cas": {
+    "total_goals": 1,
+    "covered": 1,
+    "reported_by_name": 0,
+    "value_only": 1,
+    "reported_and_correct": 1,
+    "cas_lax": 1.0,
+    "cas_strict": 1.0,
+    "goals": {
+      "fall_height": {
+        "matched_by": "value",
+        "correct": true,
+        "covered": true,
+        "reported_by_name": false
+      }
+    }
+  },
+  "codebleu": {
+    "error": null,
+    "codebleu": 0.5194152568025536,
+    "ngram_match": 0.19607819758079167,
+    "weighted_ngram_match": 0.4505483468708019,
+    "syntax_match": 0.7758620689655172,
+    "dataflow_match": 0.6551724137931034
+  }
+}
